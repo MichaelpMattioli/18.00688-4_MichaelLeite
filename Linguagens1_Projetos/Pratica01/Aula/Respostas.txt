@@ -1,0 +1,28 @@
+1 - C:\Program Files\Java\jdk1.8.0_162
+
+2 -
+C:\Program Files\Java\jdk1.8.0_162\bin\java.exe
+C:\Program Files\Java\jdk1.8.0_162\bin\javac.exe
+
+3 -
+Entre no diretorio em que seu programa está, e depois 
+digite: "javac nomedoprograma".
+
+4 - 
+Ainda no diretorio em que o programa está, 
+digite: "java nomedoprograma".
+
+5 - 
+Variaveis de ambiente são 'atalhos' () para que os programa em execução em ambiente
+sejam possiveis de serem executados corretamente, para a utilização da aula de hoje
+a variavel de ambiente tem a função de indicar onde o binario java está.
+
+6 -
+Se for o seu ambiente pode.
+
+7 -
+No windows, vá em Meu Computador, configurações avançadas de sistema, e clique em
+variaveis de ambiente.
+
+8 -
+O JAVA_HOME ajuda na execução de programa pelo terminal.
