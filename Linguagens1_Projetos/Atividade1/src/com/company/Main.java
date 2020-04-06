@@ -19,9 +19,11 @@ public class Main {
         c2 = new Conta(u2);
         c3 = new Conta(u3);
 
+        t1 = new Transacoes();
+
         c1.setSaldo(1000);
-        c1.setSaldo(250);
-        c1.setSaldo(3000);
+        c2.setSaldo(250);
+        c3.setSaldo(3000);
 
         System.out.println(c1.getUsuario().getNome());
         System.out.println(c2.getUsuario().getNome());
