@@ -2,16 +2,16 @@
 package com.company;
 
 public class Conta {
-    private static int totalDeContas += 1;
+    private static int totalDeContas = 0;
     private int idConta = totalDeContas;
     private double saldo;
     private Usuario usuario;
 
 
     public Conta(Usuario usuario) {
-        this.usuario = usuario;
-        this.idConta;
+        this.idConta = totalDeContas+1;
         saldo = 0;
+        this.usuario = usuario;
     }
 
     public int getIdConta() {
