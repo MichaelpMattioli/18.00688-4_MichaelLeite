@@ -3,6 +3,7 @@ package com.company;
 
 import java.util.Random;
 
+
 public class Transacoes {
 
     public void pagar (Conta contaRemetente,Conta contaDestino, String qrCode){
@@ -14,7 +15,7 @@ public class Transacoes {
             System.out.println("Transacao nao realizada");
     }
 
-    private static int numeroAleatorio(){
+    public int numeroAleatorio(){
         Random r = new Random();
         return r.nextInt(10000);
     }
@@ -28,6 +29,4 @@ public class Transacoes {
         String qrCode = ID + ";" + usuario + ";" + pagamento  + ";" + numAleatorio;
         return qrCode;
     }
-
-
 }

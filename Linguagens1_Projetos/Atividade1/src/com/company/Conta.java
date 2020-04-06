@@ -2,14 +2,15 @@
 package com.company;
 
 public class Conta {
-    private int idConta;
+    private static int totalDeContas += 1;
+    private int idConta = totalDeContas;
     private double saldo;
     private Usuario usuario;
-    public int i=0;
+
 
     public Conta(Usuario usuario) {
         this.usuario = usuario;
-        this.idConta = i+1;
+        this.idConta;
         saldo = 0;
     }
 
