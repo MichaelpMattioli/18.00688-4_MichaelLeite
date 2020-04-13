@@ -9,8 +9,12 @@ public class Transacoes {
     public void pagar (Conta contaRemetente,Conta contaDestino, String qrCode){
         String[] dados = qrCode.split(";");
 
-        if ( contaRemetente.sacar(Double.parseDouble(dados[2])))
-            contaDestino.setSaldo(contaDestino.getSaldo() + Double.parseDouble(dados[2]));
+        if ( contaDestino.getIdConta() == Integer.parseInt(dados[0])){
+            if ( contaRemetente.sacar(Double.parseDouble(dados[2])))
+                contaDestino.setSaldo(contaDestino.getSaldo() + Double.parseDouble(dados[2]));
+            else
+                System.out.println("Transacao nao realizada");
+        }
         else
             System.out.println("Transacao nao realizada");
     }

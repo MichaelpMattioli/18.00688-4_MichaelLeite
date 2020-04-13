@@ -9,8 +9,7 @@ public class Conta {
 
 
     public Conta(Usuario usuario) {
-        this.idConta = totalDeContas;
-
+        this.idConta = totalDeContas+1;
         saldo = 0;
         this.usuario = usuario;
     }

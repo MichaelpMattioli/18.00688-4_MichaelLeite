@@ -39,13 +39,9 @@ public class Main {
         t1.pagar(c3,c1,qrCode);
         t1.pagar(c2,c1,qrCode);
 
-        System.out.println(c1.getSaldo());
-        System.out.println(c2.getSaldo());
-        System.out.println(c3.getSaldo());
-
         qrCode = t1.qrCode(c2,1000);
 
-        t1.pagar(c3,c1,qrCode);
+        t1.pagar(c3,c2,qrCode);
 
         System.out.println(c1.getSaldo());
         System.out.println(c2.getSaldo());
