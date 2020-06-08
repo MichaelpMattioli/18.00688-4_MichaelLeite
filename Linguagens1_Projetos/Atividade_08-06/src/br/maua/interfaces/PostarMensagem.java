@@ -1,5 +1,5 @@
 package br.maua.interfaces;
 
 public interface PostarMensagem {
-    String PostarMensagem(String mensagem);
+    String PostarMensagem(int horario);
 }
