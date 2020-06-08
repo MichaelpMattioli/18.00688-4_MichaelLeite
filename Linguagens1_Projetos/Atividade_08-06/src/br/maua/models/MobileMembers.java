@@ -6,13 +6,15 @@ public class MobileMembers extends Membros{
     private String assinaturaHorarioNormal = "HappyCoding!";
     private String assinaturaHoraExtra = "Happy_C0d1ng. Maskers";
 
-    public MobileMembers(String usuario, Cargos cargos) {
-        super(usuario, cargos);
+    public MobileMembers(String usuario) {
+        super(usuario, Cargos.MOBILE_MEMBERS);
     }
 
     @Override
-    public String PostarMensagem(String mensagem) {
-
-        return null;
+    public String PostarMensagem(int horario) {
+        if( horario == 1)
+            return  assinaturaHorarioNormal ;
+        else
+            return assinaturaHoraExtra ;
     }
 }

@@ -18,6 +18,5 @@ public class BigBrothers extends Membros{
             return  assinaturaTeddyBear ;
         else
             return assinaturaEvilBear ;
-
     }
 }
