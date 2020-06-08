@@ -34,4 +34,13 @@ public abstract class Membros implements PostarMensagem {
     public Cargos getCargos() {
         return cargos;
     }
+
+    @Override
+    public String toString() {
+        return "Membros{" +
+                ", usuario='" + usuario + '\'' +
+                ", email='" + email + '\'' +
+                ", cargo=" + cargos +
+                '}';
+    }
 }
