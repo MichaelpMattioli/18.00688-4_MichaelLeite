@@ -1,5 +1,7 @@
 package br.maua.interfaces;
 
+import br.maua.enums.Horarios;
+
 public interface PostarMensagem {
-    String PostarMensagem(int horario);
+    String PostarMensagem(String horario);
 }

@@ -1,6 +1,7 @@
 package br.maua.models;
 
 import br.maua.enums.Cargos;
+import br.maua.enums.Horarios;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -60,7 +61,13 @@ public class ListaDeMembros {
         listaDeMembros.remove(usuario);
     }
 
-    protected void postarMensagem(){
+    protected String mudarHorario(String horario){
+        if(horario.equals(String.valueOf(Horarios.REGULAR)))
+            return String.valueOf(Horarios.EXTRA);
+        return String.valueOf(Horarios.REGULAR);
+    }
+
+    protected void postarMensagem(String horario){
         System.out.println("Qual usuario deseja falar?");
         int i = 0;
         for (Membros membro: listaDeMembros) {
@@ -69,6 +76,6 @@ public class ListaDeMembros {
         }
         Scanner scanner = new Scanner(System.in);
         int usuario = scanner.nextInt();
-        System.out.println(listaDeMembros.get(usuario).PostarMensagem(1));
+        System.out.println(listaDeMembros.get(usuario).PostarMensagem(horario));
     }
 }

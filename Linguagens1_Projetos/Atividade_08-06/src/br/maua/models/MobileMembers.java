@@ -1,6 +1,7 @@
 package br.maua.models;
 
 import br.maua.enums.Cargos;
+import br.maua.enums.Horarios;
 
 public class MobileMembers extends Membros{
 
@@ -10,8 +11,8 @@ public class MobileMembers extends Membros{
     }
 
     @Override
-    public String PostarMensagem(int horario) {
-        if( horario == 1)
+    public String PostarMensagem(String horario) {
+        if( horario.equals(String.valueOf(Horarios.REGULAR)))
             return  getAssinaturaHorarioNormal() ;
         else
             return getAssinaturaHoraExtra() ;
