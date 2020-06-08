@@ -47,4 +47,28 @@ public class ListaDeMembros {
             System.out.println(membro);
         }
     }
+
+    protected void deletarUsuario(){
+        System.out.println("Qual usuario deseja remover?");
+        int i = 0;
+        for (Membros membro: listaDeMembros) {
+            System.out.println(i + " - " + membro.getUsuario());
+            i++;
+        }
+        Scanner scanner = new Scanner(System.in);
+        int usuario = scanner.nextInt();
+        listaDeMembros.remove(usuario);
+    }
+
+    protected void postarMensagem(){
+        System.out.println("Qual usuario deseja falar?");
+        int i = 0;
+        for (Membros membro: listaDeMembros) {
+            System.out.println(i + " - " + membro.getUsuario());
+            i++;
+        }
+        Scanner scanner = new Scanner(System.in);
+        int usuario = scanner.nextInt();
+        System.out.println(listaDeMembros.get(usuario).PostarMensagem(1));
+    }
 }

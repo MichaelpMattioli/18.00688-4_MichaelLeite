@@ -2,7 +2,7 @@ package br.maua.models;
 
 import java.util.Scanner;
 
-public class Menus {
+public class Sistema {
     public void Sistema(){
         ListaDeMembros listadeMembros = new ListaDeMembros();
         int escolha;
@@ -15,22 +15,23 @@ public class Menus {
                     listadeMembros.criarMembro();
                     break;
                 case 2:
-                    listadeMembros.criarMembro();
+                    listadeMembros.mostrarListaDeMembros();
+
                     break;
                 case 3:
-                    listadeMembros.criarMembro();
+                    listadeMembros.deletarUsuario();
                     break;
                 case 4:
                     listadeMembros.criarMembro();
                     break;
                 case 5:
-                    listadeMembros.criarMembro();
+                    listadeMembros.postarMensagem();
                     break;
             }
-        }while (escolha != 0)
+        }while (escolha != 0);
     }
     public void MenuPrincipal() {
-        System.out.println("Bem vindo ao nosso sisteminha!\n");
+        System.out.println("\nBem vindo ao nosso sisteminha!\n");
         System.out.println("Escolha a opção:\n");
         System.out.println("1 - Cadastrar Novo Membro");
         System.out.println("2 - Membros Cadastrados");
