@@ -3,18 +3,17 @@ package br.maua.models;
 import br.maua.enums.Cargos;
 
 public class MobileMembers extends Membros{
-    private String assinaturaHorarioNormal = "HappyCoding!";
-    private String assinaturaHoraExtra = "Happy_C0d1ng. Maskers";
 
-    public MobileMembers(String usuario) {
-        super(usuario, Cargos.MOBILE_MEMBERS);
+
+    public MobileMembers(String usuario, String email) {
+        super(usuario, Cargos.MOBILE_MEMBERS,email , "HappyCoding!","Happy_C0d1ng. Maskers");
     }
 
     @Override
     public String PostarMensagem(int horario) {
         if( horario == 1)
-            return  assinaturaHorarioNormal ;
+            return  getAssinaturaHorarioNormal() ;
         else
-            return assinaturaHoraExtra ;
+            return getAssinaturaHoraExtra() ;
     }
 }
