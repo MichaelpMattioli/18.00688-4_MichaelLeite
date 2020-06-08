@@ -3,9 +3,14 @@
 
 package br.maua;
 
+import br.maua.models.BigBrothers;
+import br.maua.models.Menus;
+
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        BigBrothers bigBrothers = new BigBrothers("Xmen");
+        bigBrothers.PostarMensagem("Ola");
+        Menus menu = new Menus();
     }
 }
