@@ -6,7 +6,7 @@ package br.maua;
 import br.maua.models.Sistema;
 
 /**
- * @author Gabriel de Laurentis Dias Cardoso & Michael Pedroza Mattioli Leite
+ * @author Gabriel de Laurentis Dias Cardoso e Michael Pedroza Mattioli Leite
  * @since 08/06/2020
  * @version 1.0
  */

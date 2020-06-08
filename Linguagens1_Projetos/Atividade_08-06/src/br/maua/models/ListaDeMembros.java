@@ -7,7 +7,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * @author Gabriel de Laurentis Dias Cardoso & Michael Pedroza Mattioli Leite
+ * Classe responsavel por agrupar, criar, remover os membros em uma lista.
+ * @author Gabriel de Laurentis Dias Cardoso e Michael Pedroza Mattioli Leite
  * @since 08/06/2020
  * @version 1.0
  */
@@ -49,12 +50,19 @@ public class ListaDeMembros {
         }
     }
 
+    /**
+     * Metodo que lista todos os membros.
+     */
+
     protected void mostrarListaDeMembros(){
         for (Membros membro: listaDeMembros) {
             System.out.println(membro);
         }
     }
 
+    /**
+     * Metodo que remove os usuarios
+     */
     protected void deletarUsuario(){
         System.out.println("Qual usuario deseja remover?");
         int i = 0;
@@ -67,12 +75,22 @@ public class ListaDeMembros {
         listaDeMembros.remove(usuario);
     }
 
+    /**
+     * Metodos que faz a mudança de turno
+     * @param horario turno que está no exato momento.
+     * @return turno que irá entrar em vigor.
+     */
+
     protected String mudarHorario(String horario){
         if(horario.equals(String.valueOf(Horarios.REGULAR)))
             return String.valueOf(Horarios.EXTRA);
         return String.valueOf(Horarios.REGULAR);
     }
 
+    /**
+     * Metodo que irá definir qual mensagem de um determinado membro será postada.
+     * @param horario horario que está em vigor.
+     */
     protected void postarMensagem(String horario){
         System.out.println("Qual usuario deseja falar?");
         int i = 0;

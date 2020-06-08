@@ -5,7 +5,7 @@ import br.maua.enums.Horarios;
 
 /**
  * Classe ScriptGuys, classe filha de Membros.
- * @author Gabriel de Laurentis Dias Cardoso & Michael Pedroza Mattioli Leite
+ * @author Gabriel de Laurentis Dias Cardoso e Michael Pedroza Mattioli Leite
  * @since 08/06/2020
  * @version 1.0
  */

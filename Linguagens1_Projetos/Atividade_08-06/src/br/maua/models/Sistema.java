@@ -5,13 +5,17 @@ import br.maua.enums.Horarios;
 import java.util.Scanner;
 
 /**
- * @author Gabriel de Laurentis Dias Cardoso & Michael Pedroza Mattioli Leite
+ * @author Gabriel de Laurentis Dias Cardoso e Michael Pedroza Mattioli Leite
  * @since 08/06/2020
  * @version 1.0
  */
 
 public class Sistema {
     String horaAtual = "REGULAR";
+
+    /**
+     * Metodo que administra as demais classes.
+     */
 
     public void Sistema(){
         ListaDeMembros listadeMembros = new ListaDeMembros();
@@ -40,6 +44,11 @@ public class Sistema {
             }
         }while (escolha != 0);
     }
+
+    /**
+     * Menu que será apresentado para o usuario.
+     * @param hora horario do turno que está em vigor.
+     */
     public void MenuPrincipal(String hora) {
         System.out.println("\nBem vindo ao nosso sisteminha!\n");
         System.out.println("Escolha a opção:\n");
