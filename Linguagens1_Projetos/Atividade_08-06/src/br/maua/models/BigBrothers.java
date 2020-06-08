@@ -13,17 +13,11 @@ public class BigBrothers extends Membros{
     }
 
     @Override
-    public String PostarMensagem(String mensagem) {
-        int x = 0;
-        System.out.println("Como você está se sentindo?");
-        System.out.println("1 - Carinhoso");
-        System.out.println("2 - Malvado");
-        Scanner msg = new Scanner(System.in);
-        x = msg.nextInt();
-        if( x == 1)
-            return mensagem + "\n\n" + assinaturaTeddyBear ;
+    public String PostarMensagem(int horario) {
+        if( horario == 1)
+            return  assinaturaTeddyBear ;
         else
-            return mensagem + "\n\n" + assinaturaEvilBear ;
+            return assinaturaEvilBear ;
 
     }
 }
