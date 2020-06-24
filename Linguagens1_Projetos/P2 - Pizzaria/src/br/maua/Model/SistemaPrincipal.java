@@ -1,5 +1,6 @@
 package br.maua.Model;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class SistemaPrincipal {
@@ -13,4 +14,6 @@ public class SistemaPrincipal {
         Scanner scanner = new Scanner(System.in);
         scanner.nextLine();
     }
+
+    ArrayList<Pedidos> pedidos = new ArrayList<>();
 }
