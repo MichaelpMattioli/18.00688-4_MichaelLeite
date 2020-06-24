@@ -3,7 +3,7 @@ package br.maua.Model;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class SistemaPrincipal {
+public class SistemaPrincipal{
 
     public void Menu(){
         System.out.println("Pizzaria o Rato que Ri");
@@ -15,5 +15,20 @@ public class SistemaPrincipal {
         scanner.nextLine();
     }
 
-    ArrayList<Pedidos> pedidos = new ArrayList<>();
+    public void Sistema(){
+        Scanner escolha = new Scanner(System.in);
+        escolha = escolha.nextInt();
+        switch (escolha){
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 0:
+                break;
+    }
+}
+
+
 }
