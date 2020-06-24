@@ -1,6 +1,6 @@
 package br.maua;
 
-import java.awt.*;
+import br.maua.Model.SistemaPrincipal;
 
 public class Main {
 
