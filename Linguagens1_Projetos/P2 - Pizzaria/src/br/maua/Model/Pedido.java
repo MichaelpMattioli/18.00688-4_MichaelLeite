@@ -33,7 +33,7 @@ public class Pedido {
         return formaDePagamento;
     }
 
-    public String getEstado() {
+    public EstadoDoPedido getEstado() {
         return estado;
     }
 
@@ -41,7 +41,7 @@ public class Pedido {
         this.formaDePagamento = formaDePagamento;
     }
 
-    public void setEstado(String estado) {
+    public void setEstado(EstadoDoPedido estado) {
         this.estado = estado;
     }
 }
