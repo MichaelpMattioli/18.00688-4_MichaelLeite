@@ -1,5 +1,7 @@
 package br.maua;
 
+import br.maua.Enums.TiposDePizzas;
+import br.maua.Model.Pizzas;
 import br.maua.Model.SistemaPrincipal;
 import br.maua.Model.Usuario;
 
@@ -9,10 +11,9 @@ public class Main {
         SistemaPrincipal sistemaPrincipal = new SistemaPrincipal();
         sistemaPrincipal.Menu();
 
-        Usuario usuario1 = new Usuario("Ronaldo","RonaldoBrilhaMuitoNoCurinthians@bol.com", "123456");
-        System.out.println(usuario1.getEmail());
-        System.out.println(usuario1.getNome());
-        System.out.println(usuario1.getSenha());
+        Pizzas pizzas = new Pizzas(TiposDePizzas.MARGUERITA);
+        System.out.println(pizzas.getNome());
+        System.out.println(pizzas.getValor());
 
     }
 }

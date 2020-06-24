@@ -4,7 +4,6 @@ import br.maua.Enums.EstadoDoPedido;
 import br.maua.Enums.FormaDePagamento;
 import br.maua.Enums.TiposDePizzas;
 
-import java.util.List;
 import java.util.Random;
 
 public class Pedidos {
