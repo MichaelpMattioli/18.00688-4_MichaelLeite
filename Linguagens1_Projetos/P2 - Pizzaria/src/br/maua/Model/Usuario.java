@@ -24,6 +24,6 @@ public class Usuario {
     }
 
     void gerarPedido(){}
-    
+
     void alterarPedido(){}
 }
