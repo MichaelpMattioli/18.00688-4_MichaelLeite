@@ -2,29 +2,42 @@ package br.maua.Model;
 
 import br.maua.Enums.EstadoDoPedido;
 import br.maua.Enums.FormaDePagamento;
+import br.maua.Enums.TiposDePizzas;
 
+import java.util.List;
 import java.util.Random;
 
-public class Pedidos<Static> {
+public class Pedidos {
     private String ID;
-    private String Descricao;
+    private TiposDePizzas Descricao;
     private double valor;
     private FormaDePagamento formaDePagamento;
     private EstadoDoPedido estado;
 
-    public Pedidos() {
-        this.ID = geradorId()
-        this.Descricao = "descricao";
-        this.valor = 10;
-        this.formaDePagamento = FormaDePagamento.DINHEIRO;
+    public Pedidos(TiposDePizzas descricao, double valor, FormaDePagamento pagamento) {
+        this.ID = geradorId();
+        this.Descricao = descricao;
+        this.valor = valor;
+        this.formaDePagamento = pagamento;
         this.estado = EstadoDoPedido.REALIZADO;
+    }
+
+    @Override
+    public String toString() {
+        return "Pedidos{" +
+                "ID=" + ID +
+                ", Descricao='" + Descricao + '\'' +
+                ", valor=" + valor +
+                ", formaDePagamento='" + formaDePagamento + '\'' +
+                ", estado=" + estado +
+                '}';
     }
 
     public String getID() {
         return ID;
     }
 
-    public String getDescricao() {
+    public TiposDePizzas getDescricao() {
         return Descricao;
     }
 
@@ -42,17 +55,6 @@ public class Pedidos<Static> {
 
     public void setEstado(EstadoDoPedido estado) {
         this.estado = estado;
-    }
-
-    @Override
-    public String toString() {
-        return "Pedidos{" +
-                "ID=" + ID +
-                ", Descricao='" + Descricao + '\'' +
-                ", valor=" + valor +
-                ", formaDePagamento='" + formaDePagamento + '\'' +
-                ", estado=" + estado +
-                '}';
     }
 
     private String geradorId(){
