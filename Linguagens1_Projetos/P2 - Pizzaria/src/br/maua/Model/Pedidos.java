@@ -1,18 +1,22 @@
 package br.maua.Model;
 
 import br.maua.Enums.EstadoDoPedido;
+import br.maua.Enums.FormaDePagamento;
 
 import java.util.Random;
 
 public class Pedidos<Static> {
-    static private String ID = geradorId();
+    private String ID;
     private String Descricao;
     private double valor;
-    private String formaDePagamento;
+    private FormaDePagamento formaDePagamento;
     private EstadoDoPedido estado;
 
-    public Pedidos(String formaDePagamento, String estado) {
-        this.formaDePagamento = formaDePagamento;
+    public Pedidos() {
+        this.ID = geradorId()
+        this.Descricao = "descricao";
+        this.valor = 10;
+        this.formaDePagamento = FormaDePagamento.DINHEIRO;
         this.estado = EstadoDoPedido.REALIZADO;
     }
 
@@ -28,16 +32,12 @@ public class Pedidos<Static> {
         return valor;
     }
 
-    public String getFormaDePagamento() {
+    public FormaDePagamento getFormaDePagamento() {
         return formaDePagamento;
     }
 
     public EstadoDoPedido getEstado() {
         return estado;
-    }
-
-    public void setFormaDePagamento(String formaDePagamento) {
-        this.formaDePagamento = formaDePagamento;
     }
 
     public void setEstado(EstadoDoPedido estado) {
@@ -55,7 +55,7 @@ public class Pedidos<Static> {
                 '}';
     }
 
-    private static String geradorId(){
+    private String geradorId(){
         Random random = new Random();
         String idGerado = "";
         for(int i = 0; i < 3; i++)
