@@ -11,5 +11,6 @@ public class SistemaPrincipal {
         System.out.println("3 - Alterar pedidos");
         System.out.println("0 - Sair");
         Scanner scanner = new Scanner(System.in);
+        scanner.nextLine()
     }
 }
