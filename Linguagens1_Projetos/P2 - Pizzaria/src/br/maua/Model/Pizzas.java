@@ -14,10 +14,6 @@ public class Pizzas {
         this.valor = this.nome.getValorDaPizza();
     }
 
-    public TiposDePizzas getNome() {
-        return nome;
-    }
-
     public double getValor() {
         return valor;
     }
