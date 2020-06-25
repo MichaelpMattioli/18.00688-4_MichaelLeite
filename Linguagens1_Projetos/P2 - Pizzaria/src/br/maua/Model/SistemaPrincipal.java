@@ -6,6 +6,10 @@ import java.util.Scanner;
 
 public class SistemaPrincipal{
 
+    /**
+     * Menu do sistema, por ele é possivel visualizar como o sistema funciona através de entradas numéricas.
+     */
+
     private void Menu(){
         System.out.println("------------||------------");
         System.out.println("Pizzaria o Rato que Ri");
@@ -15,6 +19,13 @@ public class SistemaPrincipal{
         System.out.println("0 - Sair");
         System.out.print("------------||------------");
     }
+
+    /**
+     * Método responsavel por interligar as demais classes, assim criando as instancia dos objetos,
+     * e é por meio dela, a aplicação é executada.
+     * Ela é responsavel também por criar algumas interações graficas para melhor visualização do usuario com o
+     * programa.
+     */
 
     public void Sistema() {
         Usuario admin = new Usuario("Rato", "pizzariadoratoqueri@gmail.com", "123456");
