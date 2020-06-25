@@ -125,23 +125,21 @@ public class Pedidos {
         return pedido;
     }
 
-    public EstadoDoPedido mudarPedido(int Id){
-        SistemaPrincipal sistemaPrincipal = new SistemaPrincipal();
+    public void mudarPedido(String Id, List<Pedidos> listaPedidos){
         EstadoDoPedido estadoDoPedido = null;
-        for (Pedidos pedido: sistemaPrincipal.listaDosPedidos ) {
+        for (Pedidos pedido: listaPedidos ) {
             if (pedido.getID().equals(Id)){
                 if(pedido.getEstado().equals(EstadoDoPedido.REALIZADO))
                     pedido.setEstado(EstadoDoPedido.PREPARACAO);
-                if(pedido.getEstado().equals(EstadoDoPedido.PREPARACAO))
+                else if(pedido.getEstado().equals(EstadoDoPedido.PREPARACAO))
                     pedido.setEstado(EstadoDoPedido.SAIU_PARA_ENTREGAR);
-                if(pedido.getEstado().equals(EstadoDoPedido.SAIU_PARA_ENTREGAR))
+                else if(pedido.getEstado().equals(EstadoDoPedido.SAIU_PARA_ENTREGAR))
                     pedido.setEstado(EstadoDoPedido.ENTREGUE);
-                if(pedido.getEstado().equals(EstadoDoPedido.ENTREGUE))
+                else
                     pedido.setEstado(EstadoDoPedido.DEVOLVIDO);
                 estadoDoPedido = pedido.getEstado();
             }
         }
-        return estadoDoPedido;
     }
 
 
