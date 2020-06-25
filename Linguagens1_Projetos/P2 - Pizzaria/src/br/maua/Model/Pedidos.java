@@ -44,12 +44,16 @@ public class Pedidos {
         return estado;
     }
 
-    public void setDescricao(String descricao) {
+    protected void setDescricao(String descricao) {
         Descricao = descricao;
     }
 
-    public void setEstado(EstadoDoPedido estado) {
+    protected void setEstado(EstadoDoPedido estado) {
         this.estado = estado;
+    }
+
+    protected void setValor(double valor) {
+        this.valor = valor;
     }
 
     @Override
@@ -71,7 +75,7 @@ public class Pedidos {
         return idGerado;
     }
 
-    public void criarPedido(){
+    public Pedidos criarPedido(){
 
         Scanner scanner = new Scanner(System.in);
         List<Pizzas> pizzasPedidas = new ArrayList<>();
@@ -82,13 +86,14 @@ public class Pedidos {
         do {
             if (n != 0) {
                 String asPizzasPedidasAux1 = "";
+                valorDoPedido = 0;
                 for (Pizzas pizzaPedida : pizzasPedidas) {
                     asPizzasPedidasAux1 += "" + pizzaPedida;
                     valorDoPedido += pizzaPedida.getValor();
                 }
                 String asPizzasPedidasAux2= asPizzasPedidasAux1.replaceAll("  ", "; ");
                 asPizzasPedidas = "[" + asPizzasPedidasAux2 + "]";
-                System.out.println(asPizzasPedidas);
+                System.out.println(asPizzasPedidas + " Valor: " + valorDoPedido);
             }
                 System.out.println("Escolha qual pizza voce deseja.");
 
@@ -115,9 +120,9 @@ public class Pedidos {
 
         Pedidos pedido = new Pedidos();
         pedido.setDescricao(asPizzasPedidas);
+        pedido.setValor(valorDoPedido);
 
-
-
+        return pedido;
     }
 
 
