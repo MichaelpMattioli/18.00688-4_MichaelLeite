@@ -1,9 +1,9 @@
 package br.maua.Enums;
 
 /**
- * Classe responsavel enumerar os tipos de pizzas e seus valores.
+ * Enum responsavel enumerar os tipos de pizzas e seus valores.
  * @author Michael Pedroza Mattioli Leite
- * @since 24/06/2020
+ * @since 25/06/2020
  * @version 1.0
  */
 
@@ -14,7 +14,7 @@ public enum TiposDePizzas {
 
     /**
      * Construtor responsavel por indicar o valor de cada enumeracao.
-     * @param valor
+     * @param valor O valor de uma pizza especifica.
      */
     TiposDePizzas(double valor) {
         valorDaPizza = valor;
@@ -22,7 +22,7 @@ public enum TiposDePizzas {
 
     /**
      * Método responsavel por retornar o valor contido na enumeracao.
-     * @return valor contido na enumeracao
+     * @return Um valor de uma pizza na qual ja esta pre-estabelecida.
      */
 
     public double getValorDaPizza() {
