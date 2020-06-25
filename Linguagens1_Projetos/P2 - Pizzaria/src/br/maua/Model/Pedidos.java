@@ -36,23 +36,19 @@ public class Pedidos {
         return valor;
     }
 
-    public FormaDePagamento getFormaDePagamento() {
-        return formaDePagamento;
-    }
-
     public EstadoDoPedido getEstado() {
         return estado;
     }
 
-    protected void setDescricao(String descricao) {
+    private void setDescricao(String descricao) {
         Descricao = descricao;
     }
 
-    protected void setEstado(EstadoDoPedido estado) {
+    private void setEstado(EstadoDoPedido estado) {
         this.estado = estado;
     }
 
-    protected void setValor(double valor) {
+    private void setValor(double valor) {
         this.valor = valor;
     }
 
@@ -75,7 +71,7 @@ public class Pedidos {
         return idGerado;
     }
 
-    public Pedidos criarPedido(){
+    protected Pedidos criarPedido(){
 
         Scanner scanner = new Scanner(System.in);
         List<Pizzas> pizzasPedidas = new ArrayList<>();
