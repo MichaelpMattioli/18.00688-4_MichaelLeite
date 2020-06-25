@@ -10,16 +10,16 @@ import java.util.Scanner;
 
 public class Pedidos {
     private String ID;
-    private TiposDePizzas Descricao;
+    private String Descricao;
     private double valor;
     private FormaDePagamento formaDePagamento;
     private EstadoDoPedido estado;
 
     ArrayList<Pedidos> listaDePedidos = new ArrayList<>();
 
-    public Pedidos(TiposDePizzas descricao, double valor, FormaDePagamento pagamento) {
+    public Pedidos(double valor, FormaDePagamento pagamento) {
         this.ID = geradorId();
-        this.Descricao = descricao;
+        this.Descricao = Descricao;
         this.valor = valor;
         this.formaDePagamento = pagamento;
         this.estado = EstadoDoPedido.REALIZADO;
@@ -29,7 +29,7 @@ public class Pedidos {
         this.ID = geradorId();
         this.Descricao = Descricao;
         this.valor = valor;
-        this.formaDePagamento = getFormaDePagamento();
+        this.formaDePagamento = FormaDePagamento.DINHEIRO;
         this.estado = EstadoDoPedido.REALIZADO;
     }
 
@@ -48,7 +48,7 @@ public class Pedidos {
         return ID;
     }
 
-    public TiposDePizzas getDescricao() {
+    public String getDescricao() {
         return Descricao;
     }
 
@@ -76,10 +76,9 @@ public class Pedidos {
         return idGerado;
     }
 
-    void criarPedido(){
+    void criarPedido(Pedidos pedido){
         int i;
         Scanner scanner = new Scanner(System.in);
-        Pizzas pizzas = new Pizzas();
         System.out.println("Escolha qual pizza voce deseja.");
         pizzas.listaDePizzas();
         i = scanner.nextInt();

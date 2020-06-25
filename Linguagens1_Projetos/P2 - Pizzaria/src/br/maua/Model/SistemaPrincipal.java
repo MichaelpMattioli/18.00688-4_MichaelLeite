@@ -24,7 +24,7 @@ public class SistemaPrincipal{
         do {escolha = scanner.nextInt();
         switch (escolha) {
             case 1:
-                pedidos.criarPedido();
+                pedidos.criarPedido(pedidos);
                 break;
             case 2:
                 break;
