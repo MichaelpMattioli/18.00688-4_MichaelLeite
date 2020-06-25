@@ -14,6 +14,11 @@ public class Pizzas {
         this.valor = this.nome.getValorDaPizza();
     }
 
+    public Pizzas() {
+        this.nome = nome;
+        this.valor = this.nome.getValorDaPizza();
+    }
+
     public TiposDePizzas getNome() {
         return nome;
     }
@@ -29,7 +34,7 @@ public class Pizzas {
             pizzas.add(new Pizzas(TiposDePizzas.values()[i]));
         }
         for (Pizzas sabor: pizzas) {
-            sabor.getNome();
+            System.out.println(sabor.getNome());
         }
     }
 }
