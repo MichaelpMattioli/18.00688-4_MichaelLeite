@@ -3,11 +3,23 @@ package br.maua.Model;
 import br.maua.Enums.TiposDePizzas;
 
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class Pizzas {
-    private List<Pizzas> tiposDePizzas;
+    private TiposDePizzas nome;
+    private double valor;
 
-    private List<Pizzas> criarListaDePizzas
+    public Pizzas(TiposDePizzas nome) {
+        this.nome = nome;
+        this.valor = this.nome.getValorDaPizza();
+    }
+
+    public TiposDePizzas getNome() {
+        return nome;
+    }
+
+    public double getValor() {
+        return valor;
+    }
+
 }
