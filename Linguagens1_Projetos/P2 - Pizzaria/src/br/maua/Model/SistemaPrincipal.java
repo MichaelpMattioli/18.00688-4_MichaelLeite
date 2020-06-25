@@ -11,29 +11,29 @@ public class SistemaPrincipal{
         System.out.println("2 - Verificar pedidos");
         System.out.println("3 - Alterar pedidos");
         System.out.println("0 - Sair");
-        Scanner scanner = new Scanner(System.in);
-        scanner.nextLine();
     }
 
     public void Sistema(){
+        Usuario admin = new Usuario("Rato","pizzariadoratoqueri@gmail.com", "123456");
         Pedidos pedidos = new Pedidos();
         Scanner scanner = new Scanner(System.in);
 
-        int escolha;
+        int escolha = 0;
 
-        do {escolha = scanner.nextInt();
-        switch (escolha) {
-            case 1:
-                pedidos.criarPedido(pedidos);
-                break;
-            case 2:
-                break;
-            case 3:
-                break;
-            case 0:
-                System.out.println("------------| Saiu do sistema |------------");
-                break;
-        }
+        do {Menu();
+            escolha = scanner.nextInt();
+            switch (escolha) {
+                case 1:
+                    pedidos.criarPedido();
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 0:
+                    System.out.println("------------| Saiu do sistema |------------");
+                    break;
+            }
     }while (escolha != 0);
 }
 

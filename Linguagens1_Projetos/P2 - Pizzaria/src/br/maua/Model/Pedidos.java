@@ -33,17 +33,6 @@ public class Pedidos {
         this.estado = EstadoDoPedido.REALIZADO;
     }
 
-    @Override
-    public String toString() {
-        return "Pedidos{" +
-                "ID=" + ID +
-                ", Descricao='" + Descricao + '\'' +
-                ", valor=" + valor +
-                ", formaDePagamento='" + formaDePagamento + '\'' +
-                ", estado=" + estado +
-                '}';
-    }
-
     public String getID() {
         return ID;
     }
@@ -68,6 +57,17 @@ public class Pedidos {
         this.estado = estado;
     }
 
+    @Override
+    public String toString() {
+        return "Pedidos{" +
+                "ID=" + ID +
+                ", Descricao='" + Descricao + '\'' +
+                ", valor=" + valor +
+                ", formaDePagamento='" + formaDePagamento + '\'' +
+                ", estado=" + estado +
+                '}';
+    }
+
     private String geradorId(){
         Random random = new Random();
         String idGerado = "";
@@ -76,15 +76,18 @@ public class Pedidos {
         return idGerado;
     }
 
-    void criarPedido(Pedidos pedido){
-        int i;
+    void criarPedido(){
         Scanner scanner = new Scanner(System.in);
         ListaDePizzas listaDePizzas = new ListaDePizzas();
 
         System.out.println("Escolha qual pizza voce deseja.");
+        for(int i = 0; i < TiposDePizzas.values().length; i++) {
+            System.out.println(i+1 + " - " + TiposDePizzas.values()[i]);
+        }
 
-        i = scanner.nextInt();
-        switch( i ){
+        int n;
+        n = scanner.nextInt();
+        switch( n ){
             case 1:
 
                 break;
@@ -99,6 +102,7 @@ public class Pedidos {
                 break;
         }
     }
+
 
     protected void mostrarPedidos(){
         for (Pedidos pedido: listaDePedidos) {
