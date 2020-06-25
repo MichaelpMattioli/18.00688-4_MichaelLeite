@@ -9,6 +9,14 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
+/**
+ * Classe responsavel por coordenar todos os pedidos relizados, alem de apresentar um apanhado geral de todo o sistema
+ * como a criação de pedidos, modificação de pedidos, organização gráfica, contagem dos valores, formas de pagamento e estado do pedido.
+ * @author Michael Pedroza Mattioli Leite
+ * @since 25/06/2020
+ * @version 1.0
+ */
+
 public class Pedidos {
     private String ID;
     private String Descricao;

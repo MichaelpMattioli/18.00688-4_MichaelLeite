@@ -4,10 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+
+/**
+ * Classe responsável por coordenar todo o programa.
+ * @author Michael Pedroza Mattioli Leite
+ * @since 25/06/2020
+ * @version 1.0
+ */
+
 public class SistemaPrincipal{
 
     /**
-     * Menu do sistema, por ele é possivel visualizar como o sistema funciona através de entradas numéricas.
+     * Método que mostra a interface gráfica inicial do sistema.
      */
 
     private void Menu(){
@@ -22,8 +30,7 @@ public class SistemaPrincipal{
 
     /**
      * Método responsavel por interligar as demais classes, assim criando as instancia dos objetos,
-     * e é por meio dela, a aplicação é executada.
-     * Ela é responsavel também por criar algumas interações graficas para melhor visualização do usuario com o
+     * ela é responsavel também por criar algumas interações graficas para melhor visualização do usuario com o
      * programa.
      */
 

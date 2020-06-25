@@ -16,7 +16,7 @@ public class Usuario implements AutenticacaoDoUsuario {
     private String senha;
 
     /**
-     * Construtor da classe usuario, contendo suas principais caracteristicas.
+     * Construtor da classe Usuario, contendo suas principais características.
      * @param nome Uma String que representa o nome do usuario
      * @param email Uma String que representa o e-mail do usuario.
      * @param senha Uma String que representa a senha do usuario.

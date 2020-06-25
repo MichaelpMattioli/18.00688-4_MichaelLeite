@@ -1,7 +1,7 @@
 package br.maua.Enums;
 
 /**
- * Enum responsavel enumerar os tipos de pizzas e seus valores.
+ * Enum responsavel por enumerar os tipos de pizzas e seus valores.
  * @author Michael Pedroza Mattioli Leite
  * @since 25/06/2020
  * @version 1.0
