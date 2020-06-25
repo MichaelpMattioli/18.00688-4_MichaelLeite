@@ -60,10 +60,10 @@ public class Pedidos {
     public String toString() {
         return "Pedidos{" +
                 "ID=" + ID +
-                ", Descricao='" + Descricao + '\'' +
-                ", valor=" + valor +
-                ", formaDePagamento='" + formaDePagamento + '\'' +
-                ", estado=" + estado +
+                ", Descricao ='" + Descricao + '\'' +
+                ", valor = " + valor +
+                ", Forma de pagamento ='" + formaDePagamento + '\'' +
+                ", estado = " + estado +
                 '}';
     }
 
@@ -91,9 +91,9 @@ public class Pedidos {
                     asPizzasPedidasAux1 += "" + pizzaPedida;
                     valorDoPedido += pizzaPedida.getValor();
                 }
-                String asPizzasPedidasAux2= asPizzasPedidasAux1.replaceAll("  ", "; ");
-                asPizzasPedidas = "[" + asPizzasPedidasAux2 + "]";
+                asPizzasPedidas = asPizzasPedidasAux1.replaceAll("  ", "; ");
                 System.out.println(asPizzasPedidas + " Valor: " + valorDoPedido);
+                System.out.println("----------------||----------------");
             }
                 System.out.println("Escolha qual pizza voce deseja.");
 
@@ -123,6 +123,25 @@ public class Pedidos {
         pedido.setValor(valorDoPedido);
 
         return pedido;
+    }
+
+    public EstadoDoPedido mudarPedido(int Id){
+        SistemaPrincipal sistemaPrincipal = new SistemaPrincipal();
+        EstadoDoPedido estadoDoPedido = null;
+        for (Pedidos pedido: sistemaPrincipal.listaDosPedidos ) {
+            if (pedido.getID().equals(Id)){
+                if(pedido.getEstado().equals(EstadoDoPedido.REALIZADO))
+                    pedido.setEstado(EstadoDoPedido.PREPARACAO);
+                if(pedido.getEstado().equals(EstadoDoPedido.PREPARACAO))
+                    pedido.setEstado(EstadoDoPedido.SAIU_PARA_ENTREGAR);
+                if(pedido.getEstado().equals(EstadoDoPedido.SAIU_PARA_ENTREGAR))
+                    pedido.setEstado(EstadoDoPedido.ENTREGUE);
+                if(pedido.getEstado().equals(EstadoDoPedido.ENTREGUE))
+                    pedido.setEstado(EstadoDoPedido.DEVOLVIDO);
+                estadoDoPedido = pedido.getEstado();
+            }
+        }
+        return estadoDoPedido;
     }
 
 
