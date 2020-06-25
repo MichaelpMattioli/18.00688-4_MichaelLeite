@@ -16,6 +16,11 @@ public class Pedidos {
     private FormaDePagamento formaDePagamento;
     private EstadoDoPedido estado;
 
+    /**
+     * Construtor da classe pedidos, ela é responsavel por criar todas as caracterizar dessa classe
+     * com os dados importantes para a sua manipulação.
+     */
+
     public Pedidos() {
         this.ID = geradorId();
         this.Descricao = Descricao;
@@ -52,6 +57,12 @@ public class Pedidos {
         this.valor = valor;
     }
 
+    /**
+     * Método toString, amplamente utilizado para a manipulação das caracteristicas de cada pedido
+     * através de uma interpretação gráfica da utilização das Strings.
+     * @return Retorna todas as caracteristicas que compoem os pedidos: ID, descrição, valor, forma de pagamento e estado.
+     */
+
     @Override
     public String toString() {
         return "Pedidos{" +
@@ -63,6 +74,11 @@ public class Pedidos {
                 '}';
     }
 
+    /**
+     * Método gerador de ID aleatório.
+     * @return Uma String com um número aleatório.
+     */
+
     private String geradorId(){
         Random random = new Random();
         String idGerado = "";
@@ -71,28 +87,53 @@ public class Pedidos {
         return idGerado;
     }
 
+    /**
+     * Método que cria um pedido novo atráves da escolha do usuário. Por meio de uma lista, o usuario
+     * escolhe quais pizzas ele irá vender e assim irá acrescentando em sua lista de venda, com a somatória
+     * do valor e a lista de vendas logo abaixo da sua escolha.
+     * @return Um pedido que apresenta todas os parâmetros que um pedido deve ter atualizado com a escolha do usuario.
+     */
+
     protected Pedidos criarPedido(){
 
         Scanner scanner = new Scanner(System.in);
         List<Pizzas> pizzasPedidas = new ArrayList<>();
         Pedidos pedido = new Pedidos();
+        Pizzas pizzas = null;
 
         int n = 0;
-        String asPizzasPedidas = "";
         double valorDoPedido = 0;
+        int quantidadeAtual = 0;
 
         do {
             if (n != 0) {
-                String asPizzasPedidasAux1 = "";
+                String pizzasNovasAux1 = "";
                 valorDoPedido = 0;
-                for (Pizzas pizzaPedida : pizzasPedidas) {
-                    asPizzasPedidasAux1 += "" + pizzaPedida;
-                    valorDoPedido += pizzaPedida.getValor();
-                }
-                asPizzasPedidas = asPizzasPedidasAux1.replaceAll("  ", "; ");
-                System.out.println("Pizzas:" + asPizzasPedidas + "|| Valor: " + valorDoPedido);
+                for (Pizzas pizzaPedida : pizzasPedidas) {                                         // Manipulação de String
+                    valorDoPedido += pizzaPedida.getValor();                                       //
+                    pizzasNovasAux1 += pizzaPedida;                                                //
+                }                                                                                  //
+                String temp[] = pizzasNovasAux1.split(" ");                                 //
+                String pizzasNovasAux2 = "";                                                       //
+                for ( int q = 0; q < TiposDePizzas.values().length; q++){                          //
+                    int count = 0;                                                                 //
+                    for (int i = 0; i < temp.length; i++) {                                        //
+                        String comparacao = TiposDePizzas.values()[q]+"";                          //
+                        if (comparacao.equals(temp[i]))                                            //
+                            count++;                                                               //
+                    }                                                                              //
+                    if(count > 0)                                                                  //
+                        pizzasNovasAux2 += " " + count + "x" + TiposDePizzas.values()[q] + " ";    //
+                }                                                                                  //
+                String pizzasNovas = pizzasNovasAux2.replaceAll("  ", "; ");    // Manipulação de String
+
+                pedido.setValor(valorDoPedido);
+                pedido.setDescricao(pizzasNovas);
+
+                System.out.println("Pizzas:" + pizzasNovas + "|| Valor: " + valorDoPedido);
                 System.out.println("----------------||----------------");
             }
+
             System.out.println("Escolha qual pizza voce deseja.");
 
             for (int i = 0; i < TiposDePizzas.values().length; i++) {
@@ -107,11 +148,15 @@ public class Pedidos {
                 System.out.println("\n Numero digitado incorretamente \n");
         }while (n != 0) ;
 
-        pedido.setValor(valorDoPedido);
-        pedido.setDescricao(asPizzasPedidas);
-
         return pedido;
     }
+
+    /**
+     * Método que altera o estado do pedido, apatir de um estado inicial, no momento em que o usuario
+     * realiza a mudança de estado, ele passa para o próximo.
+     * @param Id String responsavel por identificar qual pedido irá mudar de estado.
+     * @param listaPedidos Lista de pedidos que contem o pedido no qual quer mudar o estado.
+     */
 
     public void mudarPedido(String Id, List<Pedidos> listaPedidos){
         for (Pedidos pedido: listaPedidos ) {

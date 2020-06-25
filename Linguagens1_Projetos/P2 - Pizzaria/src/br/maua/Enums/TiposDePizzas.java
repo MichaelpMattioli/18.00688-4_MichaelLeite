@@ -8,7 +8,7 @@ package br.maua.Enums;
  */
 
 public enum TiposDePizzas {
-    MARGUERITA(35.90), CALABRESA(35.90), PORTUGUESA(39.90),FRANGO_COM_CAPUTIRY(39.90);
+    MARGUERITA(35.90), CALABRESA(35.90), PORTUGUESA(39.90),FRANGO_COM_CAPUTIRY(39.90),ATUM(40.90);
 
     private double valorDaPizza;
 

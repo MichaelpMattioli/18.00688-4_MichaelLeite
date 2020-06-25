@@ -41,6 +41,7 @@ public class Pizzas {
 
     @Override
     public String toString() {
-        return " " + nome + " ";
+        return  nome + " ";
     }
+
 }
