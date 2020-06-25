@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class SistemaPrincipal{
-    Pedidos pedidos = new Pedidos();
     List<Pedidos> listaDosPedidos = new ArrayList<>();
 
     public void Menu(){
@@ -23,6 +22,7 @@ public class SistemaPrincipal{
     public void Sistema(){
         Usuario admin = new Usuario("Rato","pizzariadoratoqueri@gmail.com", "123456");
         Scanner scanner = new Scanner(System.in);
+        Pedidos pedidos = new Pedidos();
 
         int escolha = 0;
 
@@ -30,8 +30,11 @@ public class SistemaPrincipal{
             escolha = scanner.nextInt();
             switch (escolha) {
                 case 1:
-                    pedidos = pedidos.criarPedido();
-                    listaDosPedidos.add(pedidos);
+                        pedidos = pedidos.criarPedido();
+                        if(pedidos.getDescricao().equals("null") || pedidos.getDescricao().equals(""))
+                            break;
+                        else
+                            listaDosPedidos.add(pedidos);
                     break;
                 case 2:
                     mostraPedidos(listaDosPedidos);

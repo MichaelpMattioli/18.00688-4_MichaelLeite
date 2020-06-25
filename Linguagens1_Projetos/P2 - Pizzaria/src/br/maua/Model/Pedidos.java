@@ -79,10 +79,12 @@ public class Pedidos {
 
         Scanner scanner = new Scanner(System.in);
         List<Pizzas> pizzasPedidas = new ArrayList<>();
+        Pedidos pedido = new Pedidos();
 
         int n = 0;
         String asPizzasPedidas = "";
         double valorDoPedido = 0;
+
         do {
             if (n != 0) {
                 String asPizzasPedidasAux1 = "";
@@ -92,41 +94,30 @@ public class Pedidos {
                     valorDoPedido += pizzaPedida.getValor();
                 }
                 asPizzasPedidas = asPizzasPedidasAux1.replaceAll("  ", "; ");
-                System.out.println(asPizzasPedidas + " Valor: " + valorDoPedido);
+                System.out.println("Pizzas:" + asPizzasPedidas + "|| Valor: " + valorDoPedido);
                 System.out.println("----------------||----------------");
             }
-                System.out.println("Escolha qual pizza voce deseja.");
+            System.out.println("Escolha qual pizza voce deseja.");
 
-                for (int i = 0; i < TiposDePizzas.values().length; i++) {
-                    System.out.println(i + 1 + " - " + TiposDePizzas.values()[i]);
-                }
-                System.out.println("0 - Sair da escolha");
+            for (int i = 0; i < TiposDePizzas.values().length; i++) {
+                System.out.println(i + 1 + " - " + TiposDePizzas.values()[i]);
+            }
+            System.out.println("0 - Sair da escolha");
 
-
-                n = scanner.nextInt();
-                switch (n) {
-                    case 1:
-                        pizzasPedidas.add(new Pizzas(TiposDePizzas.MARGUERITA));
-                        break;
-                    case 2:
-                        pizzasPedidas.add(new Pizzas(TiposDePizzas.CALABRESA));
-                        break;
-                    case 3:
-                        pizzasPedidas.add(new Pizzas(TiposDePizzas.PORTUGUESA));
-                        break;
-                    case 0:
-                }
+            n = scanner.nextInt();
+            if (n > 0 && n <= TiposDePizzas.values().length){
+                pizzasPedidas.add(new Pizzas(TiposDePizzas.values()[n - 1]));
+            }else if (n != 0)
+                System.out.println("\n Numero digitado incorretamente \n");
         }while (n != 0) ;
 
-        Pedidos pedido = new Pedidos();
-        pedido.setDescricao(asPizzasPedidas);
         pedido.setValor(valorDoPedido);
+        pedido.setDescricao(asPizzasPedidas);
 
         return pedido;
     }
 
     public void mudarPedido(String Id, List<Pedidos> listaPedidos){
-        EstadoDoPedido estadoDoPedido = null;
         for (Pedidos pedido: listaPedidos ) {
             if (pedido.getID().equals(Id)){
                 if(pedido.getEstado().equals(EstadoDoPedido.REALIZADO))
@@ -137,7 +128,6 @@ public class Pedidos {
                     pedido.setEstado(EstadoDoPedido.ENTREGUE);
                 else
                     pedido.setEstado(EstadoDoPedido.DEVOLVIDO);
-                estadoDoPedido = pedido.getEstado();
             }
         }
     }
