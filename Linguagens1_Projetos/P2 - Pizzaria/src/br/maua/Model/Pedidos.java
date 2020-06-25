@@ -16,16 +16,6 @@ public class Pedidos {
     private FormaDePagamento formaDePagamento;
     private EstadoDoPedido estado;
 
-    List<Pizzas> listaDePizzasPedidas = criarPedido();
-
-    public Pedidos(double valor, FormaDePagamento pagamento) {
-        this.ID = geradorId();
-        this.Descricao = Descricao;
-        this.valor = valor;
-        this.formaDePagamento = pagamento;
-        this.estado = EstadoDoPedido.REALIZADO;
-    }
-
     public Pedidos() {
         this.ID = geradorId();
         this.Descricao = Descricao;
@@ -54,6 +44,10 @@ public class Pedidos {
         return estado;
     }
 
+    public void setDescricao(String descricao) {
+        Descricao = descricao;
+    }
+
     public void setEstado(EstadoDoPedido estado) {
         this.estado = estado;
     }
@@ -77,30 +71,53 @@ public class Pedidos {
         return idGerado;
     }
 
-    public List<Pizzas> criarPedido(){
+    public void criarPedido(){
+
         Scanner scanner = new Scanner(System.in);
-        ListaDePizzas listaDePizzas = new ListaDePizzas();
         List<Pizzas> pizzasPedidas = new ArrayList<>();
 
-        System.out.println("Escolha qual pizza voce deseja.");
-        for(int i = 0; i < TiposDePizzas.values().length; i++) {
-            System.out.println(i+1 + " - " + TiposDePizzas.values()[i]);
-        }
+        int n = 0;
+        String asPizzasPedidas = "";
+        double valorDoPedido = 0;
+        do {
+            if (n != 0) {
+                String asPizzasPedidasAux1 = "";
+                for (Pizzas pizzaPedida : pizzasPedidas) {
+                    asPizzasPedidasAux1 += "" + pizzaPedida;
+                    valorDoPedido += pizzaPedida.getValor();
+                }
+                String asPizzasPedidasAux2= asPizzasPedidasAux1.replaceAll("  ", "; ");
+                asPizzasPedidas = "[" + asPizzasPedidasAux2 + "]";
+                System.out.println(asPizzasPedidas);
+            }
+                System.out.println("Escolha qual pizza voce deseja.");
 
-        int n;
-        n = scanner.nextInt();
-        switch( n ){
-            case 1:
-                pizzasPedidas.add(new Pizzas(TiposDePizzas.MARGUERITA));
-                break;
-            case 2:
-                pizzasPedidas.add(new Pizzas(TiposDePizzas.CALABRESA));
-                break;
-            case 3:
-                pizzasPedidas.add(new Pizzas(TiposDePizzas.PORTUGUESA));
-                break;
-        }
-        return pizzasPedidas;
+                for (int i = 0; i < TiposDePizzas.values().length; i++) {
+                    System.out.println(i + 1 + " - " + TiposDePizzas.values()[i]);
+                }
+                System.out.println("0 - Sair da escolha");
+
+
+                n = scanner.nextInt();
+                switch (n) {
+                    case 1:
+                        pizzasPedidas.add(new Pizzas(TiposDePizzas.MARGUERITA));
+                        break;
+                    case 2:
+                        pizzasPedidas.add(new Pizzas(TiposDePizzas.CALABRESA));
+                        break;
+                    case 3:
+                        pizzasPedidas.add(new Pizzas(TiposDePizzas.PORTUGUESA));
+                        break;
+                    case 0:
+                }
+        }while (n != 0) ;
+
+        Pedidos pedido = new Pedidos();
+        pedido.setDescricao(asPizzasPedidas);
+
+
+
     }
 
 
