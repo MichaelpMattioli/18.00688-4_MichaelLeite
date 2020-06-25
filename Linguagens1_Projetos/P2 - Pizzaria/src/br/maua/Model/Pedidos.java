@@ -5,6 +5,7 @@ import br.maua.Enums.FormaDePagamento;
 import br.maua.Enums.TiposDePizzas;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -15,7 +16,7 @@ public class Pedidos {
     private FormaDePagamento formaDePagamento;
     private EstadoDoPedido estado;
 
-    ArrayList<Pedidos> listaDePedidos = new ArrayList<>();
+    List<Pizzas> listaDePizzasPedidas = criarPedido();
 
     public Pedidos(double valor, FormaDePagamento pagamento) {
         this.ID = geradorId();
@@ -76,9 +77,10 @@ public class Pedidos {
         return idGerado;
     }
 
-    void criarPedido(){
+    public List<Pizzas> criarPedido(){
         Scanner scanner = new Scanner(System.in);
         ListaDePizzas listaDePizzas = new ListaDePizzas();
+        List<Pizzas> pizzasPedidas = new ArrayList<>();
 
         System.out.println("Escolha qual pizza voce deseja.");
         for(int i = 0; i < TiposDePizzas.values().length; i++) {
@@ -89,24 +91,17 @@ public class Pedidos {
         n = scanner.nextInt();
         switch( n ){
             case 1:
-
+                pizzasPedidas.add(new Pizzas(TiposDePizzas.MARGUERITA));
                 break;
             case 2:
-
+                pizzasPedidas.add(new Pizzas(TiposDePizzas.CALABRESA));
                 break;
             case 3:
-
-                break;
-            case 4:
-
+                pizzasPedidas.add(new Pizzas(TiposDePizzas.PORTUGUESA));
                 break;
         }
+        return pizzasPedidas;
     }
 
 
-    protected void mostrarPedidos(){
-        for (Pedidos pedido: listaDePedidos) {
-            System.out.println(pedido);
-        }
-    }
 }
