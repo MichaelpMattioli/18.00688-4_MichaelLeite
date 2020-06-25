@@ -2,8 +2,6 @@ package br.maua.Model;
 
 import br.maua.Interfaces.AutenticacaoDoUsuario;
 
-import java.util.List;
-
 public class Usuario implements AutenticacaoDoUsuario {
     private String nome;
     private String email;
@@ -32,8 +30,10 @@ public class Usuario implements AutenticacaoDoUsuario {
     void alterarPedido(){}
 
     @Override
-    public List AutenticacaoDoUsuario(List<Usuario> listaDeUsuarios) {
-        return null;
+    public boolean autenticacaoDoUsuario(String senha) {
+        if(this.getSenha().equals(senha))
+            return true;
+        else
+            return false;
     }
-
 }
