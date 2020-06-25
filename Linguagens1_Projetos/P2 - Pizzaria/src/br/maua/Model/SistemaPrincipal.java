@@ -1,7 +1,5 @@
 package br.maua.Model;
 
-import br.maua.Enums.TiposDePizzas;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -9,7 +7,7 @@ import java.util.Scanner;
 public class SistemaPrincipal{
     List<Pedidos> listaDosPedidos = new ArrayList<>();
 
-    public void Menu(){
+    private void Menu(){
         System.out.println("------------||------------");
         System.out.println("Pizzaria o Rato que Ri");
         System.out.println("1 - Nova venda");
@@ -27,22 +25,29 @@ public class SistemaPrincipal{
         int escolha = 0;
 
         do {Menu();
+            String senha = "0";
             escolha = scanner.nextInt();
             switch (escolha) {
                 case 1:
+                    System.out.println("Digite sua senha:");
+                    senha = scanner.next();
+                    if( admin.autenticacaoDoUsuario(senha )) {
                         pedidos = pedidos.criarPedido();
                         if(pedidos.getDescricao().equals("null") || pedidos.getDescricao().equals(""))
                             break;
                         else
-                            listaDosPedidos.add(pedidos);
+                            listaDosPedidos.add(pedidos);}
                     break;
                 case 2:
                     mostraPedidos(listaDosPedidos);
                     break;
                 case 3:
-                    System.out.print("Informe o ID do pedido que queira alterar: ");
-                    String iD = scanner.next();
-                    pedidos.mudarPedido(iD,listaDosPedidos);
+                    System.out.println("Digite sua senha");
+                    senha = scanner.next();
+                    if( admin.autenticacaoDoUsuario(senha )) {
+                        System.out.print("Informe o ID do pedido que queira alterar: ");
+                        String iD = scanner.next();
+                        pedidos.mudarPedido(iD,listaDosPedidos);}
                     break;
                 case 0:
                     System.out.println("------------| Saiu do sistema |------------");
