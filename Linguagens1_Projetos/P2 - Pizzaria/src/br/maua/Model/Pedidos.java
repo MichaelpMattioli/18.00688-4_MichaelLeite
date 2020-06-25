@@ -79,8 +79,10 @@ public class Pedidos {
     void criarPedido(Pedidos pedido){
         int i;
         Scanner scanner = new Scanner(System.in);
+        ListaDePizzas listaDePizzas = new ListaDePizzas();
+
         System.out.println("Escolha qual pizza voce deseja.");
-        pizzas.listaDePizzas();
+
         i = scanner.nextInt();
         switch( i ){
             case 1:
