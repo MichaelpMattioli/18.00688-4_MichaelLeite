@@ -2,6 +2,9 @@ package br.maua.Model;
 
 import br.maua.Enums.TiposDePizzas;
 
+import java.util.ArrayList;
+
+
 public class Pizzas {
     private TiposDePizzas nome;
     private double valor;
@@ -17,5 +20,16 @@ public class Pizzas {
 
     public double getValor() {
         return valor;
+    }
+
+    public void listaDePizzas(){
+        ArrayList<Pizzas> pizzas = new ArrayList<>();
+        int i;
+        for(i = 0; i < TiposDePizzas.values().length; i++){
+            pizzas.add(new Pizzas(TiposDePizzas.values()[i]));
+        }
+        for (Pizzas sabor: pizzas) {
+            sabor.getNome();
+        }
     }
 }
