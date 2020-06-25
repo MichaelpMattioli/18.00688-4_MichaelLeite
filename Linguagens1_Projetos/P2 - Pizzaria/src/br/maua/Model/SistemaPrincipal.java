@@ -17,7 +17,7 @@ public class SistemaPrincipal{
         System.out.println("2 - Verificar pedidos");
         System.out.println("3 - Alterar pedidos");
         System.out.println("0 - Sair");
-        System.out.println("------------||------------");
+        System.out.print("------------||------------");
     }
 
     public void Sistema(){
@@ -38,8 +38,8 @@ public class SistemaPrincipal{
                     break;
                 case 3:
                     System.out.print("Informe o ID do pedido que queira alterar: ");
-                    int iD = scanner.nextInt();
-                    pedidos.mudarPedido(iD);
+                    String iD = scanner.next();
+                    pedidos.mudarPedido(iD,listaDosPedidos);
                     break;
                 case 0:
                     System.out.println("------------| Saiu do sistema |------------");
