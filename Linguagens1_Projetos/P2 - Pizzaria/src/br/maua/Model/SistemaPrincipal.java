@@ -16,18 +16,25 @@ public class SistemaPrincipal{
     }
 
     public void Sistema(){
-        Scanner escolha = new Scanner(System.in);
-        escolha = escolha.nextInt();
-        switch (escolha){
+        Pedidos pedidos = new Pedidos();
+        Scanner scanner = new Scanner(System.in);
+
+        int escolha;
+
+        do {escolha = scanner.nextInt();
+        switch (escolha) {
             case 1:
+                pedidos.criarPedido();
                 break;
             case 2:
                 break;
             case 3:
                 break;
             case 0:
+                System.out.println("------------| Saiu do sistema |------------");
                 break;
-    }
+        }
+    }while (escolha != 0);
 }
 
 
