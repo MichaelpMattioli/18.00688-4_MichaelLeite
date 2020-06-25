@@ -22,4 +22,10 @@ public class Pizzas {
         return valor;
     }
 
+    @Override
+    public String toString() {
+        return "Pizzas{" +
+                "nome=" + nome +
+                '}';
+    }
 }
