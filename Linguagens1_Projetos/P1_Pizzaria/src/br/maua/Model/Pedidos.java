@@ -4,6 +4,7 @@ import br.maua.Enums.EstadoDoPedido;
 import br.maua.Enums.FormaDePagamento;
 import br.maua.Enums.TiposDePizzas;
 
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -114,6 +115,7 @@ public class Pedidos {
         int quantidadeAtual = 0;
 
         do {
+
             if (n != 0) {
                 String pizzasNovasAux1 = "";
                 valorDoPedido = 0;
@@ -143,7 +145,6 @@ public class Pedidos {
             }
 
             System.out.println("Escolha qual pizza voce deseja.");
-
             for (int i = 0; i < TiposDePizzas.values().length; i++) {
                 System.out.println(i + 1 + " - " + TiposDePizzas.values()[i]);
             }
@@ -180,6 +181,4 @@ public class Pedidos {
             }
         }
     }
-
-
 }
