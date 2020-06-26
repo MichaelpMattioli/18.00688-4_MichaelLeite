@@ -2,7 +2,7 @@ package br.maua.Interfaces;
 
 /**
  * Interface responsavel por implementar o método de autenticação do usuario.
- * @author Michael Pedroza Mattioli Leite
+ * @author Michael Pedroza Mattioli Leite RA: 18.00688-4
  * @since 25/06/2020
  * @version 1.0
  */

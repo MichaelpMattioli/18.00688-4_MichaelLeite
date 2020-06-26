@@ -13,7 +13,7 @@ import java.util.Scanner;
 /**
  * Classe responsavel por coordenar todos os pedidos relizados, alem de apresentar um apanhado geral de todo o sistema
  * como a criação de pedidos, modificação de pedidos, organização gráfica, contagem dos valores, formas de pagamento e estado do pedido.
- * @author Michael Pedroza Mattioli Leite
+ * @author Michael Pedroza Mattioli Leite RA: 18.00688-4
  * @since 25/06/2020
  * @version 1.0
  */

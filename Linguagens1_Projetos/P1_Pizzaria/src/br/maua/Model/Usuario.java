@@ -5,7 +5,7 @@ import br.maua.Interfaces.AutenticacaoDoUsuario;
 /**
  * Classe usuário, responsavel por limitar algumas operações, sendo elas a de alterar pedidos e a de criar pedidos.
  * Tal limitação se da pela autenticação do usuário, método que foi implementado nessa classe.
- * @author Michael Pedroza Mattioli Leite
+ * @author Michael Pedroza Mattioli Leite RA: 18.00688-4
  * @since 25/06/2020
  * @version 1.0
  */

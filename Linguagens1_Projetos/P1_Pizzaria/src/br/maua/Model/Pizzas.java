@@ -6,7 +6,7 @@ import br.maua.Enums.TiposDePizzas;
  * Classe responsavel por gerenciar os tipos de pizzas, apartir do nome da pizza, é possivel já saber o seu valor
  * através dos Enums já pre-definidos, assim temos uma classe que representa várias pizzas de sabores e preços
  * diferentes.
- * @author Michael Pedroza Mattioli Leite
+ * @author Michael Pedroza Mattioli Leite RA: 18.00688-4
  * @since 25/06/2020
  * @version 1.0
  */

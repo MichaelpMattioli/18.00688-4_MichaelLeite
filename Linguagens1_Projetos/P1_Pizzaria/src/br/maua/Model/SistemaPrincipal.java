@@ -8,7 +8,7 @@ import java.util.Scanner;
 /**
  * Classe responsável por coordenar todo o programa.
  * @author Michael Pedroza Mattioli Leite
- * @since 25/06/2020
+ * @since 25/06/2020 RA: 18.00688-4
  * @version 1.0
  */
 
