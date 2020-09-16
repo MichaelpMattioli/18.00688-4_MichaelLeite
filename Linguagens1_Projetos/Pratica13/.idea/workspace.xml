@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7c0e2ddf-0dee-4195-962b-c6f27a27d732" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Pratica12/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratica12/.idea/description.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratica12/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratica12/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratica12/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratica12/.idea/project-template.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratica12/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratica12/Pratica12.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratica12/ecm251.maua" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratica12/jogos.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratica12/nome.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratica12/src/br/maua/enumeracao/Status.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratica12/src/br/maua/implementacoes/arquivo/TesteEscrita.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratica12/src/br/maua/implementacoes/arquivo/TesteLeitura.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratica12/src/br/maua/implementacoes/json/TesteJson.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratica12/src/br/maua/implementacoes/json/TesteJsonArquivo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratica12/src/br/maua/implementacoes/serealizacao/Pessoa.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratica12/src/br/maua/implementacoes/serealizacao/TesteSerializar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratica12/src/br/maua/projeto/model/Jogo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratica12/src/br/maua/projeto/model/ListaDeJogos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratica12/src/br/maua/projeto/parsers/JogoParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratica12/src/br/maua/projeto/parsers/ListaDeJogosParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratica12/src/br/maua/projeto/parsers/StatusParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratica12/src/br/maua/projeto/teste/TesteDesserializar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratica12/src/br/maua/projeto/teste/TesteJogo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratica12/src/br/maua/projeto/teste/TesteListaDeJogos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Projeto_Banca/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Projeto_Banca/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Projeto_Banca/.idea/vcs.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="D:\Documentos\GitHub\18.00688-4_MichaelLeite\Linguagens1_Projetos\Pratica13\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1gEAmA1TAhbyFtFApllTQUMsONF" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="br.maua.Main" />
+      <module name="Pratica13" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7c0e2ddf-0dee-4195-962b-c6f27a27d732" name="Default Changelist" comment="" />
+      <created>1597669534453</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1597669534453</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-1061" y="291" key="FileChooserDialogImpl" timestamp="1597669990022">
+      <screen x="-1680" y="25" width="1680" height="1050" />
+    </state>
+    <state x="-1061" y="291" key="FileChooserDialogImpl/0.0.1920.1080/-1680.25.1680.1050@-1680.25.1680.1050" timestamp="1597669990022" />
+    <state x="-1458" y="170" key="new project wizard" timestamp="1597670009758">
+      <screen x="-1680" y="25" width="1680" height="1050" />
+    </state>
+    <state x="-1458" y="170" key="new project wizard/0.0.1920.1080/-1680.25.1680.1050@-1680.25.1680.1050" timestamp="1597670009758" />
+  </component>
+</project>
