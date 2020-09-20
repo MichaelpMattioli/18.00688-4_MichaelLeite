@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ae799707-c69e-4a62-8526-22e4a3168e81" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1hnEOovQlfLJ1GSI78j2j7TjFUc" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sqlite-jdbc-3.27.2.1.jar!/" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="br.maua.Main" />
+      <module name="TSub1" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ae799707-c69e-4a62-8526-22e4a3168e81" name="Default Changelist" comment="" />
+      <created>1600638426802</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1600638426802</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="765" y="256" width="460" height="648" key="#com.intellij.ide.util.MemberChooser" timestamp="1600641984256">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="765" y="256" width="460" height="648" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080/-1680.25.1680.1050@0.0.1920.1080" timestamp="1600641984256" />
+    <state x="714" y="255" key="DetectedRootsChooserDialog" timestamp="1600641563151">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="714" y="255" key="DetectedRootsChooserDialog/0.0.1920.1080/-1680.25.1680.1050@0.0.1920.1080" timestamp="1600641563151" />
+    <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1600641725643">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1080/-1680.25.1680.1050@0.0.1920.1080" timestamp="1600641725643" />
+    <state x="440" y="114" key="SettingsEditor" timestamp="1600641728972">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="440" y="114" key="SettingsEditor/0.0.1920.1080/-1680.25.1680.1050@0.0.1920.1080" timestamp="1600641728972" />
+    <state x="342" y="160" key="new project wizard" timestamp="1600638449071">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="342" y="160" key="new project wizard/0.0.1920.1080/-1680.25.1680.1050@0.0.1920.1080" timestamp="1600638449071" />
+  </component>
+</project>
