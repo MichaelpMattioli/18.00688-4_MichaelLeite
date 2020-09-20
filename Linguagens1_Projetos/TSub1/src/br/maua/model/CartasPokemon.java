@@ -17,6 +17,30 @@ public class CartasPokemon {
         this.URL = URL;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getRaridade() {
+        return raridade;
+    }
+
+    public String getSerie() {
+        return serie;
+    }
+
+    public String getColecao() {
+        return colecao;
+    }
+
+    public String getURL() {
+        return URL;
+    }
+
     @Override
     public String toString() {
         return "CartaPokemon{" +
