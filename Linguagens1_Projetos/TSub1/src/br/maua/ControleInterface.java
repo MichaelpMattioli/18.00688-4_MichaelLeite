@@ -3,43 +3,49 @@ package br.maua;
 import br.maua.dao.CartasPokemonDAO;
 import br.maua.model.CartasPokemon;
 import br.maua.model.ListaCartasPokemon;
-import br.maua.teste.AplicacaoDAO;
 import javafx.fxml.FXML;
 
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-import java.util.ArrayList;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.List;
-
+/**
+ * * Classe responsavel pelo controle da Interface ViewInterface, criação de codigos on Action para botões e associação dos textfields e labels ficam aqui.
+ * @author José Guilherme Martins dos Santos - josegms2000@gmail.com    Michael Pedroza Mattioli Leite - michael.pmattioli@gmail.com
+ * @since 19/09/2020
+ * @version 1.0
+ * */
 public class ControleInterface {
 
     private CartasPokemonDAO cartasPokemonDAO = new CartasPokemonDAO();
     private List<CartasPokemon> cartasPokemons = cartasPokemonDAO.getAll();
     ListaCartasPokemon listaCartasPokemon = new ListaCartasPokemon(cartasPokemons);
-
     @FXML
     private ListView<CartasPokemon> lvCartasPokemon;
-
     @FXML
     private Label lblIdDoCanvas, lblNomeDoCanvas, lblRaridadeDoCanvas, lblSerieDoCanvas, lblColecaoDoCanvas, lblURLDoCanvas;
-    @FXML
-    private Button btnProximaCarta, btnAnteriorCarta;
     @FXML
     private TextField txtId, txtNome, txtRaridade, txtSerie, txtColecao, txtURL, txtIdDeletar,
             txtIdAtt, txtNomeAtt, txtRaridadeAtt, txtSerieAtt, txtColecaoAtt, txtURLAtt;
     @FXML
     private ImageView imgFoto;
 
+    /**
+     * Método que atualiza as modificações feitas na data base, atualizando a lista de cartasPokemon
+     */
+
     @FXML
     private void atualizaModificacoes(){
         cartasPokemons = cartasPokemonDAO.getAll();
         listaCartasPokemon = new ListaCartasPokemon(cartasPokemons);
     }
+
+    /**
+     * Exibe os dados e imagem da carta atual, alem de atualizar os dados de toda a lista no listView
+     */
 
     @FXML
     public void exibirCartas(){
@@ -49,6 +55,10 @@ public class ControleInterface {
         }
         previewPhoto();
    }
+
+    /**
+     * Método que atualiza os labels do campo de dados da carta atual.
+     */
 
     @FXML
     public void exibirDadosDaCartaDoFoto(){
@@ -69,11 +79,19 @@ public class ControleInterface {
 
     }
 
+    /**
+     * Método que atualiza para a proxima carta que está na lista de cartasPokemon
+     */
+
     @FXML
     public void proximaCarta(){
         listaCartasPokemon.switchToNextCard();
         exibirCartas();
     }
+
+    /**
+     * Método que atualiza para a carta anterior que está na lista de cartasPokemon
+     */
 
     @FXML
     public void cartaAnterior(){
@@ -81,25 +99,36 @@ public class ControleInterface {
         exibirCartas();
     }
 
+    /**
+     * Método que cadastrar uma carta na lista, atualiza a lista e a exibe.
+     */
+
     @FXML
     public void cadastrarCarta(){
-    cartasPokemonDAO.create(new CartasPokemon(
-            txtId.getText()+"",
-            txtNome.getText()+"",
-            txtRaridade.getText()+"",
-            txtSerie.getText()+"",
-            txtColecao.getText()+"",
-            txtURL.getText()+""
-    ));
-        atualizaModificacoes();
-        exibirCartas();
-        txtId.clear();
-        txtNome.clear();
-        txtRaridade.clear();
-        txtSerie.clear();
-        txtColecao.clear();
-        txtURL.clear();
+        try{
+            cartasPokemonDAO.create(new CartasPokemon(
+                    txtId.getText()+"",
+                    txtNome.getText()+"",
+                    txtRaridade.getText()+"",
+                    txtSerie.getText()+"",
+                    txtColecao.getText()+"",
+                    txtURL.getText()+""
+            ));
+            atualizaModificacoes();
+            exibirCartas();
+            txtId.clear();
+            txtNome.clear();
+            txtRaridade.clear();
+            txtSerie.clear();
+            txtColecao.clear();
+            txtURL.clear();
+        }catch (Exception e){
+        }
     }
+
+    /**
+     * Método que deleta determinada carta da lista.
+     */
     @FXML
     public void deletarCarta(){
         CartasPokemon cartasPokemon = new CartasPokemon(txtIdDeletar.getText()+"");
@@ -109,6 +138,10 @@ public class ControleInterface {
         exibirCartas();
         txtIdDeletar.clear();
     }
+
+    /**
+     * Método que atualiza determinada carta da lista.
+     */
     @FXML
     public void atualizarCarta(){
         cartasPokemonDAO.update(new CartasPokemon(
@@ -129,12 +162,22 @@ public class ControleInterface {
         txtURLAtt.clear();
     }
 
+    /**
+     *  Método que exibe a imagem presente na URL de uma determinada carta.
+     */
     @FXML
     public void previewPhoto(){
         String url = cartasPokemons.get(listaCartasPokemon.getPokemonAtual()).getURL();
-        Image image = new Image(url);
-        imgFoto.setImage(image);
-        exibirDadosDaCartaDoFoto();
-    }
+        try {
+            Image image = new Image(url);
+            imgFoto.setImage(image);
+            exibirDadosDaCartaDoFoto();
+        }catch (Exception e){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erro!");
+            alert.setHeaderText("URL não existente");
 
+            alert.showAndWait();
+        }
+    }
 }

@@ -5,7 +5,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="687.0" prefWidth="905.0" style="-fx-background-image: url('https://i.imgur.com/An4vndJ.png ');" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.maua.ControleInterface">
+<AnchorPane prefHeight="687.0" prefWidth="905.0" style="-fx-background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRLyq7BITIhKN-esPhDG08SvSzdN0n6u2OfNw&amp;usqp=CAU');" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.maua.ControleInterface">
    <children>
       <VBox layoutX="8.0" layoutY="14.0" prefHeight="816.0" prefWidth="932.0" spacing="8.0">
          <padding>
