@@ -38,7 +38,7 @@ public class Vendedor implements Validator {
     }
 
     public String  getSenhaHash() {
-        return Objects.hash(id,)
+        return Objects.hash(id);
     }
 
     @Override
