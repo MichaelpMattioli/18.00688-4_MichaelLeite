@@ -30,4 +30,8 @@ public class ListaCartasPokemon {
         }
         return false;
     }
+
+    public int getPokemonAtual() {
+        return pokemonAtual;
+    }
 }
