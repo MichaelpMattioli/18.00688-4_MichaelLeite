@@ -48,7 +48,7 @@ public class CartasPokemonDAO implements DAO<CartasPokemon>, DAOFields{
             while(result.next()){
                 CartasPokemon cartasPokemon = new CartasPokemon(
                         result.getString("id"),
-                        result.getString("name"),
+                        result.getString("nome"),
                         result.getString("raridade"),
                         result.getString("serie"),
                         result.getString("colecao"),
@@ -69,9 +69,10 @@ public class CartasPokemonDAO implements DAO<CartasPokemon>, DAOFields{
             preparedStatement.setString(1, cartasPokemon.getId());
             preparedStatement.setString(2, cartasPokemon.getNome());
             preparedStatement.setString(3, cartasPokemon.getRaridade());
-            preparedStatement.setString(3, cartasPokemon.getSerie());
-            preparedStatement.setString(3, cartasPokemon.getURL());
-            preparedStatement.setString(4, cartasPokemon.getId());
+            preparedStatement.setString(4, cartasPokemon.getSerie());
+            preparedStatement.setString(5, cartasPokemon.getColecao());
+            preparedStatement.setString(6, cartasPokemon.getURL());
+            preparedStatement.setString(7, cartasPokemon.getId());
             //Executa o PreparedStatement
             int retorno = preparedStatement.executeUpdate();
         }catch (Exception e){
@@ -95,8 +96,9 @@ public class CartasPokemonDAO implements DAO<CartasPokemon>, DAOFields{
             preparedStatement.setString(1, cartasPokemon.getId());
             preparedStatement.setString(2, cartasPokemon.getNome());
             preparedStatement.setString(3, cartasPokemon.getRaridade());
-            preparedStatement.setString(3, cartasPokemon.getSerie());
-            preparedStatement.setString(3, cartasPokemon.getURL());
+            preparedStatement.setString(4, cartasPokemon.getSerie());
+            preparedStatement.setString(5, cartasPokemon.getColecao());
+            preparedStatement.setString(6, cartasPokemon.getURL());
             //Executa o PreparedStatement
             int retorno = preparedStatement.executeUpdate();
         }catch (Exception e){
