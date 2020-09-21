@@ -1,4 +1,4 @@
-package br.maua;
+package br.maua.teste;
 
 import br.maua.teste.AplicacaoDAO;
 
