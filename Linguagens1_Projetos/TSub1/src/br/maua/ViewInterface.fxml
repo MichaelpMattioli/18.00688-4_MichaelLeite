@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="1240" prefWidth="1024" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.maua.ControleInterface">
+   <children>
+      <VBox layoutX="14.0" layoutY="14.0" prefHeight="1213.0" prefWidth="998.0" spacing="8.0">
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+         <children>
+            <HBox prefHeight="30.0" prefWidth="982.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#exibirCartas" text="Exibir" />
+               </children>
+            </HBox>
+            <ListView fx:id="lvCartasPokemon" prefHeight="170.0" prefWidth="210.0" />
+            <VBox prefHeight="77.0" prefWidth="982.0">
+               <children>
+                  <Button fx:id="btnCadastrar" mnemonicParsing="false" onAction="#cadastrarCarta" text="Cadastrar" />
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="txtId" alignment="CENTER" promptText="ID" />
+                        <TextField fx:id="txtNome" alignment="CENTER" promptText="Nome" />
+                        <TextField fx:id="txtRaridade" alignment="CENTER" promptText="Raridade" />
+                        <TextField fx:id="txtSerie" alignment="CENTER" promptText="Serie" />
+                        <TextField fx:id="txtColecao" alignment="CENTER" promptText="Coleção" />
+                        <TextField fx:id="txtURL" alignment="CENTER" promptText="URL" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="64.0" prefWidth="982.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#deletarCarta" text="Deletar" />
+                  <TextField fx:id="txtIdDeletar" alignment="CENTER" promptText="ID" />
+               </children>
+            </VBox>
+            <VBox prefHeight="68.0" prefWidth="982.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#atualizarCarta" text="Atualizar" />
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="txtIdAtt" promptText="ID" />
+                        <TextField fx:id="txtNomeAtt" promptText="nome" />
+                        <TextField fx:id="txtRaridadeAtt" promptText="raridade" />
+                        <TextField fx:id="txtSerieAtt" promptText="serie" />
+                        <TextField fx:id="txtColecaoAtt" promptText="colecao" />
+                        <TextField fx:id="txtURLAtt" promptText="URL" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
