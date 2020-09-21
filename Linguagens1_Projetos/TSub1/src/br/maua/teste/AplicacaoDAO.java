@@ -49,12 +49,12 @@ public class AplicacaoDAO {
     private void cadastrarNovoProduto(){
         String id,nome,raridade,serie,colecao,URL;
         System.out.println("Informe os dados:");
-        id = scanner.nextLine();
-        nome = scanner.nextLine();
-        raridade = scanner.nextLine();
-        serie = scanner.nextLine();
-        colecao = scanner.nextLine();
-        URL = scanner.nextLine();
+        id = scanner.next();
+        nome = scanner.next();
+        raridade = scanner.next();
+        serie = scanner.next();
+        colecao = scanner.next();
+        URL = scanner.next();
         cartasPokemonDAO.create(new CartasPokemon(
                 id, nome, raridade, serie, colecao, URL
         ));
@@ -63,15 +63,15 @@ public class AplicacaoDAO {
     private void atualizarProduto() {
         cartasPokemons = cartasPokemonDAO.getAll();
         System.out.println("ID da carta para Atualizar:");
-        String id = scanner.nextLine();
+        String id = scanner.next();
         System.out.println("Cadastre os novos valores:");
         String nome,raridade,serie,colecao,URL;
         System.out.println("Informe os dados:");
-        nome = scanner.nextLine();
-        raridade = scanner.nextLine();
-        serie = scanner.nextLine();
-        colecao = scanner.nextLine();
-        URL = scanner.nextLine();
+        nome = scanner.next();
+        raridade = scanner.next();
+        serie = scanner.next();
+        colecao = scanner.next();
+        URL = scanner.next();
         cartasPokemonDAO.update(new CartasPokemon(
                 id, nome, raridade, serie, colecao, URL
         ));
@@ -79,7 +79,7 @@ public class AplicacaoDAO {
 
     private void deletarProduto(){
         System.out.println("ID da carta:");
-        String id = scanner.nextLine();
+        String id = scanner.next();
         CartasPokemon cartasPokemon = new CartasPokemon(id);
         cartasPokemonDAO.delete(cartasPokemon);
     }
