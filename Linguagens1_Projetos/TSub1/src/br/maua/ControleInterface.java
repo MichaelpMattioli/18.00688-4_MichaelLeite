@@ -16,25 +16,46 @@ import java.util.List;
 public class ControleInterface {
     private List<CartasPokemon> cartasPokemons;
     private CartasPokemonDAO cartasPokemonDAO = new CartasPokemonDAO();
+    private int counter = 0;
 
     @FXML
     private ListView<CartasPokemon> lvCartasPokemon;
 
     @FXML
-    private Label lblStatusCadastrar;
+    private Label lblIdDoCanvas, lblNomeDoCanvas, lblRaridadeDoCanvas, lblSerieDoCanvas, lblColecaoDoCanvas, lblURLDoCanvas;
     @FXML
-    private Button btnDeletar;
+    private Button btnProximaURL;
     @FXML
     private TextField txtId, txtNome, txtRaridade, txtSerie, txtColecao, txtURL, txtIdDeletar,
             txtIdAtt, txtNomeAtt, txtRaridadeAtt, txtSerieAtt, txtColecaoAtt, txtURLAtt;
 
     @FXML
-    public  void exibirCartas(){
+    public void exibirCartas(){
         lvCartasPokemon.getItems().clear();
         for (CartasPokemon cartasPokemon : cartasPokemonDAO.getAll()) {
             lvCartasPokemon.getItems().add(cartasPokemon);
         }
+//        exibirDadosCartaDoCanvas();
    }
+
+//   public void exibirDadosCartaDoCanvas(){
+//        cartasPokemons = cartasPokemonDAO.getAll();
+//        if(counter >= cartasPokemons.size()-1){
+//            counter = cartasPokemons.size()-1;
+//        }
+//        String idCarta = cartasPokemons.get(counter).getId();
+//        String nomeCarta = cartasPokemons.get(counter).getNome();
+//        String raridadeCarta = cartasPokemons.get(counter).getRaridade();
+//        String serieCarta = cartasPokemons.get(counter).getSerie();
+//        String colecaoCarta = cartasPokemons.get(counter).getColecao();
+//
+//        lblIdDoCanvas.setText(idCarta);
+//        lblNomeDoCanvas.setText(nomeCarta);
+//        lblRaridadeDoCanvas.setText(raridadeCarta);
+//        lblSerieDoCanvas.setText(serieCarta);
+//        lblColecaoDoCanvas.setText(colecaoCarta);
+//
+//   }
 
    public void cadastrarCarta(){
     cartasPokemonDAO.create(new CartasPokemon(
