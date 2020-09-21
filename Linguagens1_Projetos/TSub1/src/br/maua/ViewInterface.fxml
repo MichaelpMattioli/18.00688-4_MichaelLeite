@@ -5,9 +5,9 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="832.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.maua.ControleInterface">
+<AnchorPane prefHeight="687.0" prefWidth="905.0" style="-fx-background-image: url('https://i.imgur.com/An4vndJ.png ');" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.maua.ControleInterface">
    <children>
-      <VBox layoutX="8.0" layoutY="14.0" prefHeight="813.0" prefWidth="932.0" spacing="8.0">
+      <VBox layoutX="8.0" layoutY="14.0" prefHeight="816.0" prefWidth="932.0" spacing="8.0">
          <padding>
             <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
          </padding>
@@ -129,7 +129,11 @@
                   <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                </padding>
             </VBox>
-            <ListView fx:id="lvCartasPokemon" prefHeight="170.0" prefWidth="210.0" />
+            <ListView fx:id="lvCartasPokemon" prefHeight="200.0" prefWidth="200.0">
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+            </ListView>
          </children>
       </VBox>
    </children>
