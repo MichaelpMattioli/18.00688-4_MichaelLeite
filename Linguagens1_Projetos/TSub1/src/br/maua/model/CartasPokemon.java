@@ -18,7 +18,7 @@ public class CartasPokemon {
     }
 
     public CartasPokemon(String id) {
-        this(id, null,null,null,null,null);
+        this(id,null,null,null,null,null);
     }
 
     public String getId() {
