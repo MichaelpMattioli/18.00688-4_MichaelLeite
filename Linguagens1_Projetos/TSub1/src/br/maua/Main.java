@@ -4,8 +4,9 @@
 package br.maua;
 
 import br.maua.teste.AplicacaoDAO;
+import javafx.application.Application;
 
-public class Main {
+public class Main extends Application {
 
     public static void main(String[] args) {
         AplicacaoDAO app = new AplicacaoDAO();
