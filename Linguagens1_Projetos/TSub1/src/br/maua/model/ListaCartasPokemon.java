@@ -34,4 +34,9 @@ public class ListaCartasPokemon {
     public int getPokemonAtual() {
         return pokemonAtual;
     }
+
+    public void setPokemonAtual(int pokemonAtual) {
+        if(0 <= pokemonAtual && pokemonAtual < pokemonList.size() - 1 )
+            this.pokemonAtual = pokemonAtual;
+    }
 }
