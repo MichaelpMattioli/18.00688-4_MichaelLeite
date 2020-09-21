@@ -20,8 +20,8 @@
                         <ImageView fx:id="imgFoto" fitHeight="239.0" fitWidth="208.0" pickOnBounds="true" preserveRatio="true" />
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="8.0">
                            <children>
-                              <Button fx:id="btnAnteriorCarta" mnemonicParsing="false" prefHeight="54.0" prefWidth="89.0" text="Anterior" />
-                              <Button fx:id="btnProximaCarta" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="89.0" text="Proximo" />
+                              <Button fx:id="btnAnteriorCarta" mnemonicParsing="false" onAction="#cartaAnterior" prefHeight="54.0" prefWidth="89.0" text="Anterior" />
+                              <Button fx:id="btnProximaCarta" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#proximaCarta" prefHeight="54.0" prefWidth="89.0" text="Proximo" />
                            </children>
                            <padding>
                               <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
