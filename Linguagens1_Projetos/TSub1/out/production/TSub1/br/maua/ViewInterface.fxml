@@ -13,7 +13,7 @@
          </padding>
          <children>
             <Button mnemonicParsing="false" onAction="#exibirCartas" text="Exibir" />
-            <HBox prefHeight="288.0" prefWidth="916.0" spacing="8.0">
+            <HBox alignment="CENTER" prefHeight="288.0" prefWidth="916.0" spacing="8.0">
                <children>
                   <VBox prefHeight="288.0" prefWidth="200.0" spacing="8.0">
                      <children>
