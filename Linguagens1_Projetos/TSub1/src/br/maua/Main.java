@@ -3,9 +3,12 @@
 
 package br.maua;
 
+import br.maua.teste.AplicacaoDAO;
+
 public class Main {
 
     public static void main(String[] args) {
-
+        AplicacaoDAO app = new AplicacaoDAO();
+        app.run();
     }
 }
