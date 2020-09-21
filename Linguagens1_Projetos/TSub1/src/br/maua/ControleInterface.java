@@ -2,6 +2,7 @@ package br.maua;
 
 import br.maua.dao.CartasPokemonDAO;
 import br.maua.model.CartasPokemon;
+import br.maua.model.ListaCartasPokemon;
 import br.maua.teste.AplicacaoDAO;
 import javafx.fxml.FXML;
 
@@ -9,14 +10,17 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ControleInterface {
-    private List<CartasPokemon> cartasPokemons;
+
     private CartasPokemonDAO cartasPokemonDAO = new CartasPokemonDAO();
-    private int counter = 0;
+    private List<CartasPokemon> cartasPokemons = cartasPokemonDAO.getAll();
+    ListaCartasPokemon listaCartasPokemon = new ListaCartasPokemon(cartasPokemons);
 
     @FXML
     private ListView<CartasPokemon> lvCartasPokemon;
@@ -24,10 +28,12 @@ public class ControleInterface {
     @FXML
     private Label lblIdDoCanvas, lblNomeDoCanvas, lblRaridadeDoCanvas, lblSerieDoCanvas, lblColecaoDoCanvas, lblURLDoCanvas;
     @FXML
-    private Button btnProximaURL;
+    private Button btnProximaCarta, btnAnteriorCarta;
     @FXML
     private TextField txtId, txtNome, txtRaridade, txtSerie, txtColecao, txtURL, txtIdDeletar,
             txtIdAtt, txtNomeAtt, txtRaridadeAtt, txtSerieAtt, txtColecaoAtt, txtURLAtt;
+    @FXML
+    private ImageView imgFoto;
 
     @FXML
     public void exibirCartas(){
@@ -35,28 +41,33 @@ public class ControleInterface {
         for (CartasPokemon cartasPokemon : cartasPokemonDAO.getAll()) {
             lvCartasPokemon.getItems().add(cartasPokemon);
         }
-//        exibirDadosCartaDoCanvas();
+
+        cartasPokemons = cartasPokemonDAO.getAll();
+
+        String url = cartasPokemons.get(listaCartasPokemon.getPokemonAtual()).getURL();
+        Image image = new Image("https://cdn.bulbagarden.net/upload/thumb/0/0d/025Pikachu.png/1200px-025Pikachu.png");
+        imgFoto.setImage(image);
+        exibirDadosDaCartaDoFoto(listaCartasPokemon.getPokemonAtual());
    }
 
-//   public void exibirDadosCartaDoCanvas(){
-//        cartasPokemons = cartasPokemonDAO.getAll();
-//        if(counter >= cartasPokemons.size()-1){
-//            counter = cartasPokemons.size()-1;
-//        }
-//        String idCarta = cartasPokemons.get(counter).getId();
-//        String nomeCarta = cartasPokemons.get(counter).getNome();
-//        String raridadeCarta = cartasPokemons.get(counter).getRaridade();
-//        String serieCarta = cartasPokemons.get(counter).getSerie();
-//        String colecaoCarta = cartasPokemons.get(counter).getColecao();
-//
-//        lblIdDoCanvas.setText(idCarta);
-//        lblNomeDoCanvas.setText(nomeCarta);
-//        lblRaridadeDoCanvas.setText(raridadeCarta);
-//        lblSerieDoCanvas.setText(serieCarta);
-//        lblColecaoDoCanvas.setText(colecaoCarta);
-//
-//   }
+   @FXML
+   public void exibirDadosDaCartaDoFoto(int indexDaCartaAtual){
 
+        String idCarta = cartasPokemons.get(indexDaCartaAtual).getId();
+        String nomeCarta = cartasPokemons.get(indexDaCartaAtual).getNome();
+        String raridadeCarta = cartasPokemons.get(indexDaCartaAtual).getRaridade();
+        String serieCarta = cartasPokemons.get(indexDaCartaAtual).getSerie();
+        String colecaoCarta = cartasPokemons.get(indexDaCartaAtual).getColecao();
+
+        lblIdDoCanvas.setText(idCarta);
+        lblNomeDoCanvas.setText(nomeCarta);
+        lblRaridadeDoCanvas.setText(raridadeCarta);
+        lblSerieDoCanvas.setText(serieCarta);
+        lblColecaoDoCanvas.setText(colecaoCarta);
+
+   }
+
+   @FXML
    public void cadastrarCarta(){
     cartasPokemonDAO.create(new CartasPokemon(
             txtId.getText()+"",
@@ -67,14 +78,21 @@ public class ControleInterface {
             txtURL.getText()+""
     ));
        exibirCartas();
+       txtId.clear();
+       txtNome.clear();
+       txtRaridade.clear();
+       txtSerie.clear();
+       txtColecao.clear();
+       txtURL.clear();
    }
-
+   @FXML
    public void deletarCarta(){
        CartasPokemon cartasPokemon = new CartasPokemon(txtIdDeletar.getText()+"");
        cartasPokemonDAO.delete(cartasPokemon);
        exibirCartas();
+       txtIdDeletar.clear();
    }
-
+   @FXML
    public void atualizarCarta(){
        cartasPokemonDAO.update(new CartasPokemon(
                txtIdAtt.getText()+"",
@@ -85,6 +103,13 @@ public class ControleInterface {
                txtURLAtt.getText()+""
        ));
        exibirCartas();
+       txtIdAtt.clear();
+       txtNomeAtt.clear();
+       txtRaridadeAtt.clear();
+       txtSerieAtt.clear();
+       txtColecaoAtt.clear();
+       txtURLAtt.clear();
    }
+
 
 }
