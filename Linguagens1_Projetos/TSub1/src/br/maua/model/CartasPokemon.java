@@ -47,13 +47,10 @@ public class CartasPokemon {
 
     @Override
     public String toString() {
-        return "CartaPokemon{" +
-                "id='" + id + '\'' +
-                ", nome='" + nome + '\'' +
-                ", raridade='" + raridade + '\'' +
-                ", serie='" + serie + '\'' +
-                ", colecao='" + colecao + '\'' +
-                ", URL='" + URL + '\'' +
-                '}';
+        return  "ID=" + id + "\t" +
+                ", nome=" + nome + "\t" +
+                ", raridade=" + raridade + "\t" +
+                ", serie=" + serie + "\t" +
+                ", colecao=" + colecao;
     }
 }
