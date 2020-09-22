@@ -92,7 +92,7 @@ public class CartasPokemonDAO implements DAO<CartasPokemon>, DAOFields{
      * @param cartasPokemon parametro que define qual carta está sendo alterada.
      */
     @Override
-    public void update(CartasPokemon cartasPokemon) {
+    public void update(CartasPokemon cartasPokemon) throws SQLException{
         try{
             PreparedStatement preparedStatement = connection.prepareStatement(getUpdateString(getTableName()));
             preparedStatement.setString(1, cartasPokemon.getId());

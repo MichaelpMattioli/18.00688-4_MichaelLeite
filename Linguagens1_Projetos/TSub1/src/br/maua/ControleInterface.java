@@ -106,6 +106,8 @@ public class ControleInterface {
     @FXML
     public void cadastrarCarta(){
         try{
+            Image image = new Image(txtURL.getText());
+
             cartasPokemonDAO.create(new CartasPokemon(
                     txtId.getText()+"",
                     txtNome.getText()+"",
@@ -113,6 +115,7 @@ public class ControleInterface {
                     txtSerie.getText()+"",
                     txtColecao.getText()+"",
                     txtURL.getText()+""
+
             ));
             atualizaModificacoes();
             exibirCartas();
@@ -123,6 +126,11 @@ public class ControleInterface {
             txtColecao.clear();
             txtURL.clear();
         }catch (Exception e){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erro!");
+            alert.setHeaderText("Nao foi possivel cadastrar");
+
+            alert.showAndWait();
         }
     }
 
@@ -144,22 +152,31 @@ public class ControleInterface {
      */
     @FXML
     public void atualizarCarta(){
-        cartasPokemonDAO.update(new CartasPokemon(
-               txtIdAtt.getText()+"",
-               txtNomeAtt.getText()+"",
-               txtRaridadeAtt.getText()+"",
-               txtSerieAtt.getText()+"",
-               txtColecaoAtt.getText()+"",
-               txtURLAtt.getText()+""
-        ));
-        atualizaModificacoes();
-        exibirCartas();
-        txtIdAtt.clear();
-        txtNomeAtt.clear();
-        txtRaridadeAtt.clear();
-        txtSerieAtt.clear();
-        txtColecaoAtt.clear();
-        txtURLAtt.clear();
+        try{
+            cartasPokemonDAO.update(new CartasPokemon(
+                    txtIdAtt.getText()+"",
+                    txtNomeAtt.getText()+"",
+                    txtRaridadeAtt.getText()+"",
+                    txtSerieAtt.getText()+"",
+                    txtColecaoAtt.getText()+"",
+                    txtURLAtt.getText()+""
+            ));
+            atualizaModificacoes();
+            exibirCartas();
+            txtIdAtt.clear();
+            txtNomeAtt.clear();
+            txtRaridadeAtt.clear();
+            txtSerieAtt.clear();
+            txtColecaoAtt.clear();
+            txtURLAtt.clear();
+        }catch(Exception e){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erro!");
+            alert.setHeaderText("Nao foi possivel atualizar");
+
+            alert.showAndWait();
+        }
+
     }
 
     /**
@@ -168,16 +185,8 @@ public class ControleInterface {
     @FXML
     public void previewPhoto(){
         String url = cartasPokemons.get(listaCartasPokemon.getPokemonAtual()).getURL();
-        try {
-            Image image = new Image(url);
-            imgFoto.setImage(image);
-            exibirDadosDaCartaDoFoto();
-        }catch (Exception e){
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Erro!");
-            alert.setHeaderText("URL não existente");
-
-            alert.showAndWait();
-        }
+        Image image = new Image(url);
+        imgFoto.setImage(image);
+        exibirDadosDaCartaDoFoto();
     }
 }
