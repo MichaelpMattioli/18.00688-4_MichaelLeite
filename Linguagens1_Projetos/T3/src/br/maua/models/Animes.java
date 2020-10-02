@@ -6,12 +6,14 @@ public class Animes {
     private String sinopse;
     private int quantidadeEpisodios;
     private float nota;
+    private String urlPoster;
 
-    public Animes(String nome, String sinopse, int quantidadeEpisodios, float nota) {
+    public Animes(String nome, String sinopse, int quantidadeEpisodios, float nota, String urlPoster) {
         this.nome = nome;
         this.sinopse = sinopse;
         this.quantidadeEpisodios = quantidadeEpisodios;
         this.nota = nota;
+        this.urlPoster = urlPoster;
     }
 
     public String getNome() {
@@ -28,6 +30,10 @@ public class Animes {
 
     public float getNota() {
         return nota;
+    }
+
+    public String getUrlPoster() {
+        return urlPoster;
     }
 
     @Override
