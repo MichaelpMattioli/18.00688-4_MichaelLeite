@@ -38,7 +38,8 @@ public class Animes {
 
     @Override
     public String toString() {
-        return "nome: " + nome  +
+        return "Anime - " +
+                "nome: " + nome +
                 ", sinopse: " + sinopse +
                 ", quantidadeEpisodios: " + quantidadeEpisodios +
                 ", nota: " + nota ;
