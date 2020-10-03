@@ -20,7 +20,7 @@ public class AnimesDAO implements DAO<Animes>, DAOFields{
 
 
     /**
-     * Conecta ao Sql
+     * Conecta ao banco de dados.
      */
     public AnimesDAO() {
         try {
@@ -33,7 +33,7 @@ public class AnimesDAO implements DAO<Animes>, DAOFields{
     /**
      *
      * @param condition condição relativa a posição do indice na tabela.
-     * @return retorno um anime especifico.
+     * @return retorno uma lista com um anime específico.
      */
     @Override
     public List<Animes> get(String condition) {
@@ -60,7 +60,7 @@ public class AnimesDAO implements DAO<Animes>, DAOFields{
 
     /**
      * Função para requisição de todas os os animes.
-     * @return retorna todas os animes do banco de dados
+     * @return retorna uma lista com todos os animes do banco de dados.
      */
     @Override
     public List<Animes> getAll() {
@@ -86,7 +86,7 @@ public class AnimesDAO implements DAO<Animes>, DAOFields{
     }
 
     /**
-     * Função para atualização de uma carta especifica na lista.
+     * Função para atualização de um anime específico no banco de dados.
      * @param animes parametro que define qual anime está sendo alterada.
      */
     @Override
@@ -107,7 +107,7 @@ public class AnimesDAO implements DAO<Animes>, DAOFields{
     }
 
     /**
-     * Função para deletar anime da tabela
+     * Função para deletar um anime da tabela.
      * @param animes parametro que define qual anime será deletada.
      */
     @Override
@@ -122,8 +122,8 @@ public class AnimesDAO implements DAO<Animes>, DAOFields{
     }
 
     /**
-     * Função para inserir um novo anime
-     * @param animes Parametro para representar o novo anime a ser inserida
+     * Função para inserir um novo anime.
+     * @param animes Parametro para representar o novo anime a ser inserido.
      */
     @Override
     public void create(Animes animes) {
@@ -146,8 +146,8 @@ public class AnimesDAO implements DAO<Animes>, DAOFields{
     }
 
     /**
-     *  Função para pegar o nome da tabela
-     * @return retorna o nome da tabela
+     *  Função para pegar o nome da tabela.
+     * @return retorna o nome da tabela.
      */
     @Override
     public String getTableName() {
@@ -171,7 +171,7 @@ public class AnimesDAO implements DAO<Animes>, DAOFields{
      */
     @Override
     public String getUpdateString(String table) {
-        return "UPDATE "+ table +" SET id = ?, nome = ?, raridade = ?, serie = ?, colecao = ?, URL = ? WHERE id = ?;";
+        return "UPDATE "+ table +" SET nome = ?, sinopse = ?, quantidadeEpisodios = ?, nota = ?, urlPoster = ? WHERE id = ?;";
     }
 
     /**
@@ -181,7 +181,7 @@ public class AnimesDAO implements DAO<Animes>, DAOFields{
      */
     @Override
     public String getInsertString(String table) {
-        return "INSERT INTO "+ table + " (id, nome, raridade, serie, colecao, URL) VALUES (?, ?, ?, ?, ?, ?);";
+        return "INSERT INTO "+ table + " (nome, sinopse, quantidadeEpisodios, nota, urlPoster) VALUES (?, ?, ?, ?, ?);";
     }
 
     /**
