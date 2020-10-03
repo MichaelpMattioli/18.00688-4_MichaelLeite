@@ -4,7 +4,12 @@ import br.maua.dao.AnimesDAO;
 import br.maua.dao.MangasDAO;
 import br.maua.models.Animes;
 import br.maua.models.Mangas;
+import org.json.JSONObject;
 
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -165,4 +170,5 @@ public class AplicacaoDAO {
         }
 
     }
+
 }
