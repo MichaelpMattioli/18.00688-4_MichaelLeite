@@ -1,6 +1,6 @@
 package br.maua.models;
 
-public class Manga {
+public class Mangas {
     private String nome;
     private String sinopse;
     private int quantidadeCapitulos;
@@ -9,7 +9,7 @@ public class Manga {
     private float nota;
     private String urlPoster;
 
-    public Manga(String nome, String sinopse, int quantidadeCapitulos, int quantidadeVolumes, String tipo, float nota, String urlPoster) {
+    public Mangas(String nome, String sinopse, int quantidadeCapitulos, int quantidadeVolumes, String tipo, float nota, String urlPoster) {
         this.nome = nome;
         this.sinopse = sinopse;
         this.quantidadeCapitulos = quantidadeCapitulos;
