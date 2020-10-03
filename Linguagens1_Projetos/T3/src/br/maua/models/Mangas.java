@@ -3,10 +3,10 @@ package br.maua.models;
 public class Mangas {
     private String nome;
     private String sinopse;
-    private int quantidadeCapitulos;
-    private int quantidadeVolumes;
+    private Integer quantidadeCapitulos;
+    private Integer quantidadeVolumes;
     private String tipo;
-    private float nota;
+    private Float nota;
     private String urlPoster;
 
     public Mangas(String nome, String sinopse, int quantidadeCapitulos, int quantidadeVolumes, String tipo, float nota, String urlPoster) {
@@ -17,6 +17,16 @@ public class Mangas {
         this.tipo = tipo;
         this.nota = nota;
         this.urlPoster = urlPoster;
+    }
+
+    public Mangas(String nome) {
+        this.nome = nome;
+        this.sinopse = null;
+        this.quantidadeCapitulos = null;
+        this.quantidadeVolumes = null;
+        this.tipo = null;
+        this.nota = null;
+        this.urlPoster = null;
     }
 
     public String getNome() {
