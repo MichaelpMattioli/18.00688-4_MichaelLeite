@@ -26,7 +26,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../TSub1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Pratica_14" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
@@ -62,9 +62,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="505" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1050/-1050.-407.1050.1650@0.0.1920.1050" timestamp="1601684206104" />
-    <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1601679706528">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="740" y="287" key="FileChooserDialogImpl" timestamp="1601692274965">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
+    <state x="740" y="287" key="FileChooserDialogImpl/0.0.1920.1050/-1050.-407.1050.1650@0.0.1920.1050" timestamp="1601692274965" />
     <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1080/-1050.-407.1050.1680@0.0.1920.1080" timestamp="1601679706528" />
   </component>
 </project>
