@@ -8,5 +8,5 @@ public class ListaAnimes {
     public ListaAnimes(List<Animes> animesList) {
         this.animesList = animesList;
     }
-    
+
 }
