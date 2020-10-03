@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * * Classe responsável pela implementação do DAO dos Animes.
- * @author Michael Pedroza Mattioli Leite - michael.pmattioli@gmail.com
+ * @author José Guilherme Martins dos Santos - josegms2000@gmail.com  Michael Pedroza Mattioli Leite - michael.pmattioli@gmail.com
  * @since 02/10/2020
  * @version 1.0
  * */
@@ -84,43 +84,6 @@ public class AnimesDAO implements DAO<Animes>, DAOFields{
         }
         return animes;
     }
-
-    /**
-     * Função para atualização de um anime específico no banco de dados.
-     * @param animes parametro que define qual anime está sendo alterada.
-     */
-    @Override
-    public void update(Animes animes){
-        try{
-            PreparedStatement preparedStatement = connection.prepareStatement(getUpdateString(getTableName()));
-            preparedStatement.setString(1, animes.getNome());
-            preparedStatement.setString(2, animes.getSinopse());
-            preparedStatement.setInt(3, animes.getQuantidadeEpisodios());
-            preparedStatement.setFloat(4, animes.getNota());
-            preparedStatement.setString(5, animes.getUrlPoster());
-            preparedStatement.setString(6, animes.getNome());
-            //Executa o PreparedStatement
-            int retorno = preparedStatement.executeUpdate();
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }
-
-    /**
-     * Função para deletar um anime da tabela.
-     * @param animes parametro que define qual anime será deletada.
-     */
-    @Override
-    public void delete(Animes animes) {
-        try{
-            PreparedStatement preparedStatement = connection.prepareStatement(getDeleteString(getTableName()));
-            preparedStatement.setString(1, animes.getNome());
-            preparedStatement.executeUpdate();
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-    }
-
     /**
      * Função para inserir um novo anime.
      * @param animes Parametro para representar o novo anime a ser inserido.
@@ -152,26 +115,6 @@ public class AnimesDAO implements DAO<Animes>, DAOFields{
     @Override
     public String getTableName() {
         return "anime";
-    }
-
-    /**
-     * Função que deleta um dado da tabela, relativo ao comando do SQL.
-     * @param table parametro que define a tabela.
-     * @return retorno DeleteString em formato para o SQL.
-     */
-    @Override
-    public String getDeleteString(String table) {
-        return "DELETE FROM "+ table +" WHERE nome = ?";
-    }
-
-    /**
-     * Função que atualiza um dado da tabela dentro do banco de dados, comando relativo ao SQL.
-     * @param table parametro que define a tabela.
-     * @return retorna UpdateString em formato para o SQL.
-     */
-    @Override
-    public String getUpdateString(String table) {
-        return "UPDATE "+ table +" SET nome = ?, sinopse = ?, quantidadeEpisodios = ?, nota = ?, urlPoster = ? WHERE id = ?;";
     }
 
     /**
