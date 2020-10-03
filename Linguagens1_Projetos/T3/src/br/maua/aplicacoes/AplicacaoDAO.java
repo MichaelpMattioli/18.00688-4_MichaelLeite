@@ -1,5 +1,6 @@
 package br.maua.aplicacoes;
 
+import br.maua.api.AnimesMangasAPI;
 import br.maua.dao.AnimesDAO;
 import br.maua.dao.MangasDAO;
 import br.maua.models.Animes;
@@ -18,9 +19,13 @@ public class AplicacaoDAO {
 
     private List<Animes> animesList;
     private List<Mangas> mangasList;
+
     private AnimesDAO animesDAO;
     private MangasDAO mangasDAO;
+
     private Scanner scanner;
+
+    private AnimesMangasAPI animesMangasAPI;
 
     public AplicacaoDAO() {
         animesList = new ArrayList<>();
@@ -60,9 +65,6 @@ public class AplicacaoDAO {
                     exibirMangas();
                     break;
                 case 5:
-                    cadastrarNovoAnime();
-                    break;
-                case 6:
                     deletarAnime();
                     break;
                 default:
@@ -94,36 +96,42 @@ public class AplicacaoDAO {
         mangasList.forEach( mangas -> System.out.println(mangas) );
     }
 
-    private void cadastrarNovoAnime(){
-        String nome,sinopse,urlPoster;
-        int quantidadeEpisodios;
-        float nota;
-        System.out.println("Informe os dados:");
-        nome = scanner.next();
-        sinopse = scanner.next();
-        quantidadeEpisodios = Integer.parseInt(scanner.next());
-        nota = Float.parseFloat(scanner.next());
-       urlPoster = scanner.next();
-        animesDAO.create(new Animes(
-                nome, sinopse, quantidadeEpisodios, nota, urlPoster
-        ));
+    private void cadastrarNovoAnime(String nomeCondicional){
+        try {
+            JSONObject json = animesMangasAPI.formatoJson("anime", nomeCondicional).getJSONArray("results").getJSONObject(0);
+            String nome = json.getString("title");
+            String sinopse = json.getString("synopsis");
+            Integer quantidadeEpisodios = json.getInt("episodes");
+            Float nota = json.getFloat("score");
+            String urlPoster = json.getString("image_url");
+
+            animesDAO.create(new Animes(
+                    nome, sinopse, quantidadeEpisodios, nota, urlPoster
+            ));
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Algum erro ocorreu no cadastramento");
+        }
     }
 
-    private void cadastrarNovoManga(){
-        String nome,sinopse, tipo, urlPoster;
-        int quantidadeCapitulos, quantidadeVolumes;
-        float nota;
-        System.out.println("Informe os dados:");
-        nome = scanner.next();
-        sinopse = scanner.next();
-        quantidadeCapitulos = Integer.parseInt(scanner.next());
-        quantidadeVolumes = Integer.parseInt(scanner.next());
-        tipo = scanner.next();
-        nota = Float.parseFloat(scanner.next());
-        urlPoster = scanner.next();
-        mangasDAO.create(new Mangas(
-                nome, sinopse, quantidadeCapitulos, quantidadeVolumes, tipo, nota, urlPoster
-        ));
+    private void cadastrarNovoManga(String nomeCondicional){
+        try {
+            JSONObject json = animesMangasAPI.formatoJson("anime", nomeCondicional).getJSONArray("results").getJSONObject(0);
+            String nome = json.getString("title");
+            String sinopse = json.getString("synopsis");
+            Integer quantidadeCapitulos = json.getInt("episodes");
+            Integer quantidadeVolumes = json.getInt("episodes");
+            String tipo = json.getString("type");
+            Float nota = json.getFloat("score");
+            String urlPoster = json.getString("image_url");
+
+            mangasDAO.create(new Mangas(
+                    nome, sinopse, quantidadeCapitulos, quantidadeVolumes, tipo, nota, urlPoster
+            ));
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Algum erro ocorreu no cadastramento");
+        }
     }
 
     private void deletarAnime(){
@@ -148,7 +156,7 @@ public class AplicacaoDAO {
             int resposta = scanner.nextInt();
 
             if(resposta == 1){
-
+                cadastrarNovoAnime(titulo);
             }
         }
 
@@ -165,7 +173,7 @@ public class AplicacaoDAO {
             int resposta = scanner.nextInt();
 
             if(resposta == 1){
-
+                cadastrarNovoManga(titulo);
             }
         }
 
