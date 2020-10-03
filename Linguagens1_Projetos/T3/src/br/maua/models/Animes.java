@@ -4,8 +4,8 @@ package br.maua.models;
 public class Animes {
     private String nome;
     private String sinopse;
-    private int quantidadeEpisodios;
-    private float nota;
+    private Integer quantidadeEpisodios;
+    private Float nota;
     private String urlPoster;
 
     public Animes(String nome, String sinopse, int quantidadeEpisodios, float nota, String urlPoster) {
@@ -14,6 +14,14 @@ public class Animes {
         this.quantidadeEpisodios = quantidadeEpisodios;
         this.nota = nota;
         this.urlPoster = urlPoster;
+    }
+
+    public Animes(String nome) {
+        this.nome = nome;
+        this.sinopse = null;
+        this.quantidadeEpisodios = null;
+        this.nota = null;
+        this.urlPoster = null;
     }
 
     public String getNome() {
