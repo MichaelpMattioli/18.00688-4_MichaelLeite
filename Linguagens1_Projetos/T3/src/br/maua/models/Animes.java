@@ -50,6 +50,7 @@ public class Animes {
                 "nome: " + nome +
                 ", sinopse: " + sinopse +
                 ", quantidadeEpisodios: " + quantidadeEpisodios +
-                ", nota: " + nota ;
+                ", nota: " + nota +
+                ", urlPoster" + urlPoster;
     }
 }
