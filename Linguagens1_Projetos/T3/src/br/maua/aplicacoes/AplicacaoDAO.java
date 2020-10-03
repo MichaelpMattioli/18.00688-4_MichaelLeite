@@ -40,13 +40,13 @@ public class AplicacaoDAO {
                     System.out.println("Qual o anime que deseja consultar?");
                     System.out.print("Titulo: ");
                     String tituloAnime = "nome = " + "\"" + scanner.next() + "\"";
-
+                    consultaDados(tituloAnime, opcao);
                     break;
                 case 2:
                     System.out.println("Qual o mangá que deseja consultar?");
                     System.out.print("Titulo: ");
                     String tituloManga = "nome = " + "\"" + scanner.next() + "\"";
-
+                    consultaDados(tituloManga, opcao);
                     break;
                 case 3:
                     exibirAnimes();
@@ -126,5 +126,43 @@ public class AplicacaoDAO {
         String nome = scanner.next();
         Animes animes = new Animes(nome);
         animesDAO.delete(animes);
+    }
+
+    private void consultaDados(String titulo, int numero){
+
+        if(numero == 1 && !animesDAO.get(titulo).toString().equals("[]")){
+            System.out.println("Titulo encontrado");
+            System.out.println("Informacoes sobre o titulo:");
+            System.out.println(animesDAO.get(titulo));
+        }else if(numero == 1 && animesDAO.get(titulo).toString().equals("[]")){
+            System.out.println("Titulo nao encontrada na data base");
+            System.out.println("Deseja adicionar esse anime a sua data base?");
+
+            System.out.println("0 - Nao");
+            System.out.println("1 - Sim");
+            int resposta = scanner.nextInt();
+
+            if(resposta == 1){
+
+            }
+        }
+
+        if(numero == 2 && !mangasDAO.get(titulo).toString().equals("[]")){
+            System.out.println("Titulo encontrado");
+            System.out.println("Informacoes sobre o titulo:");
+            System.out.println(mangasDAO.get(titulo));
+        }else if(numero == 2 && mangasDAO.get(titulo).toString().equals("[]")){
+            System.out.println("Titulo nao encontrada na data base");
+            System.out.println("Deseja adicionar esse anime a sua data base?");
+
+            System.out.println("0 - Nao");
+            System.out.println("1 - Sim");
+            int resposta = scanner.nextInt();
+
+            if(resposta == 1){
+
+            }
+        }
+
     }
 }
