@@ -16,18 +16,15 @@ public class Submain {
         pokemonApi();
     }
 
-    private String constroeURL(){
+    private static void pokemonApi() throws Exception{
         System.out.println("Digite o nome do pokemon");
         Scanner scanner1 = new Scanner(System.in);
         String pokemon = scanner1.nextLine();
-        return "";
-    }
 
-    private static void pokemonApi() throws Exception{
         HttpClient client = HttpClient.newBuilder().build();
         HttpRequest request = HttpRequest.newBuilder()
                 .GET()
-                .uri(URI.create("https://api.pokemontcg.io/v1/cards?name=metapod"))
+                .uri(URI.create("https://api.jikan.moe/v3/"+ pokemon))
                 .build();
         HttpResponse<String> response = client.send(request,
                 HttpResponse.BodyHandlers.ofString());
