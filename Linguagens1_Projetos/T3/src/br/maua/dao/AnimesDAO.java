@@ -36,7 +36,7 @@ public class AnimesDAO implements DAO<Animes>, DAOFields{
      * @return retorno uma lista com um anime específico.
      */
     @Override
-    public List<Animes> get(String condition) {
+    public List<Animes> get(String condition){
         List<Animes> animes = new ArrayList<>();
         try{
             Statement statement = connection.createStatement();
