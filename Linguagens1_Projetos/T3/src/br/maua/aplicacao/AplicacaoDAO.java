@@ -1,4 +1,4 @@
 package br.maua.aplicacao;
 
-public class AplicaçãoDAO {
+public class AplicacaoDAO {
 }
