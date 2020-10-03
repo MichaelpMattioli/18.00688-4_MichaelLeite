@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * * Classe responsável pela implementação do DAO dos Mangás.
- * @author Michael Pedroza Mattioli Leite - michael.pmattioli@gmail.com
+ * @author José Guilherme Martins dos Santos - josegms2000@gmail.com  Michael Pedroza Mattioli Leite - michael.pmattioli@gmail.com
  * @since 02/10/2020
  * @version 1.0
  * */
@@ -90,44 +90,6 @@ public class MangasDAO implements DAO<Mangas>, DAOFields{
     }
 
     /**
-     * Função para atualização de um mangá específico no banco de dados.
-     * @param mangas parametro que define qual mangá está sendo alterada.
-     */
-    @Override
-    public void update(Mangas mangas){
-        try{
-            PreparedStatement preparedStatement = connection.prepareStatement(getUpdateString(getTableName()));
-            preparedStatement.setString(1, mangas.getNome());
-            preparedStatement.setString(2, mangas.getSinopse());
-            preparedStatement.setInt(3, mangas.getQuantidadeCapitulos());
-            preparedStatement.setInt(4, mangas.getQuantidadeVolumes());
-            preparedStatement.setFloat(5, mangas.getNota());
-            preparedStatement.setString(6, mangas.getTipo());
-            preparedStatement.setString(7, mangas.getUrlPoster());
-            preparedStatement.setString(8, mangas.getNome());
-            //Executa o PreparedStatement
-            int retorno = preparedStatement.executeUpdate();
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }
-
-    /**
-     * Função para deletar um mangá da tabela.
-     * @param mangas parametro que define qual mangá será deletada.
-     */
-    @Override
-    public void delete(Mangas mangas) {
-        try{
-            PreparedStatement preparedStatement = connection.prepareStatement(getDeleteString(getTableName()));
-            preparedStatement.setString(1, mangas.getNome());
-            preparedStatement.executeUpdate();
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-    }
-
-    /**
      * Função para inserir um novo mangá.
      * @param mangas Parametro para representar o novo mangá a ser inserido.
      */
@@ -160,26 +122,6 @@ public class MangasDAO implements DAO<Mangas>, DAOFields{
     @Override
     public String getTableName() {
         return "manga";
-    }
-
-    /**
-     * Função que deleta um dado da tabela, relativo ao comando do SQL.
-     * @param table parametro que define a tabela.
-     * @return retorno DeleteString em formato para o SQL.
-     */
-    @Override
-    public String getDeleteString(String table) {
-        return "DELETE FROM "+ table +" WHERE nome = ?";
-    }
-
-    /**
-     * Função que atualiza um dado da tabela dentro do banco de dados, comando relativo ao SQL.
-     * @param table parametro que define a tabela.
-     * @return retorna UpdateString em formato para o SQL.
-     */
-    @Override
-    public String getUpdateString(String table) {
-        return "UPDATE "+ table +" SET nome = ?, sinopse = ?, quantidadeCapitulos = ?, quantidadeVolumes = ?, tipo = ?, nota = ?, urlPoster = ? WHERE id = ?;";
     }
 
     /**
