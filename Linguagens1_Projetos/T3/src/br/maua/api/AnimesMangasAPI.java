@@ -1,5 +1,6 @@
 package br.maua.api;
 
+import br.maua.models.Animes;
 import org.json.JSONObject;
 
 import java.net.URI;
@@ -8,7 +9,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class AnimesMangasAPI {
-    private static JSONObject formatoJson(String tipo, String nome) throws Exception{
+    public JSONObject formatoJson(String tipo, String nome) throws Exception{
 
         HttpClient client = HttpClient.newBuilder().build();
         HttpRequest request = HttpRequest.newBuilder()
@@ -20,5 +21,4 @@ public class AnimesMangasAPI {
         JSONObject jsonObject = new JSONObject(response.body());
         return jsonObject;
     }
-    
 }
