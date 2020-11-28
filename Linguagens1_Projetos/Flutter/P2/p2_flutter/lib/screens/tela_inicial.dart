@@ -9,8 +9,14 @@ class TelaInicial extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Expanded(child: SizedBox(width:200, height: 100, child: Image.asset("assets/Logo/LogoImovel.png")))
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: SizedBox(width:400, height: 200, child: Image.asset("assets/Logo/LogoImovel.png")),
+            ),
+            Text("Procure seu imovel!"),
+            
           ],
         ),
       ),
