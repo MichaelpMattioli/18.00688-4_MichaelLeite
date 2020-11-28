@@ -1,17 +1,20 @@
-import 'package:flutter/material.dart';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+import 'package:flutter/foundation.dart';
 
-class MinhaPaginaInicial extends StatelessWidget {
-  var _dados = "";
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("Minhas Requisições"),),
-      body: Text(_dados),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.send),
-        onPressed: () async{
-        },
-      ),
-    );
+class NetworkHelper{
+  final String url;
+  NetworkHelper({this.url});
+
+  Future getData() async{
+    http.Response response = await http.get(url);
+    if(response.statusCode == 200) {
+      //Resultado da requisição
+      return jsonDecode(response.body);
+    }
+    else{
+      print(response.statusCode);
+      return null;
+    }
   }
 }
