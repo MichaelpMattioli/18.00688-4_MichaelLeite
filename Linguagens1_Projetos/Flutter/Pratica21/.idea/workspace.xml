@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e7eed33-42fa-4c76-93c7-76ebc796e1a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../P2/p2_flutter/lib/screens/pagina_imoveis.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../P2/p2_flutter/lib/models/imoveis_json.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../P2/p2_flutter/lib/models/imoveis_json.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../P2/p2_flutter/lib/screens/tela_inicial.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../P2/p2_flutter/lib/screens/tela_inicial.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Pratica20.1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Pratica20.1/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Pratica20/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Pratica20/.idea/workspace.xml" afterDir="false" />
