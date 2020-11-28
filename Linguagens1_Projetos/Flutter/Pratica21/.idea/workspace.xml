@@ -4,7 +4,6 @@
     <list default="true" id="8e7eed33-42fa-4c76-93c7-76ebc796e1a0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../P2/p2_flutter/lib/screens/tela_inicial.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../P2/p2_flutter/lib/screens/tela_inicial.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../P2/p2_flutter/lib/utilities/network_helper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../P2/p2_flutter/lib/utilities/network_helper.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P2/p2_flutter/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../P2/p2_flutter/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
