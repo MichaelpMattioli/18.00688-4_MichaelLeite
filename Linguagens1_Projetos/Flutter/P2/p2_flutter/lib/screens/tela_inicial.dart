@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:p2_flutter/screens/pagina_imoveis.dart';
 
 class TelaInicial extends StatelessWidget {
 
@@ -26,7 +27,10 @@ class TelaInicial extends StatelessWidget {
               personalTextField(controladorValorMax, "Valor máximo de interesse", "Valor até", Icon(Icons.monetization_on_outlined)),
               personalTextField(controladorDorms, "Quantidade de dormitórios", "Dormitórios", Icon(Icons.home)),
               FlatButton(onPressed: (){
-
+                buscar_caracteristicas_imovel();
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (BuildContext context) => PaginaImoveis()));
               }, child: Text("Buscar",
                 style: TextStyle(fontSize: 20.0),
               ))
@@ -46,5 +50,12 @@ class TelaInicial extends StatelessWidget {
           icon: icone
       ),),
     );
+  }
+
+  void buscar_caracteristicas_imovel() {
+    print(controladorCidade.text);
+    print(controladorBairro.text);
+    print(controladorValorMax.text);
+    print(controladorDorms.text);
   }
 }
