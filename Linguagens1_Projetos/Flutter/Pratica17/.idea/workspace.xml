@@ -23,11 +23,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cda5a0a8-47bb-4154-b930-f40f716c51f6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Pratica17.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../T3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../T3/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TSub1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../TSub1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../P2/p2_flutter/lib/screens/tela_inicial.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../P2/p2_flutter/lib/screens/tela_inicial.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +72,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="92" y="92" width="1736" height="866" key="AVDManager" timestamp="1604932157370">

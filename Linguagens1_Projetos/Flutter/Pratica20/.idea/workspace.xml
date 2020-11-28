@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="875e23bb-72e4-4c70-93bd-6f63ae955da4" name="Default Changelist" comment="">
+    <list default="true" id="6ce2ff93-fffd-4bbd-83ea-414ce8bf499a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../P2/p2_flutter/assets/Logo/LogoImovel.png" beforeDir="false" afterPath="$PROJECT_DIR$/../P2/p2_flutter/assets/Logo/LogoImovel.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../P2/p2_flutter/lib/screens/tela_inicial.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../P2/p2_flutter/lib/screens/tela_inicial.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Pratica17/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Pratica17/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Pratica20.1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Pratica20.1/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Pratica21/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Pratica21/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,7 +16,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="ProjectId" id="1kvclU5GYy9IdMU6BCHmdz9pZHW" />
+  <component name="ProjectId" id="1kvgCBMa6iDEnyb8YSwmFQgRLMY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -27,7 +27,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Pratica20" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="SvnConfiguration">
@@ -35,18 +35,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="875e23bb-72e4-4c70-93bd-6f63ae955da4" name="Default Changelist" comment="" />
-      <created>1606584656717</created>
+      <changelist id="6ce2ff93-fffd-4bbd-83ea-414ce8bf499a" name="Default Changelist" comment="" />
+      <created>1606586348200</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1606584656717</updated>
+      <updated>1606586348200</updated>
     </task>
     <servers />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="-1060" y="291" key="FileChooserDialogImpl" timestamp="1606586347013">
-      <screen x="-1680" y="26" width="1680" height="1020" />
-    </state>
-    <state x="-1060" y="291" key="FileChooserDialogImpl/0.0.1920.1050/-1680.26.1680.1020@-1680.26.1680.1020" timestamp="1606586347013" />
   </component>
 </project>
