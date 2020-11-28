@@ -8,7 +8,7 @@ class imoveis_json {
   String _num;
   String _rua;
   Planta _planta;
-  
+
   imoveis_json(
       {String bairro,
         String cep,
