@@ -19,32 +19,44 @@ class TelaInicial extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
+        backgroundColor: Colors.blueGrey[50],
         body: Padding(
             padding: const EdgeInsets.all(8.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(width:400, height: 200, child: Image.asset("assets/Logo/LogoImovel.png")),
-              Text("Procure seu imovel no ABC paulista!",
-                  style: TextStyle(fontSize: 20.0)),
+              SizedBox(width:400, height: 150, child: Image.asset("assets/Logo/LogoImovel.png")),
+              Container(
+                margin: EdgeInsets.all(15.0),
+                child: Text("Procure seu imovel no ABC paulista!",
+                    style: TextStyle(fontSize: 20.0)),
+              ),
               personalTextField(controladorCidade, "Cidade de interesse","Cidade" , Icon(Icons.location_city)),
               personalTextField(controladorBairro, "Bairro de interesse","Bairro", Icon(Icons.park)),
               personalTextField(controladorValorMax, "Valor máximo de interesse", "Valor até", Icon(Icons.monetization_on_outlined)),
               personalTextField(controladorDorms, "Quantidade de dormitórios", "Dormitórios", Icon(Icons.home)),
-              FlatButton(onPressed: () async{
-                await buscar_caracteristicas_imovel();
-                if (_busca.length == 0) {
-                }
-                else {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (BuildContext context) =>
-                              PaginaImoveis(_busca)));
-                }
-                  }, child: Text("Buscar",
-                style: TextStyle(fontSize: 20.0),
-              ))
+              Container(
+                decoration: BoxDecoration(
+                  color: Colors.blue[700],
+                  shape: BoxShape.circle
+                ),
+                margin: EdgeInsets.all(25.0),
+                padding: EdgeInsets.all(25.0),
+                child: FlatButton(onPressed: () async{
+                  await buscar_caracteristicas_imovel();
+                  if (_busca.length == 0) {
+                  }
+                  else {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                PaginaImoveis(_busca)));
+                  }
+                    }, child: Text("Buscar",
+                  style: TextStyle(fontSize: 20.0),
+                )),
+              )
             ],
           ),
         ),
