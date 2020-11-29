@@ -33,14 +33,15 @@ class TelaInicial extends StatelessWidget {
               personalTextField(controladorDorms, "Quantidade de dormitórios", "Dormitórios", Icon(Icons.home)),
               FlatButton(onPressed: () async{
                 await buscar_caracteristicas_imovel();
-                print(_busca);
-                if(_busca.length != 0) {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (BuildContext context) =>
-                                  PaginaImoveis(_busca)));
-                    }
+                if (_busca.length == 0) {
+                }
+                else {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (BuildContext context) =>
+                              PaginaImoveis(_busca)));
+                }
                   }, child: Text("Buscar",
                 style: TextStyle(fontSize: 20.0),
               ))
@@ -74,6 +75,7 @@ class TelaInicial extends StatelessWidget {
     }
 
     _busca = [];
+    var count = 0;
 
     for ( var entrada in _dados){
       Imovel _imovelAtual = entrada;
@@ -95,40 +97,49 @@ class TelaInicial extends StatelessWidget {
       }
 
       try{
-        var preco = _imovelAtual.planta.preco;
-
-        if(_imovelAtual.planta.preco > double.parse(controladorValorMax.text)){
+        try{
+          var plantaVerification = _imovelAtual.planta.preco;
+        }catch(e){
+          continue;
+        }
+        if(_imovelAtual.planta.preco < double.parse(controladorValorMax.text) && !controladorValorMax.text.isEmpty){
           _verification++;
         }
         if(controladorValorMax.text.isEmpty){
           countBlank++;
         }
       }catch(e){
+        count++;
+        countBlank++;
       }
 
       try{
-        var dorms = _imovelAtual.planta.dorms;
+        try{
+          var plantaVerification = _imovelAtual.planta.dorms;
+        }catch(e){
+          continue;
+        }
 
-        if(_imovelAtual.planta.dorms > double.parse(controladorDorms.text)){
+        if(_imovelAtual.planta.dorms == double.parse(controladorDorms.text)){
           _verification++;
         }
         if(controladorDorms.text.isEmpty){
           countBlank++;
         }
       }catch(e){
+        count++;
+        countBlank++;
       }
 
       int totalCampos = 4 - countBlank;
 
-      if ( _verification == 4 - totalCampos){
+      if ( _verification == totalCampos){
         _busca.add(_imovelAtual);
       }
     }
 
-    print(_dados.length);
-    print(_busca.length);
-
   }
+
 }
 
 
