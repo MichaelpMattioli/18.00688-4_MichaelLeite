@@ -73,31 +73,56 @@ class TelaInicial extends StatelessWidget {
       }
     }
 
-    for ( var entrada in _dados){
-      Imovel imovelAtual = entrada;
+    _busca = [];
 
-      if(imovelAtual.cidade == controladorCidade.text && controladorCidade.text != ""){
-        _busca.add(imovelAtual);
+    for ( var entrada in _dados){
+      Imovel _imovelAtual = entrada;
+      int _verification = 0;
+      int countBlank = 0;
+
+      if(_imovelAtual.cidade == controladorCidade.text){
+        _verification++;
       }
-      if(imovelAtual.bairro != controladorBairro.text && controladorBairro.text != ""){
-        _busca.remove(imovelAtual);
+      if(controladorCidade.text.isEmpty){
+        countBlank++;
+      }
+
+      if(_imovelAtual.bairro == controladorBairro.text){
+        _verification++;
+      }
+      if(controladorBairro.text.isEmpty){
+        countBlank++;
       }
 
       try{
-        if(imovelAtual.planta.preco > double.parse(controladorValorMax.text) && controladorBairro.text != ""){
-          _busca.remove(imovelAtual);
+        var preco = _imovelAtual.planta.preco;
+
+        if(_imovelAtual.planta.preco > double.parse(controladorValorMax.text)){
+          _verification++;
+        }
+        if(controladorValorMax.text.isEmpty){
+          countBlank++;
         }
       }catch(e){
-        if(imovelAtual.bairro != controladorBairro.text && controladorBairro.text != ""){
-          _busca.remove(imovelAtual);
-        }
       }
 
       try{
-        if(imovelAtual.planta.dorms > double.parse(controladorDorms.text) && controladorBairro.text != ""){
-          _busca.remove(imovelAtual);
+        var dorms = _imovelAtual.planta.dorms;
+
+        if(_imovelAtual.planta.dorms > double.parse(controladorDorms.text)){
+          _verification++;
         }
-      }catch(e){}
+        if(controladorDorms.text.isEmpty){
+          countBlank++;
+        }
+      }catch(e){
+      }
+
+      int totalCampos = 4 - countBlank;
+
+      if ( _verification == 4 - totalCampos){
+        _busca.add(_imovelAtual);
+      }
     }
 
     print(_dados.length);
