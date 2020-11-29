@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:p2_flutter/models/imoveis_json.dart';
 
 class PaginaImoveis extends StatefulWidget {
-  var imoveis;
+  List imoveis;
+
 
   PaginaImoveis(var dados){
     this.imoveis = dados;
@@ -17,9 +18,6 @@ class _PaginaImoveisState extends State<PaginaImoveis> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          title: Text("Imoveis Encontrados"),
-        ),
         body: Column(
           children: [
             Expanded(
@@ -42,16 +40,18 @@ class _PaginaImoveisState extends State<PaginaImoveis> {
         child: Row(
           children: [
             Container(
-              child: SizedBox(width: 200, height: 200, child: imageBuilder(index)),
+              child: SizedBox(width: 150, height: 200, child: imageBuilder(index)),
               color: Colors.grey[300],
             ),
-            Column(
-              children: [
-                Text("Cidade: " + widget.imoveis[index].cidade),
-                Text("Bairro: " + widget.imoveis[index].bairro),
-                Text("Preço: " + stringPreco(index)),
-                Text("Dormitórios: " + stringDormitorios(index))
-              ],
+            Expanded(
+              child: Column(
+                children: [
+                  Text("Cidade: " + widget.imoveis[index].cidade),
+                  Text("Bairro: " + widget.imoveis[index].bairro),
+                  Text("Preço: " + stringPreco(index)),
+                  Text("Dormitórios: " + stringDormitorios(index))
+                ],
+              ),
             ),
           ],
         ),
