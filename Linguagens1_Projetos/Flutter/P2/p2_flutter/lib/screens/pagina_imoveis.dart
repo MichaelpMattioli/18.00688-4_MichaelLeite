@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:p2_flutter/models/imoveis_json.dart';
+import 'package:p2_flutter/screens/imovel_infos.dart';
 
 class PaginaImoveis extends StatefulWidget {
-  List imoveis;
+  List imoveisList;
 
 
   PaginaImoveis(var dados){
-    this.imoveis = dados;
+    this.imoveisList = dados;
   }
 
   @override
@@ -22,9 +23,18 @@ class _PaginaImoveisState extends State<PaginaImoveis> {
           children: [
             Expanded(
                 child: ListView.builder(
-                  itemCount: widget.imoveis.length,
+                  itemCount: widget.imoveisList.length,
                   itemBuilder: (context, index) {
-                    return buildContainer(index);
+                    return GestureDetector(
+                      child: buildContainer(index),
+                      onDoubleTap: (){
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (BuildContext context) =>
+                                    ImovelInfos(widget.imoveisList[index])));
+                      },
+                    );
                   },
                 )
             )
@@ -46,10 +56,22 @@ class _PaginaImoveisState extends State<PaginaImoveis> {
             Expanded(
               child: Column(
                 children: [
-                  Text("Cidade: " + widget.imoveis[index].cidade),
-                  Text("Bairro: " + widget.imoveis[index].bairro),
-                  Text("Preço: " + stringPreco(index)),
-                  Text("Dormitórios: " + stringDormitorios(index))
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text("Cidade: " + widget.imoveisList[index].cidade),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text("Bairro: " + widget.imoveisList[index].bairro),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text("Preço: " + stringPreco(index)),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text("Dormitórios: " + stringDormitorios(index)),
+                  )
                 ],
               ),
             ),
@@ -62,7 +84,7 @@ class _PaginaImoveisState extends State<PaginaImoveis> {
   Image imageBuilder(int index) {
     var imagem;
     try{
-      imagem = Image.network(widget.imoveis[index].fachada);
+      imagem = Image.network(widget.imoveisList[index].fachada);
     }catch(e){
       imagem = Image.network("https://radioingamar.com.br/portal/img/not-found.png");
     }
@@ -72,7 +94,7 @@ class _PaginaImoveisState extends State<PaginaImoveis> {
   String stringPreco(int index){
     var preco;
     try{
-      preco = widget.imoveis[index].planta.preco.toString();
+      preco = widget.imoveisList[index].planta.preco.toString();
     }catch(e){
       preco = "-";
     }
@@ -83,7 +105,7 @@ class _PaginaImoveisState extends State<PaginaImoveis> {
   String stringDormitorios(int index){
     var dormits;
     try{
-      dormits = widget.imoveis[index].planta.dorms.toString();
+      dormits = widget.imoveisList[index].planta.dorms.toString();
     }catch(e){
       dormits = "-";
     }
