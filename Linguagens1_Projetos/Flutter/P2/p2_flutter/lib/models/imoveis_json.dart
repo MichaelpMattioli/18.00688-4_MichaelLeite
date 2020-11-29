@@ -84,7 +84,6 @@ class Planta {
       dorms = json['dorms'];
     }catch(e) {
       var aux = json['dorms'];
-      print(aux);
       dorms = int.parse(aux);
     }
 
