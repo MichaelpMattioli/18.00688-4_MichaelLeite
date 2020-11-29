@@ -19,6 +19,7 @@ class _PaginaImoveisState extends State<PaginaImoveis> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(title: Text("Resultados encontrados: ${widget.imoveisList.length}")),
         body: Column(
           children: [
             Expanded(
