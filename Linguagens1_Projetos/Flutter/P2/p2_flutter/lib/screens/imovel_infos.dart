@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:p2_flutter/models/imoveis_json.dart';
+import 'package:p2_flutter/screens/google_maps_imovel.dart';
 
 class ImovelInfos extends StatelessWidget {
 
@@ -91,7 +92,7 @@ class ImovelInfos extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                             builder: (BuildContext context) =>
-                                PaginaImoveis(_busca)));
+                                ImovelGoogleMaps()));
                   }, child: Text("Procurar no Google Maps"))
                 ],
               ),
