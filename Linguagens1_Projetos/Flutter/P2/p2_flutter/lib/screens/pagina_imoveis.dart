@@ -58,34 +58,68 @@ class _PaginaImoveisState extends State<PaginaImoveis> {
               child: Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(widget._imoveisList[index].rua),
+                    padding: const EdgeInsets.fromLTRB(16.0, 0.0, 8.0, 0.0),
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                        child: Text(
+                          widget._imoveisList[index].rua,
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold),
+                        )
+                    ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(widget._imoveisList[index].bairro + ", " + widget._imoveisList[index].cidade,),
+                    padding: const EdgeInsets.fromLTRB(16.0, 8.0, 8.0, 8.0),
+                    child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(widget._imoveisList[index].bairro + ", " + widget._imoveisList[index].cidade,)),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.fromLTRB(11.5, 0.0, 8.0, 8.0),
                     child: Row(
                       children: [
                         RichText(
                             text: TextSpan(
+                              style: Theme.of(context).textTheme.bodyText2,
                               children: [
-                                TextSpan(
-                                  text: widget._imoveisList[index].planta.metragem.toString(),
-                                )
                                 WidgetSpan(
-                                    child: )
+                                    child: Icon(Icons.architecture)
+                                ),
+                                TextSpan(
+                                  text: " " + tratamentoVarMetragem(index) + " m²    ",
+                                ),
                               ]
-                            ))
-                        Text(widget._imoveisList[index].planta.dorms.toString(),)
+                            )
+                        ),
+                        RichText(
+                            text: TextSpan(
+                                style: Theme.of(context).textTheme.bodyText2,
+                                children: [
+                                  WidgetSpan(
+                                      child: Icon(Icons.airline_seat_individual_suite_outlined)
+                                  ),
+                                  TextSpan(
+                                    text: "  " + tratamentoVarDorms(index) + " quartos",
+                                  ),
+                                ]
+                            )
+                        )
                       ],
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text("Preco: " + widget._imoveisList[index].planta.preco.toString()),
+                    padding: const EdgeInsets.fromLTRB(16.0, 8.0, 8.0, 0.0),
+                    child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          "Preco: " + tratamentoVarPreco(index),
+                          style: TextStyle(
+                            color: Colors.green[900],
+                            fontWeight: FontWeight.bold,
+                            fontSize: 17.0,
+                          ),
+                        ),
+                    ),
                   )
                 ],
               ),
@@ -106,25 +140,33 @@ class _PaginaImoveisState extends State<PaginaImoveis> {
     return _imagem;
   }
 
-  String stringPreco(int index){
+  String tratamentoVarPreco(int index){
     var _preco;
     try{
       _preco = widget._imoveisList[index].planta.preco.toString();
     }catch(e){
       _preco = "-";
     }
-
     return _preco;
   }
 
-  String stringDormitorios(int index){
+  String tratamentoVarMetragem(int index){
+    var _metragem;
+    try{
+      _metragem = widget._imoveisList[index].planta.metragem.toString();
+    }catch(e){
+      _metragem = "-";
+    }
+    return _metragem;
+  }
+
+  String tratamentoVarDorms(int index){
     var _dormits;
     try{
       _dormits = widget._imoveisList[index].planta.dorms.toString();
     }catch(e){
       _dormits = "-";
     }
-
     return _dormits;
   }
 }
