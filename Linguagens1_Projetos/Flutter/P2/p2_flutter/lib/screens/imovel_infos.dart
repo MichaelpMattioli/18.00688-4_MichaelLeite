@@ -15,7 +15,6 @@ class ImovelInfos extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(title: Text("Voltar"),),
         backgroundColor: Colors.blueGrey[100],
         body: Column(
           children: [
@@ -23,7 +22,7 @@ class ImovelInfos extends StatelessWidget {
               child: ListView(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 0.0),
+                    padding: const EdgeInsets.all(8.0),
                     child: Container(
                       color: Colors.blue[100],
                       child: SizedBox(
@@ -48,19 +47,19 @@ class ImovelInfos extends StatelessWidget {
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
-                                  child: Text("Preço: ${tratamentoVarPreco()}"),
+                                  child: Text("Preço: ${imovel.planta.preco}"),
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
-                                  child: Text(" Dormitorios: ${tratamentoVarDorms()}"),
+                                  child: Text(" Dormitorios: ${imovel.planta.dorms}"),
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
-                                  child: Text("Vagas: ${tratamentoVarVagas()}"),
+                                  child: Text("Vagas: ${imovel.planta.vagas}"),
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
-                                  child: Text("Metragem: ${tratamentoVarMetragem()}"),
+                                  child: Text("Metragem: ${imovel.planta.metragem}"),
                                 ),
                               ],
                             ),
@@ -103,45 +102,5 @@ class ImovelInfos extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  String tratamentoVarPreco(){
-    var _preco;
-    try{
-      _preco = imovel.planta.preco.toString();
-    }catch(e){
-      _preco = "-";
-    }
-    return _preco;
-  }
-
-  String tratamentoVarMetragem(){
-    var _metragem;
-    try{
-      _metragem = imovel.planta.metragem.toString();
-    }catch(e){
-      _metragem = "-";
-    }
-    return _metragem;
-  }
-
-  String tratamentoVarDorms(){
-    var _dormits;
-    try{
-      _dormits = imovel.planta.dorms.toString();
-    }catch(e){
-      _dormits = "-";
-    }
-    return _dormits;
-  }
-
-  String tratamentoVarVagas(){
-    var _dormits;
-    try{
-      _dormits = imovel.planta.dorms.toString();
-    }catch(e){
-      _dormits = "-";
-    }
-    return _dormits;
   }
 }

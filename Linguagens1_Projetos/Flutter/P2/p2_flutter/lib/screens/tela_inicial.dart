@@ -35,30 +35,28 @@ class TelaInicial extends StatelessWidget {
               personalTextField(controladorBairro, "Bairro de interesse","Bairro", Icon(Icons.park)),
               personalTextField(controladorValorMax, "Valor máximo de interesse", "Valor até", Icon(Icons.monetization_on_outlined)),
               personalTextField(controladorDorms, "Quantidade de dormitórios", "Dormitórios", Icon(Icons.home)),
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: SizedBox(
-                  width: 100,
-                  height: 100,
-                  child: FloatingActionButton(
-                    onPressed: () async{
-                      await buscar_caracteristicas_imovel();
-                      if (_busca.length == 0) {
-                      }
-                      else {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (BuildContext context) =>
-                                    PaginaImoveis(_busca)));
-                      }
-                    },
-                    child: Text("Buscar",
-                    style: TextStyle(fontSize: 15.0),
-                  )
-                  ),
+              Container(
+                decoration: BoxDecoration(
+                  color: Colors.blue[700],
+                  shape: BoxShape.circle
                 ),
-              ),
+                margin: EdgeInsets.all(25.0),
+                padding: EdgeInsets.all(25.0),
+                child: FlatButton(onPressed: () async{
+                  await buscar_caracteristicas_imovel();
+                  if (_busca.length == 0) {
+                  }
+                  else {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                PaginaImoveis(_busca)));
+                  }
+                    }, child: Text("Buscar",
+                  style: TextStyle(fontSize: 20.0),
+                )),
+              )
             ],
           ),
         ),
