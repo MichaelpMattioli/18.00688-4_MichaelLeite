@@ -3,11 +3,11 @@ import 'package:p2_flutter/models/imoveis_json.dart';
 import 'package:p2_flutter/screens/imovel_infos.dart';
 
 class PaginaImoveis extends StatefulWidget {
-  List imoveisList;
+  List _imoveisList;
 
 
   PaginaImoveis(var dados){
-    this.imoveisList = dados;
+    this._imoveisList = dados;
   }
 
   @override
@@ -19,12 +19,12 @@ class _PaginaImoveisState extends State<PaginaImoveis> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(title: Text("Resultados encontrados: ${widget.imoveisList.length}")),
+        appBar: AppBar(title: Text("Resultados encontrados: ${widget._imoveisList.length}")),
         body: Column(
           children: [
             Expanded(
                 child: ListView.builder(
-                  itemCount: widget.imoveisList.length,
+                  itemCount: widget._imoveisList.length,
                   itemBuilder: (context, index) {
                     return GestureDetector(
                       child: buildContainer(index),
@@ -33,7 +33,7 @@ class _PaginaImoveisState extends State<PaginaImoveis> {
                             context,
                             MaterialPageRoute(
                                 builder: (BuildContext context) =>
-                                    ImovelInfos(widget.imoveisList[index])));
+                                    ImovelInfos(widget._imoveisList[index])));
                       },
                     );
                   },
@@ -59,19 +59,33 @@ class _PaginaImoveisState extends State<PaginaImoveis> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Text("Cidade: " + widget.imoveisList[index].cidade),
+                    child: Text(widget._imoveisList[index].rua),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Text("Bairro: " + widget.imoveisList[index].bairro),
+                    child: Text(widget._imoveisList[index].bairro + ", " + widget._imoveisList[index].cidade,),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Text("Preço: " + stringPreco(index)),
+                    child: Row(
+                      children: [
+                        RichText(
+                            text: TextSpan(
+                              children: [
+                                TextSpan(
+                                  text: widget._imoveisList[index].planta.metragem.toString(),
+                                )
+                                WidgetSpan(
+                                    child: )
+                              ]
+                            ))
+                        Text(widget._imoveisList[index].planta.dorms.toString(),)
+                      ],
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Text("Dormitórios: " + stringDormitorios(index)),
+                    child: Text("Preco: " + widget._imoveisList[index].planta.preco.toString()),
                   )
                 ],
               ),
@@ -83,35 +97,35 @@ class _PaginaImoveisState extends State<PaginaImoveis> {
   }
 
   Image imageBuilder(int index) {
-    var imagem;
+    var _imagem;
     try{
-      imagem = Image.network(widget.imoveisList[index].fachada);
+      _imagem = Image.network(widget._imoveisList[index].fachada);
     }catch(e){
-      imagem = Image.network("https://radioingamar.com.br/portal/img/not-found.png");
+      _imagem = Image.asset("assets/Logo/imagemNaoEncotrada.png");
     }
-    return imagem;
+    return _imagem;
   }
 
   String stringPreco(int index){
-    var preco;
+    var _preco;
     try{
-      preco = widget.imoveisList[index].planta.preco.toString();
+      _preco = widget._imoveisList[index].planta.preco.toString();
     }catch(e){
-      preco = "-";
+      _preco = "-";
     }
 
-    return preco;
+    return _preco;
   }
 
   String stringDormitorios(int index){
-    var dormits;
+    var _dormits;
     try{
-      dormits = widget.imoveisList[index].planta.dorms.toString();
+      _dormits = widget._imoveisList[index].planta.dorms.toString();
     }catch(e){
-      dormits = "-";
+      _dormits = "-";
     }
 
-    return dormits;
+    return _dormits;
   }
 }
 
