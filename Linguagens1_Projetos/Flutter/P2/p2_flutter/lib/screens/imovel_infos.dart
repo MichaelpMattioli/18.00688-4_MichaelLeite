@@ -2,7 +2,6 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:p2_flutter/models/imoveis_json.dart';
-import 'package:p2_flutter/screens/google_maps_imovel.dart';
 
 class ImovelInfos extends StatelessWidget {
 
@@ -11,6 +10,7 @@ class ImovelInfos extends StatelessWidget {
   ImovelInfos(Imovel imovel){
     this.imovel = imovel;
   }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -23,12 +23,19 @@ class ImovelInfos extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: SizedBox(width: 200, height: 500, child: Image.network(imovel.fachada),),
+                    child: Container(
+                      color: Colors.blue[100],
+                      child: SizedBox(
+                        width: 200,
+                        height: 500,
+                        child: Image.network(imovel.fachada),
+                      )
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
-                      color: Colors.blueGrey,
+                      color: Colors.blue[100],
                       child: Row(
                         children: [
                           Expanded(
@@ -87,13 +94,6 @@ class ImovelInfos extends StatelessWidget {
                       ),
                     ),
                   ),
-                  FlatButton(onPressed: (){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (BuildContext context) =>
-                                ImovelGoogleMaps()));
-                  }, child: Text("Procurar no Google Maps"))
                 ],
               ),
             ),
