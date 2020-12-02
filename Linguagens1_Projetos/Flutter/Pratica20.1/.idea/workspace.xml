@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="875e23bb-72e4-4c70-93bd-6f63ae955da4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../P2/p2_flutter/lib/screens/google_maps_imovel.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../P2/p2_flutter/lib/screens/google_maps_imovel.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P2/p2_flutter/lib/screens/imovel_infos.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../P2/p2_flutter/lib/screens/imovel_infos.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P2/p2_flutter/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../P2/p2_flutter/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P2/p2_flutter/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../P2/p2_flutter/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Pratica20/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Pratica20/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Pratica21/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Pratica21/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="875e23bb-72e4-4c70-93bd-6f63ae955da4" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
