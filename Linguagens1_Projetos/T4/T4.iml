@@ -10,15 +10,6 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://D:/Downloads/json-20200518.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" exported="">
-      <library>
-        <CLASSES>
           <root url="jar://$MODULE_DIR$/../sqlite-jdbc-3.27.2.1.jar!/" />
         </CLASSES>
         <JAVADOC />
