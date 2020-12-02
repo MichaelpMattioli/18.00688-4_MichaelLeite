@@ -9,5 +9,4 @@ public enum Itens {
     POT_HP_MP,
     POT_NEUTRALIZANTE,
     REVIVER,
-
 }
