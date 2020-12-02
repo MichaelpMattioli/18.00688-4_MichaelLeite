@@ -1,9 +1,17 @@
 package br.maua.models;
 
+import br.maua.enums.Equipamentos;
+import br.maua.enums.Itens;
+import br.maua.enums.Profissao;
+import br.maua.enums.Raca;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Personagem {
     private String nome;
-    private String raca;
-    private String profissao;
+    private Raca raca;
+    private Profissao profissao;
     private Integer mana;
     private Integer ad;
     private Integer ap;
@@ -13,9 +21,10 @@ public class Personagem {
     private Integer destreza;
     private Integer experiencia;
     private Integer nivel;
+    private List<Itens> itensList;
+    private List<Equipamentos> equipamentosList ;
 
-
-    public Personagem(String nome, String raca, String profissao, Integer mana, Integer ad, Integer ap, Integer def, Integer defM, Integer velocidade, Integer destreza, Integer experiencia, Integer nivel) {
+    public Personagem(String nome, Raca raca, Profissao profissao, Integer mana, Integer ad, Integer ap, Integer def, Integer defM, Integer velocidade, Integer destreza, Integer experiencia, Integer nivel, List<Itens> itensList, List<Equipamentos> equipamentosList) {
         this.nome = nome;
         this.raca = raca;
         this.profissao = profissao;
@@ -28,110 +37,72 @@ public class Personagem {
         this.destreza = destreza;
         this.experiencia = experiencia;
         this.nivel = nivel;
+        this.itensList = itensList;
+        this.equipamentosList = equipamentosList;
     }
 
     public String getNome() {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getRaca() {
+    public Raca getRaca() {
         return raca;
     }
 
-    public void setRaca(String raca) {
-        this.raca = raca;
-    }
-
-    public String getProfissao() {
+    public Profissao getProfissao() {
         return profissao;
-    }
-
-    public void setProfissao(String profissao) {
-        this.profissao = profissao;
     }
 
     public Integer getMana() {
         return mana;
     }
 
-    public void setMana(Integer mana) {
-        this.mana = mana;
-    }
-
     public Integer getAd() {
         return ad;
-    }
-
-    public void setAd(Integer ad) {
-        this.ad = ad;
     }
 
     public Integer getAp() {
         return ap;
     }
 
-    public void setAp(Integer ap) {
-        this.ap = ap;
-    }
-
     public Integer getDef() {
         return def;
-    }
-
-    public void setDef(Integer def) {
-        this.def = def;
     }
 
     public Integer getDefM() {
         return defM;
     }
 
-    public void setDefM(Integer defM) {
-        this.defM = defM;
-    }
-
     public Integer getVelocidade() {
         return velocidade;
-    }
-
-    public void setVelocidade(Integer velocidade) {
-        this.velocidade = velocidade;
     }
 
     public Integer getDestreza() {
         return destreza;
     }
 
-    public void setDestreza(Integer destreza) {
-        this.destreza = destreza;
-    }
-
     public Integer getExperiencia() {
         return experiencia;
-    }
-
-    public void setExperiencia(Integer experiencia) {
-        this.experiencia = experiencia;
     }
 
     public Integer getNivel() {
         return nivel;
     }
 
-    public void setNivel(Integer nivel) {
-        this.nivel = nivel;
+    public List<Itens> getItensList() {
+        return itensList;
+    }
+
+    public List<Equipamentos> getEquipamentosList() {
+        return equipamentosList;
     }
 
     @Override
     public String toString() {
         return "Personagem{" +
                 "nome='" + nome + '\'' +
-                ", raca='" + raca + '\'' +
-                ", profissao='" + profissao + '\'' +
+                ", raca=" + raca +
+                ", profissao=" + profissao +
                 ", mana=" + mana +
                 ", ad=" + ad +
                 ", ap=" + ap +
@@ -141,6 +112,8 @@ public class Personagem {
                 ", destreza=" + destreza +
                 ", experiencia=" + experiencia +
                 ", nivel=" + nivel +
+                ", itensList=" + itensList +
+                ", equipamentosList=" + equipamentosList +
                 '}';
     }
 }
