@@ -5,7 +5,6 @@ import br.maua.enums.Itens;
 import br.maua.enums.Profissao;
 import br.maua.enums.Raca;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Personagem {
@@ -21,10 +20,8 @@ public class Personagem {
     private Integer destreza;
     private Integer experiencia;
     private Integer nivel;
-    private List<Itens> itensList;
-    private List<Equipamentos> equipamentosList ;
 
-    public Personagem(String nome, Raca raca, Profissao profissao, Integer mana, Integer ad, Integer ap, Integer def, Integer defM, Integer velocidade, Integer destreza, Integer experiencia, Integer nivel, List<Itens> itensList, List<Equipamentos> equipamentosList) {
+    public Personagem(String nome, Raca raca, Profissao profissao, Integer mana, Integer ad, Integer ap, Integer def, Integer defM, Integer velocidade, Integer destreza, Integer experiencia, Integer nivel) {
         this.nome = nome;
         this.raca = raca;
         this.profissao = profissao;
@@ -37,8 +34,6 @@ public class Personagem {
         this.destreza = destreza;
         this.experiencia = experiencia;
         this.nivel = nivel;
-        this.itensList = itensList;
-        this.equipamentosList = equipamentosList;
     }
 
     public String getNome() {
@@ -89,13 +84,6 @@ public class Personagem {
         return nivel;
     }
 
-    public List<Itens> getItensList() {
-        return itensList;
-    }
-
-    public List<Equipamentos> getEquipamentosList() {
-        return equipamentosList;
-    }
 
     @Override
     public String toString() {
@@ -112,8 +100,6 @@ public class Personagem {
                 ", destreza=" + destreza +
                 ", experiencia=" + experiencia +
                 ", nivel=" + nivel +
-                ", itensList=" + itensList +
-                ", equipamentosList=" + equipamentosList +
                 '}';
     }
 }
