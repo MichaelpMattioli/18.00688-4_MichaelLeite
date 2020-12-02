@@ -5,5 +5,14 @@ public enum Raca {
     ELFO,
     ASMODIANO,
     HAROS,
-    ANÃO
+    ANÃO;
+
+    public static Raca getRaca(String raca){
+        for(Raca rac:Raca.values()){
+            if(rac.toString().equals(raca.toUpperCase())){
+                return rac;
+            }
+        }
+        return null;
+    }
 }
