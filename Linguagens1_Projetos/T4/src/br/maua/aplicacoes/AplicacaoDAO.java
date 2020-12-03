@@ -1,13 +1,13 @@
 package br.maua.aplicacoes;
 
 import br.maua.DAO.PersonagemDAO;
+import br.maua.enums.Equipamentos;
 import br.maua.enums.Profissao;
 import br.maua.enums.Raca;
 import br.maua.models.Personagem;
 
 import java.util.List;
 import java.util.Scanner;
-import java.util.regex.Matcher;
 
 public class AplicacaoDAO {
     private List<Personagem> personagemList;
@@ -118,6 +118,12 @@ public class AplicacaoDAO {
                 Integer destreza = personagem.getDestreza();
                 Integer experiencia = personagem.getExperiencia();
                 Integer nivel = personagem.getNivel();
+                Equipamentos cabeca = personagem.getCabeca();
+                Equipamentos tronco = personagem.getTronco();
+                Equipamentos pernas = personagem.getPerna();
+                Equipamentos pes = personagem.getPes();
+
+                System.out.println("Atualize sua armadura!");
 
                 boolean alive = true;
                 do{
@@ -157,14 +163,38 @@ public class AplicacaoDAO {
                         case 10:
                             nivel = escolhaProprietadeInteger("do Nivel");
                             break;
-                        default:
-                            System.out.println("Opcao Invalida!");
+                        case 11:
+                            boolean alive1 = true;
+                            do{
+                                menuArmadura();
+                                int opcao1 = isInteger();
+                                switch (opcao1){
+                                    case 0:
+                                        alive1 = false;
+                                        break;
+                                    case 1:
+                                        cabeca = escolhaArmadura(1,personagem);
+                                        break;
+                                    case 2:
+                                        tronco = escolhaArmadura(2,personagem);
+                                        break;
+                                    case 3:
+                                        pernas = escolhaArmadura(3,personagem);
+                                        break;
+                                    case 4:
+                                        pes = escolhaArmadura(4,personagem);
+                                        break;
+                                    default:
+                                        System.out.println("Opcao Invalida!");
+                                }
+                            }while(alive1);
+                            break;
                     }
 
                 }while(alive);
 
                 personagemDAO.update( new Personagem(
-                        nome, raca, profissao, mana, ad, ap, def, defM, velocidade, destreza, experiencia, nivel
+                        nome, raca, profissao, mana, ad, ap, def, defM, velocidade, destreza, experiencia, nivel, cabeca, tronco, pernas, pes
                 ));
                 break;
             }
@@ -218,6 +248,16 @@ public class AplicacaoDAO {
         System.out.println("8 - Destreza");
         System.out.println("9 - Experiencia");
         System.out.println("10 - Nivel");
+        System.out.println("11 - Armadura");
+        System.out.println("0 - Sair");
+    }
+
+    private void menuArmadura(){
+        System.out.println("Escolha o local em que queira colocar a uma armadura:");
+        System.out.println("1 - Cabeça");
+        System.out.println("2 - Tronco");
+        System.out.println("3 - Pernas");
+        System.out.println("4 - Pés");
         System.out.println("0 - Sair");
     }
 
@@ -284,6 +324,50 @@ public class AplicacaoDAO {
 
         System.out.println("Voce escolheu a profissao: " + profissaoEscolhida.getValor());
         return profissaoEscolhida;
+
+    }
+
+    private Equipamentos escolhaArmadura(int localDaArmadura, Personagem personagem) {
+        Equipamentos equipamentosEscolhida = Equipamentos.NONE;
+        System.out.println("localArmadura" + localDaArmadura);
+
+        if( localDaArmadura == 1){
+            equipamentosEscolhida = personagem.getCabeca();
+        }else if( localDaArmadura == 2){
+            equipamentosEscolhida = personagem.getTronco();
+        }else if( localDaArmadura == 3){
+            equipamentosEscolhida = personagem.getPerna();
+        }else if( localDaArmadura == 4){
+            equipamentosEscolhida = personagem.getPes();
+        }
+
+        System.out.println("Escolha seu Equipamento: ");
+        System.out.println("0 - Retirar equipamento");
+        int i = 0;
+        for (Equipamentos equipamentos: Equipamentos.values()) {
+            if(equipamentos.getValor() == localDaArmadura){
+                i++;
+                System.out.println(i + " - " + equipamentos);
+            }
+
+        }
+        int escolha = isInteger();
+
+        int j = 0;
+        for (Equipamentos equipamentos: Equipamentos.values()) {
+            if(equipamentos.getValor() == localDaArmadura){
+                j++;
+                if(escolha == j){
+                    equipamentosEscolhida = equipamentos;
+                }
+                if(escolha == 0){
+                    equipamentosEscolhida = Equipamentos.NONE;
+                }
+            }
+        }
+
+        System.out.println("Voce escolheu a armadura: " + equipamentosEscolhida);
+        return equipamentosEscolhida;
 
     }
 }
