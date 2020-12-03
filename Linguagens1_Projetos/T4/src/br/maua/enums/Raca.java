@@ -16,4 +16,13 @@ public enum Raca {
     public String getValor() {
         return valor;
     }
+
+    public static Raca getRaca(String raca){
+        for(Raca rac:Raca.values()){
+            if(rac.toString().equals(raca.toUpperCase())){
+                return rac;
+            }
+        }
+        return null;
+    }
 }
