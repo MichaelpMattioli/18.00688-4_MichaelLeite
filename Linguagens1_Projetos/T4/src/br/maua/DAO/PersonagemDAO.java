@@ -1,5 +1,6 @@
 package br.maua.DAO;
 
+import br.maua.enums.Equipamentos;
 import br.maua.enums.Profissao;
 import br.maua.enums.Raca;
 import br.maua.models.Personagem;
@@ -57,7 +58,11 @@ public class PersonagemDAO implements DAO<Personagem>, DAOFields{
                         result.getInt("velocidade"),
                         result.getInt("destreza"),
                         result.getInt("experiencia"),
-                        result.getInt("nivel")
+                        result.getInt("nivel"),
+                        Equipamentos.getEquipamento(result.getString("cabeca")),
+                        Equipamentos.getEquipamento(result.getString("tronco")),
+                        Equipamentos.getEquipamento(result.getString("pernas")),
+                        Equipamentos.getEquipamento(result.getString("pes"))
                 );
                 personagems.add(personagem1);
             }
@@ -77,6 +82,7 @@ public class PersonagemDAO implements DAO<Personagem>, DAOFields{
         List<Personagem> personagems = new ArrayList<>();
         Profissao profissao = null;
         Raca raca = null;
+        Equipamentos equipamentos = null;
         try{
             Statement statement = connection.createStatement();
             ResultSet result = statement.executeQuery(getSelectAllString(getTableName()));
@@ -93,7 +99,11 @@ public class PersonagemDAO implements DAO<Personagem>, DAOFields{
                         result.getInt("velocidade"),
                         result.getInt("destreza"),
                         result.getInt("experiencia"),
-                        result.getInt("nivel")
+                        result.getInt("nivel"),
+                        Equipamentos.getEquipamento(result.getString("cabeca")),
+                        Equipamentos.getEquipamento(result.getString("tronco")),
+                        Equipamentos.getEquipamento(result.getString("pernas")),
+                        Equipamentos.getEquipamento(result.getString("pes"))
                 );
                 personagems.add(personagem1);
             }
@@ -124,6 +134,10 @@ public class PersonagemDAO implements DAO<Personagem>, DAOFields{
             preparedStatement.setInt(10, personagem.getDestreza());
             preparedStatement.setInt(11, personagem.getExperiencia());
             preparedStatement.setInt(12, personagem.getNivel());
+            preparedStatement.setString(13, personagem.getCabeca().toString());
+            preparedStatement.setString(14, personagem.getTronco().toString());
+            preparedStatement.setString(15, personagem.getPerna().toString());
+            preparedStatement.setString(16, personagem.getPes().toString());
             //Executa o PreparedStatement
             int retorno = preparedStatement.executeUpdate();
             int statusErroCreate = 0;
@@ -152,7 +166,11 @@ public class PersonagemDAO implements DAO<Personagem>, DAOFields{
             preparedStatement.setInt(10, personagem.getDestreza());
             preparedStatement.setInt(11, personagem.getExperiencia());
             preparedStatement.setInt(12, personagem.getNivel());
-            preparedStatement.setString(13, personagem.getNome());
+            preparedStatement.setString(13, personagem.getCabeca().toString());
+            preparedStatement.setString(14, personagem.getTronco().toString());
+            preparedStatement.setString(15, personagem.getPerna().toString());
+            preparedStatement.setString(16, personagem.getPes().toString());
+            preparedStatement.setString(17, personagem.getNome());
             //Executa o PreparedStatement
             int retorno = preparedStatement.executeUpdate();
         }catch (Exception e){
@@ -191,7 +209,7 @@ public class PersonagemDAO implements DAO<Personagem>, DAOFields{
      */
     @Override
     public String getInsertString(String table) {
-        return "INSERT INTO "+ table + " (nome, raca, profissao, mana, ad, ap, def, defM, velocidade, destreza, experiencia, nivel) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+        return "INSERT INTO "+ table + " (nome, raca, profissao, mana, ad, ap, def, defM, velocidade, destreza, experiencia, nivel, cabeca, tronco, pernas, pes) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
     }
 
     /**
@@ -201,7 +219,7 @@ public class PersonagemDAO implements DAO<Personagem>, DAOFields{
      */
     @Override
     public String getUpdateString(String table) {
-        return "UPDATE "+ table +" SET nome = ?, raca = ?, profissao = ?, mana = ?, ad = ?, ap = ?, def = ?, defM = ?, velocidade = ?, destreza = ?, experiencia = ?, nivel = ? WHERE nome = ?;";
+        return "UPDATE "+ table +" SET nome = ?, raca = ?, profissao = ?, mana = ?, ad = ?, ap = ?, def = ?, defM = ?, velocidade = ?, destreza = ?, experiencia = ?, nivel = ?, cabeca = ?, tronco = ?, pernas = ?, pes = ? WHERE nome = ?;";
     }
 
     /**
