@@ -329,7 +329,6 @@ public class AplicacaoDAO {
 
     private Equipamentos escolhaArmadura(int localDaArmadura, Personagem personagem) {
         Equipamentos equipamentosEscolhida = Equipamentos.NONE;
-        System.out.println("localArmadura" + localDaArmadura);
 
         if( localDaArmadura == 1){
             equipamentosEscolhida = personagem.getCabeca();
