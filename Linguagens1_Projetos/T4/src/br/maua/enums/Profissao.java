@@ -15,13 +15,8 @@ public enum Profissao {
         this.valor = valor;
     }
 
-    public static Profissao getProfissao(String profissao){
-        for(Profissao prof:Profissao.values()){
-            if(prof.toString().equals(profissao.toUpperCase())){
-                return prof;
-            }
-        }
-        return null;
+    public String getValor() {
+        return valor;
     }
 
 }
