@@ -1,18 +1,19 @@
 package br.maua.enums;
 
 public enum Raca {
-    HUMANO,
-    ELFO,
-    ASMODIANO,
-    HAROS,
-    ANÃO;
+    HUMANO("Humano"),
+    ELFO("Elfo"),
+    ASMODIANO("Asmodiano"),
+    HAROS("Haros"),
+    ANÃO("Anão");
 
-    public static Raca getRaca(String raca){
-        for(Raca rac:Raca.values()){
-            if(rac.toString().equals(raca.toUpperCase())){
-                return rac;
-            }
-        }
-        return null;
+    private String valor;
+
+    Raca(String valor) {
+        this.valor = valor;
+    }
+
+    public String getValor() {
+        return valor;
     }
 }
