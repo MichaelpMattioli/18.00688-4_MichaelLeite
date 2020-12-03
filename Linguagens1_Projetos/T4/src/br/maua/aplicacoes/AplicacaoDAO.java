@@ -11,15 +11,9 @@ import java.util.Scanner;
 public class AplicacaoDAO {
     private List<Personagem> personagemList;
 
-    private PersonagemDAO personagemDAO;
+    private PersonagemDAO personagemDAO = new PersonagemDAO();
 
-    private Scanner scanner;
-
-    public AplicacaoDAO() {
-        this.personagemDAO = personagemDAO;
-
-        this.scanner = new Scanner(System.in);
-    }
+    private Scanner scanner = new Scanner(System.in);
 
     public void run(){
         boolean alive = true;
@@ -65,9 +59,9 @@ public class AplicacaoDAO {
             System.out.println("nome:");
             String nome = scanner.next();
             System.out.println("raça:");
-            Raca raca = Raca.ASMODIANO;
+            Raca raca = escolhaRaca();
             System.out.println("profissao:");
-            Profissao profissao = Profissao.TECNOMAGO;
+            Profissao profissao = escolhaProfissao();
             System.out.println("mana:");
             Integer mana = scanner.nextInt();
             System.out.println("ad:");
@@ -86,18 +80,6 @@ public class AplicacaoDAO {
             Integer experiencia = scanner.nextInt();
             System.out.println("nivel:");
             Integer nivel = scanner.nextInt();
-            System.out.print(nome);System.out.println(nome.getClass().getName());
-            System.out.print(raca); System.out.println(raca.getClass().getName());
-            System.out.print(profissao);System.out.println(profissao.getClass().getName());
-            System.out.print(mana);System.out.println(mana.getClass().getName());
-            System.out.print(ad);System.out.println(ad.getClass().getName());
-            System.out.print(ap);System.out.println(ap.getClass().getName());
-            System.out.print(def);System.out.println(def.getClass().getName());
-            System.out.print(defM);System.out.println(defM.getClass().getName());
-            System.out.print(velocidade);System.out.println(velocidade.getClass().getName());
-            System.out.print(destreza);System.out.println(destreza.getClass().getName());
-            System.out.print(experiencia);System.out.println(experiencia.getClass().getName());
-            System.out.print(nivel);System.out.println(nivel.getClass().getName());
 
             Personagem personagem = new Personagem(
                     nome, raca, profissao, mana, ad, ap, def, defM, velocidade, destreza, experiencia, nivel
@@ -105,12 +87,57 @@ public class AplicacaoDAO {
 
             System.out.println(personagem);
 
-            personagemDAO.create(new Personagem(
-                    nome, raca, profissao, mana, ad, ap, def, defM, velocidade, destreza, experiencia, nivel
-            ));
+            personagemDAO.create(personagem);
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("Algum erro ocorreu no cadastramento");
         }
+    }
+
+    private Raca escolhaRaca() {
+        Raca racaEscolhida = null;
+
+        System.out.println("Escolha sua raça: ");
+        int i = 0;
+        for (Raca raca: Raca.values()) {
+            i++;
+            System.out.println(i + " - " + raca.getValor());
+        }
+        int escolha = scanner.nextInt();
+
+        int j =0;
+        for (Raca raca: Raca.values()) {
+            j++;
+            if(escolha == j){
+                racaEscolhida = raca;
+            }
+        }
+
+        System.out.println("Voce escolheu a raça: " + racaEscolhida.getValor());
+        return racaEscolhida;
+    }
+
+    private Profissao escolhaProfissao() {
+        Profissao profissaoEscolhida = null;
+
+        System.out.println("Escolha sua profissao: ");
+        int i = 0;
+        for (Profissao profissao: Profissao.values()) {
+            i++;
+            System.out.println(i + " - " + profissao.getValor());
+        }
+        int escolha = scanner.nextInt();
+
+        int j =0;
+        for (Profissao profissao: Profissao.values()) {
+            j++;
+            if(escolha == j){
+                profissaoEscolhida = profissao;
+            }
+        }
+
+        System.out.println("Voce escolheu a profissao: " + profissaoEscolhida.getValor());
+        return profissaoEscolhida;
+
     }
 }
