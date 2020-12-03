@@ -134,6 +134,49 @@ public class PersonagemDAO implements DAO<Personagem>, DAOFields{
     }
 
     /**
+     * Função para atualização de uma carta especifica na lista.
+     * @param personagem parametro que define qual carta está sendo alterada.
+     */
+    @Override
+    public void update(Personagem personagem) {
+        try{
+            PreparedStatement preparedStatement = connection.prepareStatement(getUpdateString(getTableName()));
+            preparedStatement.setString(1, personagem.getNome());
+            preparedStatement.setString(2, personagem.getRaca().getValor());
+            preparedStatement.setString(3, personagem.getProfissao().getValor());
+            preparedStatement.setInt(4, personagem.getMana());
+            preparedStatement.setInt(5, personagem.getAd());
+            preparedStatement.setInt(6, personagem.getAp());
+            preparedStatement.setInt(7, personagem.getDef());
+            preparedStatement.setInt(8, personagem.getDefM());
+            preparedStatement.setInt(9, personagem.getVelocidade());
+            preparedStatement.setInt(10, personagem.getDestreza());
+            preparedStatement.setInt(11, personagem.getExperiencia());
+            preparedStatement.setInt(12, personagem.getNivel());
+            preparedStatement.setString(13, personagem.getNome());
+            //Executa o PreparedStatement
+            int retorno = preparedStatement.executeUpdate();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Função para deletar cartas da lista
+     * @param personagem parametro que define qual carta será deletada.
+     */
+    @Override
+    public void delete(Personagem personagem) {
+        try{
+            PreparedStatement preparedStatement = connection.prepareStatement(getDeleteString(getTableName()));
+            preparedStatement.setString(1, personagem.getNome());
+            preparedStatement.executeUpdate();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    /**
      *  Função para pegar o nome da tabela.
      * @return retorna o nome da tabela.
      */
@@ -150,6 +193,26 @@ public class PersonagemDAO implements DAO<Personagem>, DAOFields{
     @Override
     public String getInsertString(String table) {
         return "INSERT INTO "+ table + " (nome, raca, profissao, mana, ad, ap, def, defM, velocidade, destreza, experiencia, nivel) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+    }
+
+    /**
+     * Função para pegar UpdateString no formato do SQL.
+     * @param table parametro que define a tabela.
+     * @return retorna UpdateString em formato para o SQL.
+     */
+    @Override
+    public String getUpdateString(String table) {
+        return "UPDATE "+ table +" SET nome = ?, raca = ?, profissao = ?, mana = ?, ad = ?, ap = ?, def = ?, defM = ?, velocidade = ?, destreza = ?, experiencia = ?, nivel = ? WHERE nome = ?;";
+    }
+
+    /**
+     * função para pega uma DeleteString, relativa ao SQL.
+     * @param table parametro que define a tabela.
+     * @return retorno DeleteString em formato para o SQL.
+     */
+    @Override
+    public String getDeleteString(String table) {
+        return "DELETE FROM "+ table +" WHERE id = ?";
     }
 
     /**
