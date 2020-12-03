@@ -7,6 +7,7 @@ import br.maua.models.Personagem;
 
 import java.util.List;
 import java.util.Scanner;
+import java.util.regex.Matcher;
 
 public class AplicacaoDAO {
     private List<Personagem> personagemList;
@@ -19,7 +20,7 @@ public class AplicacaoDAO {
         boolean alive = true;
         do{
             menu();
-            int opcao = Integer.parseInt(scanner.next());
+            int opcao = isInteger();
             switch (opcao){
                 case 0:
                     alive = false;
@@ -28,11 +29,11 @@ public class AplicacaoDAO {
                     exibirPersonagens();
                     break;
                 case 2:
-                    System.out.print("Criação de personagem: ");
+                    System.out.println("Criação de personagem: ");
                     cadastrarPersonagem();
                     break;
                 case 3:
-                    System.out.print("Atualização do personagem: ");
+                    System.out.println("Atualização do personagem: ");
                     atualizaPersonagem();
                     break;
                 default:
@@ -59,19 +60,18 @@ public class AplicacaoDAO {
 
     private void cadastrarPersonagem(){
         try {
-            System.out.println("Informe o ");
-            System.out.println("nome:");String nome = scanner.next();
-            System.out.println("raça:");Raca raca = escolhaRaca();
-            System.out.println("profissao:");Profissao profissao = escolhaProfissao();
-            System.out.println("mana:");Integer mana = scanner.nextInt();
-            System.out.println("ad:");Integer ad = scanner.nextInt();
-            System.out.println("ap:");Integer ap = scanner.nextInt();
-            System.out.println("def:");Integer def = scanner.nextInt();
-            System.out.println("defM:");Integer defM = scanner.nextInt();
-            System.out.println("velocidade:");Integer velocidade = scanner.nextInt();
-            System.out.println("destreza:");Integer destreza = scanner.nextInt();
-            System.out.println("experiencia:");Integer experiencia = scanner.nextInt();
-            System.out.println("nivel:");Integer nivel = scanner.nextInt();
+            System.out.print("Informe o nome: ");String nome = scanner.next();System.out.println("");
+            Raca raca = escolhaRaca();System.out.println("");
+            Profissao profissao = escolhaProfissao();System.out.println("");
+            System.out.print("Informe a mana: ");Integer mana = isInteger();System.out.println("");
+            System.out.print("Informe o ad: ");Integer ad = isInteger();System.out.println("");
+            System.out.print("Informe o ap: ");Integer ap = isInteger();System.out.println("");
+            System.out.print("Informe a def: ");Integer def = isInteger();System.out.println("");
+            System.out.print("Informe a defM: ");Integer defM = isInteger();System.out.println("");
+            System.out.print("Informe a velocidade: ");Integer velocidade = isInteger();System.out.println("");
+            System.out.print("Informe a destreza: ");Integer destreza = isInteger();System.out.println("");
+            System.out.print("Informe a experiencia: ");Integer experiencia = isInteger();System.out.println("");
+            System.out.print("Informe o nivel: ");Integer nivel = isInteger();System.out.println("");
 
             Personagem personagem = new Personagem(
                     nome, raca, profissao, mana, ad, ap, def, defM, velocidade, destreza, experiencia, nivel
@@ -95,7 +95,7 @@ public class AplicacaoDAO {
             i++;
             System.out.println(i + " - " + raca.getValor());
         }
-        int escolha = scanner.nextInt();
+        int escolha = isInteger();
 
         int j =0;
         for (Raca raca: Raca.values()) {
@@ -118,7 +118,7 @@ public class AplicacaoDAO {
             i++;
             System.out.println(i + " - " + profissao.getValor());
         }
-        int escolha = scanner.nextInt();
+        int escolha = isInteger();
 
         int j =0;
         for (Profissao profissao: Profissao.values()) {
@@ -142,10 +142,11 @@ public class AplicacaoDAO {
 
         String nomeEscolhido = scanner.next();
 
+        int i=0;
+
         for (Personagem personagem : personagemList) {
-            System.out.print(nomeEscolhido + " ->");
-            System.out.println(personagem.getNome());
             if(nomeEscolhido.equals(personagem.getNome())){
+                i++;
                 System.out.println(personagem);
                 String nome = personagem.getNome();
                 Raca raca = personagem.getRaca();
@@ -163,7 +164,7 @@ public class AplicacaoDAO {
                 boolean alive = true;
                 do{
                     menuUpdatePersonagem();
-                    int opcao = Integer.parseInt(scanner.next());
+                    int opcao = isInteger();
                     switch (opcao){
                         case 0:
                             alive = false;
@@ -210,11 +211,14 @@ public class AplicacaoDAO {
                 break;
             }
         }
+        if( i !=1){
+            System.out.println("Personagem não encontrado! Verifique se o nome foi digitado corretamente.");
+        }
     }
 
     private Integer escolhaProprietadeInteger(String propriedade) {
-        System.out.print("Digite o valor " + propriedade);
-        Integer escolha = scanner.nextInt();
+        System.out.print("Digite o novo valor " + propriedade +": ");
+        Integer escolha = isInteger();
         return escolha;
     }
 
@@ -232,5 +236,24 @@ public class AplicacaoDAO {
         System.out.println("9 - Experiencia");
         System.out.println("10 - Nivel");
         System.out.println("0 - Sair");
+    }
+
+    private Integer isInteger(){
+        Integer integer = null;
+        boolean flag = true;
+
+        do{
+            String integerAux = scanner.next();
+
+           try{
+               integer = Integer.parseInt(integerAux);
+               flag = false;
+           }catch (Exception e){
+               System.out.println("Valor invalido! Verifique se é um inteiro.");
+               System.out.print("Tente novamente: ");
+           }
+
+        }while (flag);
+        return integer;
     }
 }
