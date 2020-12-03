@@ -109,13 +109,12 @@ public class PersonagemDAO implements DAO<Personagem>, DAOFields{
      */
     @Override
     public void create(Personagem personagem) {
-
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement(getInsertString(getTableName()));
             preparedStatement.setString(1, personagem.getNome());
-            preparedStatement.setString(2, personagem.getRaca().toString());
-            preparedStatement.setString(3, personagem.getProfissao().toString());
+            preparedStatement.setString(2, personagem.getRaca().getValor());
+            preparedStatement.setString(3, personagem.getProfissao().getValor());
             preparedStatement.setInt(4, personagem.getMana());
             preparedStatement.setInt(5, personagem.getAd());
             preparedStatement.setInt(6, personagem.getAp());
@@ -129,6 +128,7 @@ public class PersonagemDAO implements DAO<Personagem>, DAOFields{
             int retorno = preparedStatement.executeUpdate();
             int statusErroCreate = 0;
         } catch (SQLException e) {
+            System.out.println("aqui caraio");
             e.printStackTrace();
         }
     }
@@ -139,7 +139,7 @@ public class PersonagemDAO implements DAO<Personagem>, DAOFields{
      */
     @Override
     public String getTableName() {
-        return "Personagem";
+        return "personagem";
     }
 
     /**
