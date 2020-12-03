@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0809828-f908-4792-872d-bd47a108bd62" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../T4/src/dados.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3/META-INF/T3.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../T4/src/br/maua/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../T4/src/br/maua/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../T4/src/br/maua/aplicacoes/AplicacaoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../T4/src/br/maua/aplicacoes/AplicacaoDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../T4/src/br/maua/models/Personagem.java" beforeDir="false" afterPath="$PROJECT_DIR$/../T4/src/br/maua/models/Personagem.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,6 +69,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="1135" y="336" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606954487097">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="1135" y="336" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1050/-1680.26.1680.1020@0.0.1920.1050" timestamp="1606954487097" />
     <state x="765" y="241" key="#com.intellij.ide.util.MemberChooser" timestamp="1601693873260">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
