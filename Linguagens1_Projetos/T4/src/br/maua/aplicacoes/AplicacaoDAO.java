@@ -36,6 +36,10 @@ public class AplicacaoDAO {
                     System.out.println("Atualização do personagem: ");
                     atualizaPersonagem();
                     break;
+                case 4:
+                    System.out.println("Deletar personagem: ");
+                    deletarPersonagem();
+                    break;
                 default:
                     System.out.println("Opcao Invalida!");
             }
@@ -49,6 +53,7 @@ public class AplicacaoDAO {
         System.out.println("1 - Consultar personagens");
         System.out.println("2 - Cadastra personagem");
         System.out.println("3 - Alterar personagem");
+        System.out.println("4 - Deletar personagem");
         System.out.println("0 - Sair");
     }
 
@@ -86,53 +91,6 @@ public class AplicacaoDAO {
         }
     }
 
-    private Raca escolhaRaca() {
-        Raca racaEscolhida = null;
-
-        System.out.println("Escolha sua raça: ");
-        int i = 0;
-        for (Raca raca: Raca.values()) {
-            i++;
-            System.out.println(i + " - " + raca.getValor());
-        }
-        int escolha = isInteger();
-
-        int j =0;
-        for (Raca raca: Raca.values()) {
-            j++;
-            if(escolha == j){
-                racaEscolhida = raca;
-            }
-        }
-
-        System.out.println("Voce escolheu a raça: " + racaEscolhida.getValor());
-        return racaEscolhida;
-    }
-
-    private Profissao escolhaProfissao() {
-        Profissao profissaoEscolhida = null;
-
-        System.out.println("Escolha sua profissao: ");
-        int i = 0;
-        for (Profissao profissao: Profissao.values()) {
-            i++;
-            System.out.println(i + " - " + profissao.getValor());
-        }
-        int escolha = isInteger();
-
-        int j =0;
-        for (Profissao profissao: Profissao.values()) {
-            j++;
-            if(escolha == j){
-                profissaoEscolhida = profissao;
-            }
-        }
-
-        System.out.println("Voce escolheu a profissao: " + profissaoEscolhida.getValor());
-        return profissaoEscolhida;
-
-    }
-
     private void atualizaPersonagem(){
         System.out.println("Informe o nome do personagem que queira alterar.");
 
@@ -142,11 +100,11 @@ public class AplicacaoDAO {
 
         String nomeEscolhido = scanner.next();
 
-        int i=0;
+        boolean flagNomeEncontrado = false;
 
         for (Personagem personagem : personagemList) {
             if(nomeEscolhido.equals(personagem.getNome())){
-                i++;
+                flagNomeEncontrado = true;
                 System.out.println(personagem);
                 String nome = personagem.getNome();
                 Raca raca = personagem.getRaca();
@@ -211,7 +169,32 @@ public class AplicacaoDAO {
                 break;
             }
         }
-        if( i !=1){
+        if(!flagNomeEncontrado){
+            System.out.println("Personagem não encontrado! Verifique se o nome foi digitado corretamente.");
+        }
+    }
+
+    private void deletarPersonagem(){
+        System.out.println("Informe o nome do personagem que deseja deletar.");
+
+        personagemList = personagemDAO.getAll();
+        System.out.println("Seus personagens são: ");
+        personagemList.forEach( personagem -> System.out.println(personagem.getNome()));
+        System.out.println("_____________________________________");
+        System.out.println("0 - Desistir");
+
+
+        String nomeEscolhido = scanner.next();
+
+        int i=0;
+
+        for (Personagem personagem : personagemList) {
+            if(nomeEscolhido.equals(personagem.getNome())){
+                i++;
+                personagemDAO.delete(personagem);
+            }
+        }
+        if( i !=1 && !nomeEscolhido.equals("0")){
             System.out.println("Personagem não encontrado! Verifique se o nome foi digitado corretamente.");
         }
     }
@@ -223,7 +206,7 @@ public class AplicacaoDAO {
     }
 
     private void menuUpdatePersonagem() {
-        System.out.println("Escolha a propriedade a ser mudada");
+        System.out.println("Escolha a propriedade a ser mudada:");
 
         System.out.println("1 - Profissao");
         System.out.println("2 - Mana");
@@ -255,5 +238,52 @@ public class AplicacaoDAO {
 
         }while (flag);
         return integer;
+    }
+
+    private Raca escolhaRaca() {
+        Raca racaEscolhida = null;
+
+        System.out.println("Escolha sua raça: ");
+        int i = 0;
+        for (Raca raca: Raca.values()) {
+            i++;
+            System.out.println(i + " - " + raca.getValor());
+        }
+        int escolha = isInteger();
+
+        int j =0;
+        for (Raca raca: Raca.values()) {
+            j++;
+            if(escolha == j){
+                racaEscolhida = raca;
+            }
+        }
+
+        System.out.println("Voce escolheu a raça: " + racaEscolhida.getValor());
+        return racaEscolhida;
+    }
+
+    private Profissao escolhaProfissao() {
+        Profissao profissaoEscolhida = null;
+
+        System.out.println("Escolha sua profissao: ");
+        int i = 0;
+        for (Profissao profissao: Profissao.values()) {
+            i++;
+            System.out.println(i + " - " + profissao.getValor());
+        }
+        int escolha = isInteger();
+
+        int j =0;
+        for (Profissao profissao: Profissao.values()) {
+            j++;
+            if(escolha == j){
+                profissaoEscolhida = profissao;
+            }
+        }
+
+        System.out.println("Voce escolheu a profissao: " + profissaoEscolhida.getValor());
+        return profissaoEscolhida;
+
     }
 }
