@@ -128,7 +128,6 @@ public class PersonagemDAO implements DAO<Personagem>, DAOFields{
             int retorno = preparedStatement.executeUpdate();
             int statusErroCreate = 0;
         } catch (SQLException e) {
-            System.out.println("aqui caraio");
             e.printStackTrace();
         }
     }
@@ -212,7 +211,7 @@ public class PersonagemDAO implements DAO<Personagem>, DAOFields{
      */
     @Override
     public String getDeleteString(String table) {
-        return "DELETE FROM "+ table +" WHERE id = ?";
+        return "DELETE FROM "+ table +" WHERE nome = ?";
     }
 
     /**
