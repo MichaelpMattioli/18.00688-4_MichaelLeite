@@ -1,11 +1,8 @@
 package br.maua.models;
 
-import br.maua.enums.Equipamentos;
-import br.maua.enums.Itens;
 import br.maua.enums.Profissao;
 import br.maua.enums.Raca;
 
-import java.util.List;
 
 public class Personagem {
     private String nome;
