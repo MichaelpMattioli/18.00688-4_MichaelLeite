@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae799707-c69e-4a62-8526-22e4a3168e81" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../Teste/src/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../T3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../T3/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../T4/dados.db" beforeDir="false" afterPath="$PROJECT_DIR$/../T4/dados.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../T4/out/production/T4/br/maua/DAO/PersonagemDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../T4/out/production/T4/br/maua/DAO/PersonagemDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../T4/out/production/T4/br/maua/aplicacoes/AplicacaoDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../T4/src/br/maua/DAO/DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../T4/src/br/maua/DAO/DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../T4/src/br/maua/DAO/DAOFields.java" beforeDir="false" afterPath="$PROJECT_DIR$/../T4/src/br/maua/DAO/DAOFields.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../T4/src/br/maua/DAO/PersonagemDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../T4/src/br/maua/DAO/PersonagemDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../T4/src/br/maua/aplicacoes/AplicacaoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../T4/src/br/maua/aplicacoes/AplicacaoDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

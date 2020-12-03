@@ -3,18 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e0809828-f908-4792-872d-bd47a108bd62" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../T4/T4.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../T4/T4.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../T4/out/production/T4/br/maua/DAO/PersonagemDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../T4/out/production/T4/br/maua/DAO/PersonagemDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../T4/out/production/T4/br/maua/aplicacoes/AplicacaoDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../T4/out/production/T4/br/maua/aplicacoes/AplicacaoDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../T4/out/production/T4/br/maua/enums/Profissao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../T4/out/production/T4/br/maua/enums/Profissao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../T4/out/production/T4/br/maua/enums/Raca.class" beforeDir="false" afterPath="$PROJECT_DIR$/../T4/out/production/T4/br/maua/enums/Raca.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../T4/out/production/T4/br/maua/models/Personagem.class" beforeDir="false" afterPath="$PROJECT_DIR$/../T4/out/production/T4/br/maua/models/Personagem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../T4/src/br/maua/DAO/PersonagemDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../T4/src/br/maua/DAO/PersonagemDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../T4/src/br/maua/aplicacoes/AplicacaoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../T4/src/br/maua/aplicacoes/AplicacaoDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../T4/src/br/maua/enums/Profissao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../T4/src/br/maua/enums/Profissao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../T4/src/br/maua/enums/Raca.java" beforeDir="false" afterPath="$PROJECT_DIR$/../T4/src/br/maua/enums/Raca.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../T4/src/br/maua/models/Personagem.java" beforeDir="false" afterPath="$PROJECT_DIR$/../T4/src/br/maua/models/Personagem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../T4/src/dados.db" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,30 +88,30 @@
     <state x="740" y="287" key="FileChooserDialogImpl/0.0.1920.1050/-1680.25.1680.1020@0.0.1920.1050" timestamp="1604215983179" />
     <state x="740" y="287" key="FileChooserDialogImpl/0.0.1920.1050/-1680.26.1680.1020@0.0.1920.1050" timestamp="1604369575508" />
     <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1080/-1050.-407.1050.1680@0.0.1920.1080" timestamp="1601679706528" />
-    <state width="1391" height="444" key="GridCell.Tab.0.bottom" timestamp="1606956689775">
+    <state width="1391" height="444" key="GridCell.Tab.0.bottom" timestamp="1606962736500">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1050.-407.1050.1650@0.0.1920.1050" timestamp="1601698118630" />
     <state width="1877" height="225" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1680.25.1680.1020@0.0.1920.1050" timestamp="1601763011445" />
-    <state width="1391" height="444" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1680.26.1680.1020@0.0.1920.1050" timestamp="1606956689775" />
-    <state width="1391" height="444" key="GridCell.Tab.0.center" timestamp="1606956689775">
+    <state width="1391" height="444" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1680.26.1680.1020@0.0.1920.1050" timestamp="1606962736500" />
+    <state width="1391" height="444" key="GridCell.Tab.0.center" timestamp="1606962736500">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1920.1050/-1050.-407.1050.1650@0.0.1920.1050" timestamp="1601698118630" />
     <state width="1877" height="225" key="GridCell.Tab.0.center/0.0.1920.1050/-1680.25.1680.1020@0.0.1920.1050" timestamp="1601763011445" />
-    <state width="1391" height="444" key="GridCell.Tab.0.center/0.0.1920.1050/-1680.26.1680.1020@0.0.1920.1050" timestamp="1606956689775" />
-    <state width="1391" height="444" key="GridCell.Tab.0.left" timestamp="1606956689775">
+    <state width="1391" height="444" key="GridCell.Tab.0.center/0.0.1920.1050/-1680.26.1680.1020@0.0.1920.1050" timestamp="1606962736500" />
+    <state width="1391" height="444" key="GridCell.Tab.0.left" timestamp="1606962736500">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1920.1050/-1050.-407.1050.1650@0.0.1920.1050" timestamp="1601698118630" />
     <state width="1877" height="225" key="GridCell.Tab.0.left/0.0.1920.1050/-1680.25.1680.1020@0.0.1920.1050" timestamp="1601763011444" />
-    <state width="1391" height="444" key="GridCell.Tab.0.left/0.0.1920.1050/-1680.26.1680.1020@0.0.1920.1050" timestamp="1606956689775" />
-    <state width="1391" height="444" key="GridCell.Tab.0.right" timestamp="1606956689775">
+    <state width="1391" height="444" key="GridCell.Tab.0.left/0.0.1920.1050/-1680.26.1680.1020@0.0.1920.1050" timestamp="1606962736500" />
+    <state width="1391" height="444" key="GridCell.Tab.0.right" timestamp="1606962736500">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1920.1050/-1050.-407.1050.1650@0.0.1920.1050" timestamp="1601698118630" />
     <state width="1877" height="225" key="GridCell.Tab.0.right/0.0.1920.1050/-1680.25.1680.1020@0.0.1920.1050" timestamp="1601763011445" />
-    <state width="1391" height="444" key="GridCell.Tab.0.right/0.0.1920.1050/-1680.26.1680.1020@0.0.1920.1050" timestamp="1606956689775" />
+    <state width="1391" height="444" key="GridCell.Tab.0.right/0.0.1920.1050/-1680.26.1680.1020@0.0.1920.1050" timestamp="1606962736500" />
     <state x="440" y="99" key="SettingsEditor" timestamp="1601745297402">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
