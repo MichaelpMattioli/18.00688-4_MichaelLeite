@@ -5,8 +5,6 @@ import br.maua.enums.Itens;
 import br.maua.enums.Profissao;
 import br.maua.enums.Raca;
 
-import java.util.HashMap;
-
 
 public class Personagem {
     private String nome;
@@ -23,10 +21,11 @@ public class Personagem {
     private Integer nivel;
     private Equipamentos cabeca;
     private Equipamentos tronco;
-    private Equipamentos perna;
+    private Equipamentos pernas;
     private Equipamentos pes;
+    private Itens[] itensDisponiveis;
 
-    public Personagem(String nome, Raca raca, Profissao profissao, Integer mana, Integer ad, Integer ap, Integer def, Integer defM, Integer velocidade, Integer destreza, Integer experiencia, Integer nivel, Equipamentos cabeca, Equipamentos tronco, Equipamentos perna, Equipamentos pes) {
+    public Personagem(String nome, Raca raca, Profissao profissao, Integer mana, Integer ad, Integer ap, Integer def, Integer defM, Integer velocidade, Integer destreza, Integer experiencia, Integer nivel, Equipamentos cabeca, Equipamentos tronco, Equipamentos pernas, Equipamentos pes, Itens itens) {
         this.nome = nome;
         this.raca = raca;
         this.profissao = profissao;
@@ -41,8 +40,29 @@ public class Personagem {
         this.nivel = nivel;
         this.cabeca = cabeca;
         this.tronco = tronco;
-        this.perna = perna;
+        this.pernas = pernas;
         this.pes = pes;
+        this.itensDisponiveis = new Itens[] {itens};
+    }
+
+    public Personagem(String nome, Raca raca, Profissao profissao, Integer mana, Integer ad, Integer ap, Integer def, Integer defM, Integer velocidade, Integer destreza, Integer experiencia, Integer nivel, Equipamentos cabeca, Equipamentos tronco, Equipamentos pernas, Equipamentos pes) {
+        this.nome = nome;
+        this.raca = raca;
+        this.profissao = profissao;
+        this.mana = mana;
+        this.ad = ad;
+        this.ap = ap;
+        this.def = def;
+        this.defM = defM;
+        this.velocidade = velocidade;
+        this.destreza = destreza;
+        this.experiencia = experiencia;
+        this.nivel = nivel;
+        this.cabeca = cabeca;
+        this.tronco = tronco;
+        this.pernas = pernas;
+        this.pes = pes;
+        this.itensDisponiveis = new Itens[] {Itens.VAZIO};
     }
 
     public Personagem(String nome, Raca raca, Profissao profissao, Integer mana, Integer ad, Integer ap, Integer def, Integer defM, Integer velocidade, Integer destreza, Integer experiencia, Integer nivel) {
@@ -60,8 +80,9 @@ public class Personagem {
         this.nivel = nivel;
         this.cabeca = Equipamentos.NONE;
         this.tronco = Equipamentos.NONE;
-        this.perna = Equipamentos.NONE;
+        this.pernas = Equipamentos.NONE;
         this.pes = Equipamentos.NONE;
+        this.itensDisponiveis = new Itens[] {Itens.VAZIO};
     }
 
     public String getNome() {
@@ -120,35 +141,41 @@ public class Personagem {
         return tronco;
     }
 
-    public Equipamentos getPerna() {
-        return perna;
+    public Equipamentos getPernas() {
+        return pernas;
     }
 
     public Equipamentos getPes() {
         return pes;
     }
 
+    public Itens[] getItensDisponiveis() {
+        return itensDisponiveis;
+    }
+
     @Override
     public String toString() {
         return "Personagem{" +
-                "nome='" + nome + '\'' +
-                ", raca=" + raca +
-                ", profissao=" + profissao +
-                ", mana=" + mana +
-                ", ad=" + ad +
-                ", ap=" + ap +
-                ", def=" + def +
-                ", defM=" + defM +
-                ", velocidade=" + velocidade +
-                ", destreza=" + destreza +
-                ", experiencia=" + experiencia +
-                ", nivel=" + nivel +
+                "nome:'" + nome + '\'' +
+                ", raca:" + raca.getValor() +
+                ", profissao:" + profissao.getValor() +
+                ", mana:" + mana +
+                ", ad:" + ad +
+                ", ap:" + ap +
+                ", def:" + def +
+                ", defM:" + defM +
+                ", velocidade:" + velocidade +
+                ", destreza:" + destreza +
+                ", experiencia:" + experiencia +
+                ", nivel:" + nivel +
                 ", armadura{"+
-                    "cabeca=" + cabeca +
-                    ", tronco=" + tronco +
-                    ", perna=" + perna +
-                    ", pes=" + pes +
+                    "cabeca:" + cabeca.toString().replace("_", " ").toLowerCase() +
+                    ", tronco:" + tronco.toString().replace("_", " ").toLowerCase() +
+                    ", perna:" + pernas.toString().replace("_", " ").toLowerCase() +
+                    ", pes:" + pes.toString().replace("_", " ").toLowerCase() +
                 "}" +
+                ", item{"+ itensDisponiveis + "}" +
                 '}';
     }
+
 }
