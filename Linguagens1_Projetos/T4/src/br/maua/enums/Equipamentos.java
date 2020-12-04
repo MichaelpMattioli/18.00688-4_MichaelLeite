@@ -3,13 +3,14 @@ package br.maua.enums;
 import java.util.ArrayList;
 
 /**
- * * Classe responsável por enumerar todos os equipamentos disponiveis.
+ * * Classe responsável por enumerar todos os equipamentos disponiveis e construir os seus atributos.
  * @author José Guilherme Martins dos Santos - josegms2000@gmail.com  Michael Pedroza Mattioli Leite - michael.pmattioli@gmail.com
  * @since 02/11/2020
  * @version 1.0
  * */
 
 public enum Equipamentos {
+
     NONE(0, 0, 0, 0, 0, 0, 0, 0),
     ELMO_DE_COURO(1, 1, 0, 0, 3, 1, 1, 0),
     PEITORAL_DE_COURO(2, 2, 0, 0, 3, 1, 1, 0),
@@ -32,6 +33,19 @@ public enum Equipamentos {
     private int defM;
     private int velocidade;
     private int destreza;
+
+    /**
+     * Construtor da classe Equipamentos, responsável por construir as variaveis que esse enum apresenta, que nesse caso são os atributos
+     * que iram interferir nas váriaveis de atributos do personagem.
+     * @param local
+     * @param mana
+     * @param ad
+     * @param ap
+     * @param def
+     * @param defM
+     * @param velocidade
+     * @param destreza
+     */
 
     Equipamentos(int local, int mana, int ad, int ap, int def, int defM, int velocidade, int destreza) {
         this.local = local;
@@ -75,6 +89,12 @@ public enum Equipamentos {
     public int getDestreza() {
         return destreza;
     }
+
+    /**
+     * Método responsável por retornar o tipo de enum relacionado a String que foi inserida em seu parâmetro, foi essencial para a implementação e construção do DAO.
+     * @param equipamento String que irá ser comparada aos itens contidos na classe equipamento.
+     * @return retorna o equipamento que tenha o nome igual a string que foi colocada no parâmetro.
+     */
 
     public static Equipamentos getEquipamento(String equipamento){
         for(Equipamentos equip:Equipamentos.values()){

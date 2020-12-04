@@ -10,9 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * * Classe responsável pela implementação do DAO dos Animes.
+ * * Classe responsável pela implementação do DAO dos Personagens.
  * @author José Guilherme Martins dos Santos - josegms2000@gmail.com  Michael Pedroza Mattioli Leite - michael.pmattioli@gmail.com
- * @since 02/10/2020
+ * @since 02/12/2020
  * @version 1.0
  * */
 
@@ -33,8 +33,8 @@ public class PersonagemDAO implements DAO<Personagem>, DAOFields{
     }
 
     /**
-     *
-     * @param condition condição relativa a posição do indice na tabela.
+     * Método responsável por retornar um personagem específico.
+     * @param condition Uma String relativa a codição que deve ser procurada na tabela do banco de dados.
      * @return retorno uma lista com um anime específico.
      */
     @Override
@@ -74,8 +74,8 @@ public class PersonagemDAO implements DAO<Personagem>, DAOFields{
     }
 
     /**
-     * Função para requisição de todas os os animes.
-     * @return retorna uma lista com todos os animes do banco de dados.
+     * Método para requisição de todas os personagens do banco de dados.
+     * @return retorna uma lista de personagens com todos os personagens do banco de dados.
      */
     @Override
     public List<Personagem> getAll() {
@@ -114,8 +114,8 @@ public class PersonagemDAO implements DAO<Personagem>, DAOFields{
         return personagems;
     }
     /**
-     * Função para inserir um novo anime.
-     * @param personagem Parametro para representar o novo anime a ser inserido.
+     * Método para inserir um personagem no banco de dados.
+     * @param personagem varivavel do tipo personagem que será o parâmetro para retirar os dados e inseri-lo no banco de dados.
      */
     @Override
     public void create(Personagem personagem) {
@@ -147,8 +147,8 @@ public class PersonagemDAO implements DAO<Personagem>, DAOFields{
     }
 
     /**
-     * Função para atualização de uma carta especifica na lista.
-     * @param personagem parametro que define qual carta está sendo alterada.
+     * Método para atualização de um personagem do banco de dados, chave primária é o nome.
+     * @param personagem varivavel do tipo personagem que será o parâmetro para atualizar os dados no banco de dados.
      */
     @Override
     public void update(Personagem personagem) {
@@ -179,8 +179,8 @@ public class PersonagemDAO implements DAO<Personagem>, DAOFields{
     }
 
     /**
-     * Função para deletar cartas da lista
-     * @param personagem parametro que define qual carta será deletada.
+     * Método para deletar um personagem no banco de dados.
+     * @param personagem varivavel do tipo personagem que será o parâmetro para deletar o personagem no banco de dados.
      */
     @Override
     public void delete(Personagem personagem) {
@@ -194,7 +194,7 @@ public class PersonagemDAO implements DAO<Personagem>, DAOFields{
     }
 
     /**
-     *  Função para pegar o nome da tabela.
+     *  Método que define o nome da tabela.
      * @return retorna o nome da tabela.
      */
     @Override
@@ -203,9 +203,9 @@ public class PersonagemDAO implements DAO<Personagem>, DAOFields{
     }
 
     /**
-     * Função que insere um dado especifico na tabela, comando relativo ao SQL.
-     * @param table parametro que define a tabela.
-     * @return retorna InsertString em formato para o SQL.
+     * Método que insere um dado especifico na tabela, comando relativo ao SQL.
+     * @param table parametro que define qual a tabela a ser utilizada.
+     * @return retorna uma String em formato para o SQL.
      */
     @Override
     public String getInsertString(String table) {
@@ -213,9 +213,9 @@ public class PersonagemDAO implements DAO<Personagem>, DAOFields{
     }
 
     /**
-     * Função para pegar UpdateString no formato do SQL.
-     * @param table parametro que define a tabela.
-     * @return retorna UpdateString em formato para o SQL.
+     * Método que atualiza um dado específico da tabela, comando relativo ao SQL.
+     * @param table parametro que define qual a tabela a ser utilizada.
+     * @return retorna uma String em formato para o SQL.
      */
     @Override
     public String getUpdateString(String table) {
@@ -223,9 +223,9 @@ public class PersonagemDAO implements DAO<Personagem>, DAOFields{
     }
 
     /**
-     * função para pega uma DeleteString, relativa ao SQL.
-     * @param table parametro que define a tabela.
-     * @return retorno DeleteString em formato para o SQL.
+     * Método que deleta um dado específico da tabela, comando relativo ao SQL.
+     * @param table parametro que define qual a tabela a ser utilizada.
+     * @return retorna uma String em formato para o SQL.
      */
     @Override
     public String getDeleteString(String table) {
@@ -233,9 +233,9 @@ public class PersonagemDAO implements DAO<Personagem>, DAOFields{
     }
 
     /**
-     * Função que recupera todos os dados do banco dados, comando relativo ao SQL.
-     * @param table parametro que define a tabela.
-     * @return retorna SelectAllString em formato para o SQL.
+     * Método que recupera todos os dados da tabela, comando relativo ao SQL.
+     * @param table parametro que define qual a tabela a ser utilizada.
+     * @return retorna uma String em formato para o SQL.
      */
     @Override
     public String getSelectAllString(String table) {
@@ -243,9 +243,9 @@ public class PersonagemDAO implements DAO<Personagem>, DAOFields{
     }
 
     /**
-     * Função que recupera um dado especifico do banco dados, comando relativo ao SQL.
-     * @param table parametro que define a tabela.
-     * @return retorna SelectConditionalString em formato para o SQL.
+     * Método que recupera um dado específico da tabela, comando relativo ao SQL.
+     * @param table parametro que define qual a tabela a ser utilizada.
+     * @return retorna uma String em formato para o SQL.
      */
     @Override
     public String getSelectConditionalString(String table) {
