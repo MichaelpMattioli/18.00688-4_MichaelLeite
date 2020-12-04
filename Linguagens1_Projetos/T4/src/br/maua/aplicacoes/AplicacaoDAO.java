@@ -120,7 +120,7 @@ public class AplicacaoDAO {
                 Integer nivel = personagem.getNivel();
                 Equipamentos cabeca = personagem.getCabeca();
                 Equipamentos tronco = personagem.getTronco();
-                Equipamentos pernas = personagem.getPerna();
+                Equipamentos pernas = personagem.getPernas();
                 Equipamentos pes = personagem.getPes();
 
                 System.out.println("Atualize sua armadura!");
@@ -137,25 +137,25 @@ public class AplicacaoDAO {
                             profissao = escolhaProfissao();
                             break;
                         case 2:
-                            mana = escolhaProprietadeInteger("da Mana");
+                            mana = escolhaProprietadeInteger("da Mana") + cabeca.getMana();
                             break;
                         case 3:
-                            ad = escolhaProprietadeInteger("do Ad");
+                            ad = escolhaProprietadeInteger("do Ad") + cabeca.getAd();
                             break;
                         case 4:
-                            ap = escolhaProprietadeInteger("do Ap");
+                            ap += escolhaProprietadeInteger("do Ap") + cabeca.getAp();
                             break;
                         case 5:
-                            def = escolhaProprietadeInteger("da Def");
+                            def += escolhaProprietadeInteger("da Def") + cabeca.getDef();
                             break;
                         case 6:
-                            defM = escolhaProprietadeInteger("da DefM");
+                            defM = escolhaProprietadeInteger("da DefM") + cabeca.getDefM();
                             break;
                         case 7:
-                            velocidade = escolhaProprietadeInteger("da Velocidade");
+                            velocidade = escolhaProprietadeInteger("da Velocidade") + cabeca.getVelocidade();
                             break;
                         case 8:
-                            destreza = escolhaProprietadeInteger("da Destreza");
+                            destreza = escolhaProprietadeInteger("da Destreza") + cabeca.getDestreza();
                             break;
                         case 9:
                             experiencia = escolhaProprietadeInteger("da Experiência");
@@ -173,16 +173,48 @@ public class AplicacaoDAO {
                                         alive1 = false;
                                         break;
                                     case 1:
+                                        Equipamentos armaduraAnterior1 = cabeca;
                                         cabeca = escolhaArmadura(1,personagem);
+                                        mana += atualizaAtributo(cabeca, "mana") - armaduraAnterior1.getMana();
+                                        ad += atualizaAtributo(cabeca, "ad") - armaduraAnterior1.getAd();
+                                        ap += atualizaAtributo(cabeca, "ap") - armaduraAnterior1.getAp();
+                                        def += atualizaAtributo(cabeca,"def") - armaduraAnterior1.getDef();
+                                        defM += atualizaAtributo(cabeca,"defM") - armaduraAnterior1.getDefM();
+                                        velocidade += atualizaAtributo(cabeca,"velocidade") - armaduraAnterior1.getVelocidade();
+                                        destreza += atualizaAtributo(cabeca,"destreza") - armaduraAnterior1.getDestreza();
                                         break;
                                     case 2:
+                                        Equipamentos armaduraAnterior2 = tronco;
                                         tronco = escolhaArmadura(2,personagem);
+                                        mana += atualizaAtributo(tronco, "mana") - armaduraAnterior2.getMana();
+                                        ad += atualizaAtributo(tronco, "ad") - armaduraAnterior2.getAd();
+                                        ap += atualizaAtributo(tronco, "ap") - armaduraAnterior2.getAp();
+                                        def += atualizaAtributo(tronco,"def") - armaduraAnterior2.getDef();
+                                        defM += atualizaAtributo(tronco,"defM") - armaduraAnterior2.getDefM();
+                                        velocidade += atualizaAtributo(tronco,"velocidade") - armaduraAnterior2.getVelocidade();
+                                        destreza += atualizaAtributo(tronco,"destreza") - armaduraAnterior2.getDestreza();
                                         break;
                                     case 3:
+                                        Equipamentos armaduraAnterior3 = pernas;
                                         pernas = escolhaArmadura(3,personagem);
+                                        mana += atualizaAtributo(pernas, "mana") - armaduraAnterior3.getMana();
+                                        ad +=  atualizaAtributo(pernas, "ad") - armaduraAnterior3.getAd();
+                                        ap += atualizaAtributo(pernas, "ap") - armaduraAnterior3.getAp();
+                                        def += atualizaAtributo(pernas,"def") - armaduraAnterior3.getDef();
+                                        defM += atualizaAtributo(pernas,"defM") - armaduraAnterior3.getDefM();
+                                        velocidade += atualizaAtributo(pernas,"velocidade") - armaduraAnterior3.getVelocidade();
+                                        destreza += atualizaAtributo(pernas,"destreza") - armaduraAnterior3.getDestreza();
                                         break;
                                     case 4:
+                                        Equipamentos armaduraAnterior4 = pes;
                                         pes = escolhaArmadura(4,personagem);
+                                        mana += atualizaAtributo(pes, "mana") - armaduraAnterior4.getMana();
+                                        ad += atualizaAtributo(pes, "ad") - armaduraAnterior4.getAd();
+                                        ap += atualizaAtributo(pes, "ap") - armaduraAnterior4.getAp();
+                                        def += atualizaAtributo(pes,"def") - armaduraAnterior4.getDef();
+                                        defM += atualizaAtributo(pes,"defM") - armaduraAnterior4.getDefM();
+                                        velocidade += atualizaAtributo(pes,"velocidade") - armaduraAnterior4.getVelocidade();
+                                        destreza += atualizaAtributo(pes,"destreza") - armaduraAnterior4.getDestreza();
                                         break;
                                     default:
                                         System.out.println("Opcao Invalida!");
@@ -202,6 +234,31 @@ public class AplicacaoDAO {
         if(!flagNomeEncontrado){
             System.out.println("Personagem não encontrado! Verifique se o nome foi digitado corretamente.");
         }
+    }
+
+    private Integer atualizaAtributo(Equipamentos equipamento, String nomeDaVariavel) {
+        if(nomeDaVariavel == "mana"){
+            return equipamento.getMana();
+        }
+        if(nomeDaVariavel == "ad"){
+            return equipamento.getAd();
+        }
+        if(nomeDaVariavel == "ap"){
+            return equipamento.getAp();
+        }
+        if(nomeDaVariavel == "def"){
+            return equipamento.getDef();
+        }
+        if(nomeDaVariavel == "defM"){
+            return equipamento.getDefM();
+        }
+        if(nomeDaVariavel == "velocidade"){
+            return equipamento.getVelocidade();
+        }
+        if(nomeDaVariavel == "destreza"){
+            return equipamento.getDestreza();
+        }
+        return 0;
     }
 
     private void deletarPersonagem(){
@@ -236,7 +293,7 @@ public class AplicacaoDAO {
     }
 
     private void menuUpdatePersonagem() {
-        System.out.println("Escolha a propriedade a ser mudada:");
+        System.out.println("Escolha o que deseja alterar:");
 
         System.out.println("1 - Profissao");
         System.out.println("2 - Mana");
@@ -335,7 +392,7 @@ public class AplicacaoDAO {
         }else if( localDaArmadura == 2){
             equipamentosEscolhida = personagem.getTronco();
         }else if( localDaArmadura == 3){
-            equipamentosEscolhida = personagem.getPerna();
+            equipamentosEscolhida = personagem.getPernas();
         }else if( localDaArmadura == 4){
             equipamentosEscolhida = personagem.getPes();
         }
@@ -344,7 +401,7 @@ public class AplicacaoDAO {
         System.out.println("0 - Retirar equipamento");
         int i = 0;
         for (Equipamentos equipamentos: Equipamentos.values()) {
-            if(equipamentos.getValor() == localDaArmadura){
+            if(equipamentos.getLocal() == localDaArmadura){
                 i++;
                 System.out.println(i + " - " + equipamentos);
             }
@@ -354,7 +411,7 @@ public class AplicacaoDAO {
 
         int j = 0;
         for (Equipamentos equipamentos: Equipamentos.values()) {
-            if(equipamentos.getValor() == localDaArmadura){
+            if(equipamentos.getLocal() == localDaArmadura){
                 j++;
                 if(escolha == j){
                     equipamentosEscolhida = equipamentos;
