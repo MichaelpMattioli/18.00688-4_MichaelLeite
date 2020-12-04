@@ -136,7 +136,7 @@ public class PersonagemDAO implements DAO<Personagem>, DAOFields{
             preparedStatement.setInt(12, personagem.getNivel());
             preparedStatement.setString(13, personagem.getCabeca().toString());
             preparedStatement.setString(14, personagem.getTronco().toString());
-            preparedStatement.setString(15, personagem.getPerna().toString());
+            preparedStatement.setString(15, personagem.getPernas().toString());
             preparedStatement.setString(16, personagem.getPes().toString());
             //Executa o PreparedStatement
             int retorno = preparedStatement.executeUpdate();
@@ -168,7 +168,7 @@ public class PersonagemDAO implements DAO<Personagem>, DAOFields{
             preparedStatement.setInt(12, personagem.getNivel());
             preparedStatement.setString(13, personagem.getCabeca().toString());
             preparedStatement.setString(14, personagem.getTronco().toString());
-            preparedStatement.setString(15, personagem.getPerna().toString());
+            preparedStatement.setString(15, personagem.getPernas().toString());
             preparedStatement.setString(16, personagem.getPes().toString());
             preparedStatement.setString(17, personagem.getNome());
             //Executa o PreparedStatement
