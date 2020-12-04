@@ -378,7 +378,7 @@ public class AplicacaoDAO {
 
     /**
      * Métodor responsável por obrigar o usuario digitar um inteiro, evitando com que erros ocorram na digitação dos atributos.
-     * @return
+     * @return Retorna um Integer.
      */
 
     private Integer isInteger(){

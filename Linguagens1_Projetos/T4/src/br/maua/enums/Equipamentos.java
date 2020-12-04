@@ -37,14 +37,14 @@ public enum Equipamentos {
     /**
      * Construtor da classe Equipamentos, responsável por construir as variaveis que esse enum apresenta, que nesse caso são os atributos
      * que iram interferir nas váriaveis de atributos do personagem.
-     * @param local
-     * @param mana
-     * @param ad
-     * @param ap
-     * @param def
-     * @param defM
-     * @param velocidade
-     * @param destreza
+     * @param local Integer que representa o local onde a armadura será colocada.
+     * @param mana Integer que representa a quantidade de mana do personagem.
+     * @param ad Integer que representa a quantidade de ataque fisico do personagem.
+     * @param ap Integer que representa a quantidade de ataque mágico do personagem.
+     * @param def Integer que representa a quantidade de defesa do personagem.
+     * @param defM Integer que representa a quantidade de defesa mágica do personagem.
+     * @param velocidade Integer que representa a quantidade de velocidade do personagem.
+     * @param destreza Integer que representa a quantidade de destreza do personagem.
      */
 
     Equipamentos(int local, int mana, int ad, int ap, int def, int defM, int velocidade, int destreza) {
